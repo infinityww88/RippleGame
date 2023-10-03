@@ -1,0 +1,33 @@
+.mark {
+    background-color: rgb(114, 236, 101);
+}
+
+.cell {
+    flex-grow: 0;
+    flex-direction: row;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(101, 101, 101);
+    border-right-color: rgb(101, 101, 101);
+    border-top-color: rgb(101, 101, 101);
+    border-bottom-color: rgb(101, 101, 101);
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+:root {
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
