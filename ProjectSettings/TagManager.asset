@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TargetPlatform
+  - SpawnPos
   layers:
   - Default
   - TransparentFX
@@ -12,12 +14,12 @@ TagManager:
   - Water
   - UI
   - Block
+  - Planet
+  - Background
   - 
-  - RCC
-  - RCC_WheelCollider
-  - RCC_DetachablePart
-  - RCC_Trailer
-  - RCC_Crasher
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -40,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Star
+    uniqueID: 2341825825
     locked: 0

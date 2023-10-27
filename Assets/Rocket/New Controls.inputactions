@@ -1,0 +1,73 @@
+{
+    "name": "New Controls",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "18a8024b-9e1a-471f-8a71-625a5bac5de2",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "3afa258d-76df-46e0-a633-b86e5ced13f3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "33b7f4ee-d812-495b-9816-5013c094e76f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme1",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "New action map1",
+            "id": "657edbe8-e2ba-47d6-96fa-db743a7c4643",
+            "actions": [
+                {
+                    "name": "New action 1",
+                    "type": "Button",
+                    "id": "4205a1ff-296a-4520-9e4d-a3f13087005b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ce2786f7-485a-46a7-833c-7d1c1f2413f6",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme1",
+                    "action": "New action 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "New control scheme",
+            "bindingGroup": "New control scheme",
+            "devices": []
+        },
+        {
+            "name": "New control scheme1",
+            "bindingGroup": "New control scheme1",
+            "devices": []
+        }
+    ]
+}

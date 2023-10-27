@@ -4,6 +4,11 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
+#if UNITY_EDITOR
+using UnityEditor;
+using Sirenix.OdinInspector;
+#endif
+
 public class BlockGrid : MonoBehaviour
 {
     public GameObjectGameEvent eventGameObjectOnPatternRelease;
@@ -64,7 +69,8 @@ public class BlockGrid : MonoBehaviour
         return blockRoot.GetChild(Index(coord)).gameObject.GetComponent<Block>();
     }
 
-    [ExecuteInEditMode]
+#if UNITY_EDITOR
+	[Button(ButtonSizes.Medium)]
     private void CreateGrid()
     {
         if (transform.childCount > 0)
@@ -74,17 +80,23 @@ public class BlockGrid : MonoBehaviour
         blockRoot = new GameObject("BlockRoot").transform;
         blockRoot.transform.SetParent(transform);
         blockRoot.transform.SetAsFirstSibling();
-        blockRoot.transform.localPosition = Vector3.zero;
+	    blockRoot.transform.localPosition = Vector3.zero;
+	    GameObject emptyBlock = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Blocks/Prefab/Blocks/EmptyBlockPrefab.prefab");
+	    Debug.Log(emptyBlock);
         for (int i = 0; i < Row; i++)
         {
             for (int j =  0; j < Col; j++)
             {
-                GameObject child = Instantiate(blockPrefab, blockRoot.transform);
-                child.GetComponent<Block>().Color = hideColor;
-                child.transform.localPosition = new Vector2(j, -i) - Center;
+	            GameObject child = new GameObject($"GridCell {i}x{j}"); // Instantiate(blockPrefab, blockRoot.transform);
+	            child.transform.SetParent(blockRoot);
+	            //child.GetComponent<Block>().Color = hideColor;
+	            child.transform.localPosition = new Vector2(j, -i) - Center;
+	            GameObject block = PrefabUtility.InstantiatePrefab(emptyBlock) as GameObject;
+	            block.transform.SetParent(child.transform, false);
             }
         }
     }
+#endif
 
     private void EraseRows(List<int> rows)
     {
