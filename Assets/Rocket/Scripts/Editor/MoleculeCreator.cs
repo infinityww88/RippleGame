@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEditor;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.OdinInspector;
+using System;
+
+using Random = UnityEngine.Random;
 
 public class MoleculeCreator : OdinEditorWindow
 {
@@ -125,7 +128,7 @@ public class MoleculeCreator : OdinEditorWindow
 		var go = Selection.activeGameObject;
 		var rocks = go.GetComponentsInChildren<MeshFilter>();
 		rocks.ForEach(r => {
-			int i = Random.Range(0, meshs.Count);
+			int i = UnityEngine.Random.Range(0, meshs.Count);
 			r.mesh = meshs[i];
 			if (r.TryGetComponent<MeshCollider>(out var mc)) {
 				DestroyImmediate(mc);
@@ -144,6 +147,43 @@ public class MoleculeCreator : OdinEditorWindow
 		}
 		var o = new GameObject("ObstacleRoot");
 		o.transform.SetParent(Selection.activeGameObject.transform, false);
+	}
+	
+	[Button(ButtonSizes.Medium)]
+	private void ReplaceChildren(string prefabPath, int minIndex, int maxIndex, float minScale = 1, float maxScale = 3) {
+		if (Selection.activeGameObject == null || string.IsNullOrEmpty(prefabPath)) {
+			return;
+		}
+		
+		var prefabs =  GetAssets<GameObject>(prefabPath, "prefab");
+		
+		Debug.Log($"{prefabs.Count}");
+		
+		maxIndex = Mathf.Min(maxIndex, prefabs.Count);
+		
+		Func<GameObject> provider = () => {
+			var i = Random.Range(minIndex, maxIndex);
+			return Instantiate(prefabs[i]) as GameObject;
+		};
+		
+		var newChildren = new List<GameObject>();
+		var root = Selection.activeGameObject.transform;
+		while (root.childCount > 0) {
+			var c = root.transform.GetChild(0);
+			var nc = provider();
+			nc.transform.position = c.position;
+			//nc.transform.rotation = c.rotation;
+			//nc.transform.localScale = c.localScale;
+			nc.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+			nc.transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
+			newChildren.Add(nc);
+			c.SetParent(null);
+			DestroyImmediate(c.gameObject);
+		}
+		
+		newChildren.ForEach(nc => {
+			nc.transform.SetParent(root, true);
+		});
 	}
 	
 	[Button(ButtonSizes.Medium)]
