@@ -5,34 +5,41 @@ using UnityEngine;
 public class RocketLandingChecker : MonoBehaviour
 {
 	private const string TARGET_TAG = "TargetPlatform";
-	private Rigidbody rigidbody;
+	private Rigidbody2D rigidbody;
 	private bool isLandingSuccess = false;
+	private bool isEnterStandArea = false;
 	
     // Start is called before the first frame update
     void Start()
     {
-	    rigidbody = GetComponent<Rigidbody>();
+	    rigidbody = GetComponent<Rigidbody2D>();
     }
     
 	// OnTriggerStay is called once per frame for every Collider other that is touching the trigger.
-	protected void OnTriggerStay(Collider other)
+	protected void OnTriggerEnter2D(Collider2D other)
 	{
-		if (isLandingSuccess) {
-			return;
+		if (other.gameObject.tag == TARGET_TAG) {
+			isEnterStandArea = true;
 		}
-		
-		if (other.gameObject.tag != TARGET_TAG) {
-			return;
+	}
+	
+	// Sent when another object leaves a trigger collider attached to this object (2D physics only).
+	protected void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.gameObject.tag == TARGET_TAG) {
+			isEnterStandArea = false;
 		}
-		
-		if (!rigidbody.IsSleeping()) {
-			return;
-		}
-		
-		var angle = Vector3.Angle(transform.up, Vector3.up);
-		if (angle < 5) {
-			isLandingSuccess = true;
-			RocketGlobal.OnLandingSuccess();
+	}
+	
+	// Update is called every frame, if the MonoBehaviour is enabled.
+	protected void Update()
+	{
+		if (isEnterStandArea && rigidbody.IsSleeping() && !isLandingSuccess) {
+			var angle = Mathf.Abs(Vector3.Angle(transform.up, Vector3.up));
+			if (angle < 30) {
+				isLandingSuccess = true;
+				RocketGlobal.OnLandingSuccess();
+			}
 		}
 	}
 }

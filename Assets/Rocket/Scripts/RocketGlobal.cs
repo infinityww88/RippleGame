@@ -14,4 +14,6 @@ public static class RocketGlobal
 	public static Action OnReloadScene;
 	
 	public static Action OnLandingSuccess;
+	public static Action OnSunLightUp;
+	public static Action OnGemMerged;
 }

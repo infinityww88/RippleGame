@@ -13,17 +13,25 @@ public class LightUpSun : MonoBehaviour
 	private ParticleSystem SunCorona;
 	[SerializeField]
 	private ParticleSystem SunLoop;
+	[SerializeField]
+	private Spark spark;
 	
 	// This function is called when the object becomes enabled and active.
 	protected void OnEnable()
 	{
-		RocketGlobal.OnLandingSuccess += Play;
+		RocketGlobal.OnSunLightUp += Play;
+		RocketGlobal.OnGemMerged += EmitSpart;
 	}
 	
 	// This function is called when the behaviour becomes disabled () or inactive.
 	protected void OnDisable()
 	{
-		RocketGlobal.OnLandingSuccess -= Play;
+		RocketGlobal.OnSunLightUp -= Play;
+		RocketGlobal.OnGemMerged -= EmitSpart;
+	}
+	
+	void EmitSpart() {
+		spark.Emit();
 	}
 	
 	void Play() {

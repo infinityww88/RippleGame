@@ -16,7 +16,7 @@ public class RocketController : MonoBehaviour
 	[SerializeField]
 	private float force;
 	
-	private Rigidbody rigidbody;
+	private Rigidbody2D rigidbody;
 	
 	[SerializeField]
 	private InputAction startLeftEngineAction;
@@ -39,7 +39,7 @@ public class RocketController : MonoBehaviour
     void Start()
 	{
 		ReadConfig();
-		rigidbody = GetComponent<Rigidbody>();
+		rigidbody = GetComponent<Rigidbody2D>();
 		//rigidbody.centerOfMass = COM.localPosition;
 		startLeftEngineAction.performed += ctx => OnStartLeftEngine();
 		startRightEngineAction.performed += ctx => OnStartRightEngine();
@@ -80,9 +80,6 @@ public class RocketController : MonoBehaviour
 	// Implement OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn.
 	protected void OnDrawGizmos()
 	{
-		if (rigidbody != null && rigidbody.IsSleeping()) {
-			Gizmos.DrawSphere(transform.position, 1f);
-		}
 	}
 
 	// This function is called when the behaviour becomes disabled () or inactive.
