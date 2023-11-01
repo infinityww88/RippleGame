@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connections: []
   lines: []
-  progress: 1
+  progress: 0
   blinkClip: {fileID: 7400000, guid: c870cebb646ca654c9c53d8ba354f50d, type: 2}
   lightUpClip: {fileID: 7400000, guid: f4bbc2e884e44644997a067748d170f0, type: 2}
   starRenderer: {fileID: 562845847701433548}
@@ -100,7 +100,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2946585854665909606, guid: d5c8db53ed9079446b1c889fed11e8a8, type: 3}
       propertyPath: m_Color.a
-      value: 0.39607844
+      value: 0.27058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946585854665909606, guid: d5c8db53ed9079446b1c889fed11e8a8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946585854665909606, guid: d5c8db53ed9079446b1c889fed11e8a8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.89102256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946585854665909606, guid: d5c8db53ed9079446b1c889fed11e8a8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.43529412
       objectReference: {fileID: 0}
     - target: {fileID: 6331240955308572051, guid: d5c8db53ed9079446b1c889fed11e8a8, type: 3}
       propertyPath: m_LocalScale.x

@@ -14,11 +14,7 @@ public class Test : MonoBehaviour
 	// Start is called on the frame when a script is enabled just before any of the Update methods is called the first time.
 	protected void Start()
 	{
-		Debug.Log($"{levelData.LevelNum}");
-		Debug.Log($"{levelData.GetLevelNum(4)}");
-		Debug.Log($"{levelData.GetZodiacIndex(30)}");
 	}
-	
 	
 	// This function is called when the MonoBehaviour will be destroyed.
 	protected void OnDestroy()

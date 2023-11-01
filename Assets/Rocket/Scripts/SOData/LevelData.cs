@@ -12,6 +12,9 @@ public class LevelData : ScriptableObject
 	private List<int> zodiacLevelNum = new List<int>(ZODIAC_NUM);
 	
 	[SerializeField]
+	private List<GameObject> levelPrefabs;
+	
+	[SerializeField]
 	[HideInInspector]
 	private int totalLevelNum = 0;
 	
@@ -22,8 +25,23 @@ public class LevelData : ScriptableObject
 		totalLevelNum = zodiacLevelNum.Sum();
 	}
 	
-	public int GetLevelNum(int zodiacIndex) {
+	public int GetZodiacLevelNum(int zodiacIndex) {
 		return zodiacLevelNum[zodiacIndex];
+	}
+	
+	private int GetGlobalLevel(int zodiac, int level) {
+		int index = 0;
+		for (int i = 0; i < zodiac; i++) {
+			index += zodiacLevelNum[i];
+		}
+		index += level;
+		return index;
+	}
+	
+	public GameObject GetLevelPrefab(int zodiac, int level) {
+		//int index = GetGlobalLevel(zodiac, level);
+		//return levelPrefabs[index];
+		return levelPrefabs[0];
 	}
 	
 	public int GetZodiacIndex(int level) {

@@ -27,8 +27,9 @@ public class ZodiacLevels : MonoBehaviour
     }
     
 	public void NextLevel(int level) {
-		conns[level-1].LightUpStar();
-		conns[level].BlinkStar();
+		conns[level-1].LightUpStar(() => {
+			conns[level].BlinkStar();
+		});
 	}
     
 	public void SetComplete() {
@@ -38,12 +39,14 @@ public class ZodiacLevels : MonoBehaviour
 		});
 	}
 	
-	public void SetInProgress(int level) {
+	public void SetInProgress(int level, bool blinkCurrentStar) {
 		for (int i = 0; i < conns.Length; i++) {
 			if (i < level) {
 				conns[i].LightStar();
 			} else if (i == level) {
-				conns[i].BlinkStar();
+				if (blinkCurrentStar) {
+					conns[i].BlinkStar();
+				}
 			} else {
 				conns[i].DarkStar();
 			}
@@ -70,6 +73,7 @@ public class ZodiacLevels : MonoBehaviour
 	
 	private Tween MakeStarsConnTween(ZodiacConnection conn) {
 		conn.Progress = 0;
+		Selection.activeObject = playConnDuration;
 		return DOTween.To(() => conn.Progress, v => conn.Progress = v, 1, playConnDuration).SetTarget(this);
 	}
     

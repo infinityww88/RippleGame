@@ -33,12 +33,11 @@ public class Zodiac : MonoBehaviour
 		lightZodiac.NextLevel(level);
 	}
     
-	public void SetInProgress(int level) {
-		Debug.Log($"{gameObject.name} {level}");
+	public void SetInProgress(int level, bool blinkCurrentStar) {
 		spriteRenderer.color = new Color(1, 1, 1, 0);
 		darkZodiac.gameObject.SetActive(true);
 		lightZodiac.gameObject.SetActive(true);
-		lightZodiac.SetInProgress(level);
+		lightZodiac.SetInProgress(level, blinkCurrentStar);
 	}
     
 	public void SetUnavailable() {
@@ -53,9 +52,16 @@ public class Zodiac : MonoBehaviour
 		lightZodiac.gameObject.SetActive(true);
 		lightZodiac.SetComplete();
 	}
+	
+	public void SetInvisible() {
+		SetAlpha(0);
+		darkZodiac.gameObject.SetActive(false);
+		lightZodiac.gameObject.SetActive(false);
+	}
     
 	[Button]
 	public void PlayComplete(TweenCallback onComplete) {
+		SetAlpha(0);
 		darkZodiac.gameObject.SetActive(false);
 		lightZodiac.gameObject.SetActive(true);
 		lightZodiac.PlayComplete(() => {
@@ -66,11 +72,15 @@ public class Zodiac : MonoBehaviour
 		});
 	}
 	
-	void LightUpImage() {
+	public void SetAlpha(float alpha) {
 		var mat = spriteRenderer.material;
-		float t = 0;
-		spriteRenderer.color = new Color(1, 1, 1, 0);
+		spriteRenderer.color = new Color(1, 1, 1, alpha);
+	}
+	
+	void LightUpImage() {
+		SetAlpha(0);
 		spriteRenderer.DOColor(new Color(1, 1, 1, 1), fadeDuration);
+		float t = 0;
 		DOTween.To(() => t, v => {
 			t = v;
 			spriteRenderer.material.SetFloat("_GlowGlobal", glowCurve.Value.Evaluate(t));

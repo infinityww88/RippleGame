@@ -82,12 +82,14 @@ public class ZodiacConnection : MonoBehaviour
 	}
 	
 	[Button]
-	public void LightUpStar() {
+	public void LightUpStar(Action onCompleted = null) {
 		animancer.enabled = true;
 		animancer.Play(lightUpClip).Events.OnEnd = () => {
-			Debug.Log("light up end");
 			animancer.Stop();
 			animancer.enabled = false;
+			if (onCompleted != null) {
+				onCompleted();
+			}
 		};
 	}
 	

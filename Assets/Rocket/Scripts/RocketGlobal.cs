@@ -18,4 +18,5 @@ public static class RocketGlobal
 	public static Action OnSunLightUp;
 	public static Action OnGemMerged;
 	public static Action OnRocketHit;
+	public static Action OnNewZodiac;
 }
