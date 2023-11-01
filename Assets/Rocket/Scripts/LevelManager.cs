@@ -14,7 +14,7 @@ public enum LevelResult {
 
 public class LevelManager : MonoBehaviour
 {
-	public static LevelResult levelResult = LevelResult.NoLevel;
+	public static LevelResult levelResult = LevelResult.LevelSuccess;
 	
 	[SerializeField]
 	private LevelData levelData;
@@ -28,7 +28,7 @@ public class LevelManager : MonoBehaviour
 	[SerializeField]
 	private PlayableDirector landingTimeline;
 	
-	public static int CurrZodiac = 0; //{ get; set; }
+	public static int CurrZodiac = 2; //{ get; set; }
 	public static int CurrLevel = 9; // { get; set; }
 	
 	public static LevelManager Instance;

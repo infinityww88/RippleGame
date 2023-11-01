@@ -31,6 +31,13 @@ public class ZodiacLevels : MonoBehaviour
 			conns[level].BlinkStar();
 		});
 	}
+	
+	public void SetInvisible() {
+		conns.ForEach(conn => {
+			conn.Fade = 0;
+			conn.Progress = 0;
+		});
+	}
     
 	public void SetComplete() {
 		conns.ForEach(conn => {
@@ -66,7 +73,7 @@ public class ZodiacLevels : MonoBehaviour
 	}
 	
 	private Tween MakeStarFadeTween(ZodiacConnection conn) {
-		conn.DarkStar();
+		conn.Invisible();
 		float t = 0;
 		return DOTween.To(() => conn.Fade, v => conn.Fade = v, 1, playDuration / conns.Length).SetTarget(this);
 	}

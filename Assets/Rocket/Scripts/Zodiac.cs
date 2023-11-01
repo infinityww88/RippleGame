@@ -8,7 +8,7 @@ using System;
 
 public class Zodiac : MonoBehaviour
 {
-	private ZodiacLevels darkZodiac;
+	//private ZodiacLevels darkZodiac;
 	private ZodiacLevels lightZodiac;
 	
 	[SerializeField]
@@ -25,8 +25,8 @@ public class Zodiac : MonoBehaviour
 	void Awake()
 	{
 		var zodiacs = GetComponentsInChildren<ZodiacLevels>();
-		darkZodiac = zodiacs[0];
-		lightZodiac = zodiacs[1];
+		//darkZodiac = zodiacs[0];
+		lightZodiac = zodiacs[0];
     }
     
 	public void NextLevel(int level) {
@@ -35,35 +35,35 @@ public class Zodiac : MonoBehaviour
     
 	public void SetInProgress(int level, bool blinkCurrentStar) {
 		spriteRenderer.color = new Color(1, 1, 1, 0);
-		darkZodiac.gameObject.SetActive(true);
-		lightZodiac.gameObject.SetActive(true);
+		//darkZodiac.gameObject.SetActive(true);
+		//lightZodiac.gameObject.SetActive(true);
 		lightZodiac.SetInProgress(level, blinkCurrentStar);
 	}
     
 	public void SetUnavailable() {
 		spriteRenderer.color = new Color(1, 1, 1, 0);
-		darkZodiac.gameObject.SetActive(true);
-		lightZodiac.gameObject.SetActive(false);
+		//darkZodiac.gameObject.SetActive(true);
+		//lightZodiac.gameObject.SetActive(false);
 	}
 	
 	public void SetComplete() {
 		spriteRenderer.color = new Color(1, 1, 1, 1);
-		darkZodiac.gameObject.SetActive(false);
-		lightZodiac.gameObject.SetActive(true);
+		//darkZodiac.gameObject.SetActive(false);
+		//lightZodiac.gameObject.SetActive(true);
 		lightZodiac.SetComplete();
 	}
 	
 	public void SetInvisible() {
 		SetAlpha(0);
-		darkZodiac.gameObject.SetActive(false);
-		lightZodiac.gameObject.SetActive(false);
+		//darkZodiac.gameObject.SetActive(false);
+		lightZodiac.SetInvisible();
 	}
     
 	[Button]
 	public void PlayComplete(TweenCallback onComplete) {
-		SetAlpha(0);
-		darkZodiac.gameObject.SetActive(false);
-		lightZodiac.gameObject.SetActive(true);
+		SetInvisible();
+		//darkZodiac.gameObject.SetActive(false);
+		//lightZodiac.gameObject.SetActive(true);
 		lightZodiac.PlayComplete(() => {
 			DOTween.Sequence().AppendInterval(0.5f)
 				.AppendCallback(LightUpImage)

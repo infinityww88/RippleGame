@@ -65,7 +65,13 @@ public class ZodiacConnection : MonoBehaviour
 	public void DarkStar() {
 		animancer.enabled = false;
 		Progress = 0;
-		FadeStar(0);
+		FadeStar(0.4f);
+	}
+	
+	public void Invisible() {
+		animancer.enabled = false;
+		Progress = 0;
+		FadeStar(0f);
 	}
 	
 	[Button]
