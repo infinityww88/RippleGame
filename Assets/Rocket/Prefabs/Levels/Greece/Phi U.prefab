@@ -1220,6 +1220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SunCorona: {fileID: 2364908733379479214}
   SunLoop: {fileID: 5393290035233434293}
+  spark: {fileID: 0}
 --- !u!114 &1528994127716725580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,7 +2097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3358853218331870302}
-  - component: {fileID: -6662967431792669864}
+  - component: {fileID: 2919655009340541971}
   m_Layer: 0
   m_Name: Phi U
   m_TagString: Untagged
@@ -2123,7 +2124,7 @@ Transform:
   - {fileID: 2459294537565415872}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6662967431792669864
+--- !u!114 &2919655009340541971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2132,14 +2133,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3062205705477501285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3e88c5c630c96543af5e8bb5bca6ca3, type: 3}
+  m_Script: {fileID: 11500000, guid: 482a212861775e040a7108def0d95ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleRoot: {fileID: 0}
-  rockRoot: {fileID: 0}
-  RocketPos: {fileID: 0}
-  SunPos: {fileID: 0}
-  PadPos: {fileID: 0}
 --- !u!1 &3270999035971780912
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ public class Gem : MonoBehaviour
 	private float mergeRadius = 0.5f;
 	//private float mergeDuration = 1f;
 	private float gravity = 9.8f;
-	public AudioClip audioclip;
 	
 	private Rigidbody2D rigidbody;
 	
@@ -39,12 +38,11 @@ public class Gem : MonoBehaviour
 		    if (pos.magnitude < mergeRadius) {
 			    RocketGlobal.OnGemMerged();
 			    beginMerge = false;
-			    Destroy(gameObject);
-			    var o = new GameObject("gem_sound");
-			    var a = o.AddComponent<AudioSource>();
-			    a.volume = 0.5f;
-			    a.PlayOneShot(audioclip);
-			    Destroy(o, 3);
+			    GetComponent<SpriteRenderer>().enabled = false;
+			    GetComponent<PolygonCollider2D>().enabled = false;
+			    rigidbody.simulated = false;
+			    GetComponent<AudioSource>().Play();
+			    Destroy(gameObject, 2);
 		    } else {
 			    rigidbody.AddForce(-pos.normalized * gravity);
 		    }

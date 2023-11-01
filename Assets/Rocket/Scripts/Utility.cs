@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
+using Random = UnityEngine.Random;
+
 public static class Utility
 {
 	public static void DestroyChildrenByComponent<T>(Transform parent) where T : Component {
@@ -21,5 +23,13 @@ public static class Utility
 		foreach (var e in collection) {
 			action(i++, e);
 		}
+	}
+	
+	public static T RandomElement<T>(List<T> collection) {
+		if (collection == null || collection.Count == 0) {
+			return default(T);
+		}
+		int index = Random.Range(0, collection.Count);
+		return collection[index];
 	}
 }
