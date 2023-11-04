@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Rocket/UI/LevelRankUSS.uss?fileID=7433441132597879392&amp;guid=e6e1de3af4a9ebc4586849c61b5ae64b&amp;type=3#LevelRankUXML" />
+    <ui:VisualElement name="LevelRankPanel" class="LevelRecordPanel" style="flex-grow: 0; width: 300px; height: auto; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=21300000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;); -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; padding-top: 0; -unity-background-scale-mode: stretch-to-fill;">
+        <ui:VisualElement name="ZodiacHeader" style="flex-grow: 0; flex-direction: row; align-items: center; justify-content: space-between; height: 59px; min-height: 0; min-width: 0; margin-left: 18px; margin-right: 18px;">
+            <ui:Button name="PrevZodiac" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Btn_Prev.png?fileID=2800000&amp;guid=4c75d0636c4c3d44d82db5cd5c874ea1&amp;type=3#Btn_Prev&apos;); background-color: rgba(0, 0, 0, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+            <ui:VisualElement style="flex-grow: 0; flex-direction: row; width: 159px; justify-content: center; align-items: center;">
+                <ui:Label text="Leo" style="flex-grow: 0; flex-shrink: 1; color: rgb(255, 255, 255); -unity-text-align: upper-center; font-size: 24px; width: auto; margin-top: 0; margin-right: 22px; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:VisualElement style="flex-grow: 0; background-image: url(&apos;project://database/Assets/SCI-FI%20UI%20Pack%20Pro/SCI-FI%20UI%20Components/Textures/Icon00/Icon_Example03.png?fileID=2800000&amp;guid=d960462dd4a26bb45879cc705c9f259f&amp;type=3#Icon_Example03&apos;); width: 30px; height: 30px; justify-content: flex-start;" />
+            </ui:VisualElement>
+            <ui:Button name="NextZodiac" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Btn_Next.png?fileID=2800000&amp;guid=48ec0ef13b20a8a448b30728de87f44b&amp;type=3#Btn_Next&apos;); background-color: rgba(0, 0, 0, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ListHeader" style="flex-grow: 0; height: 40px; margin-right: 20px; margin-left: 20px;">
+            <ui:VisualElement name="HeaderItem" style="flex-grow: 1; flex-direction: row; justify-content: space-around;">
+                <ui:Label text="Star" style="color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 18px; flex-grow: 1; width: 50%;" />
+                <ui:Label text="BestRecord" style="color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 18px; flex-grow: 1; width: 50%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ListArea" style="flex-grow: 0; display: flex; height: auto; margin-left: 20px; margin-right: 20px;">
+            <ui:ListView name="ListView" fixed-item-height="37" style="max-height: 300px; min-height: 200px;" />
+        </ui:VisualElement>
+        <ui:Button text="Replay" class="replay-button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Btn08Blue_p%201.png?fileID=2800000&amp;guid=d5dc1e95b6b92514795813cfcabb83cf&amp;type=3#Btn08Blue_p 1&apos;); -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); color: rgb(255, 255, 255); font-size: 18px; width: auto; align-self: center; margin-bottom: 15px; margin-top: 10px; -unity-background-scale-mode: stretch-to-fill;" />
+    </ui:VisualElement>
+</ui:UXML>

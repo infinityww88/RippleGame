@@ -1,0 +1,126 @@
+:root {
+    background-color: rgba(0, 0, 0, 0.78);
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.panel {
+    background-color: rgba(156, 187, 255, 0.28);
+    padding-top: 35px;
+    padding-right: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.slider {
+    flex-direction: row;
+}
+
+.slider > Label {
+    color: rgb(255, 255, 255);
+    min-width: initial;
+    min-height: initial;
+    width: 80px;
+    font-size: 24px;
+}
+
+.slider > .unity-base-slider__input {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.slider .unity-base-slider__tracker {
+    height: 20px;
+    -unity-text-align: upper-left;
+    top: auto;
+    bottom: auto;
+    margin-top: -10px;
+    background-color: rgb(114, 135, 176);
+}
+
+.slider .unity-base-slider__dragger {
+    width: 20px;
+}
+
+.toggle-button:active > #Marker {
+    margin-left: 45%;
+}
+
+.info-button {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    background-image: url('project://database/Assets/Rocket/Texture/UI/info_button.png?fileID=2800000&guid=0ebe6c6c38460fb46b9c5c79b7a47cfe&type=3#info_button');
+    -unity-slice-left: 15;
+    -unity-slice-top: 15;
+    -unity-slice-right: 15;
+    -unity-slice-bottom: 15;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+.toggle {
+    flex-grow: 0;
+    position: relative;
+    width: 254px;
+    height: 44px;
+    flex-direction: row;
+}
+
+.toggle-button {
+    flex-grow: 0;
+    flex-direction: row;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left-color: rgb(30, 66, 142);
+    border-right-color: rgb(30, 66, 142);
+    border-top-color: rgb(30, 66, 142);
+    border-bottom-color: rgb(30, 66, 142);
+    height: 30px;
+    align-self: center;
+    min-width: 0;
+    min-height: 0;
+    width: 100px;
+}
+
+.info-button:hover {
+    -unity-background-image-tint-color: rgb(170, 211, 255);
+}
+
+.info-button:active {
+    -unity-background-image-tint-color: rgb(176, 176, 176);
+}
+
+.toggle-label {
+    margin-left: 52px;
+    -unity-text-align: middle-left;
+}

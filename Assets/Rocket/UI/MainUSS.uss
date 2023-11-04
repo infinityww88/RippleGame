@@ -1,56 +1,42 @@
-.operate-button {
-    border-top-width: 4px;
-    border-right-width: 4px;
-    border-bottom-width: 4px;
-    border-left-width: 4px;
-    border-left-color: rgba(255, 255, 255, 0);
-    border-right-color: rgba(255, 255, 255, 0);
-    border-top-color: rgba(255, 255, 255, 0);
-    border-bottom-color: rgba(255, 255, 255, 0);
-    margin-top: 64px;
-    margin-right: 64px;
-    margin-bottom: 64px;
-    margin-left: 64px;
-}
-
-.header {
-    flex-grow: 0;
-    flex-direction: row;
-    height: 100px;
-    margin-right: 50%;
-    margin-left: 100px;
-}
-
-.status {
-    flex-grow: 1;
-    flex-direction: row;
-    border-top-width: 0;
-    border-right-width: 0;
-    border-bottom-width: 0;
-    border-left-width: 0;
+.play-button {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    background-color: rgba(0, 0, 0, 0);
     border-left-color: rgba(0, 0, 0, 0);
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    background-image: url('project://database/Assets/Rocket/Texture/UI/Btn_RandomName_p%201.png?fileID=21300000&guid=fa9159349a1c19b4e84a2fc75373a31f&type=3#Btn_RandomName_p 1');
 }
 
-.status-label {
-    font-size: 48px;
-    -unity-text-align: middle-center;
-    color: rgb(255, 255, 255);
-    margin-right: 50px;
+.play-button-background {
+    transition-duration: 0.5s;
+    transition-property: rotate;
 }
 
-.status-value {
-    font-size: 48px;
-    color: rgb(93, 255, 76);
-    -unity-text-align: middle-left;
+.play-button:hover > .play-button-background {
+    rotate: 90deg;
+}
+
+.play-button:active > .play-button-background {
+    -unity-background-image-tint-color: rgb(168, 168, 168);
+}
+
+.setting-button:hover > .setting-button-gear {
+    rotate: 45deg;
+}
+
+.dialog-container {
+    background-color: rgba(0, 0, 0, 0.78);
 }

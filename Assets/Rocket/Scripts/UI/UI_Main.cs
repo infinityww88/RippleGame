@@ -8,35 +8,41 @@ using QFSW.QC;
 public class UI_Main : MonoBehaviour
 {
 	private VisualElement root;
-	private VisualElement reloadSceneButton;
-	public QuantumConsole console;
 	
-	private T Q<T>(string name) where T : VisualElement {
-		return root.Q<T>(name);
-	}
+	private UI_Setting setting;
+	private UI_LevelRank levelRank;
 	
     // Start is called before the first frame update
     void Start()
 	{
 		root = GetComponent<UIDocument>().rootVisualElement;
-		reloadSceneButton = Q<VisualElement>("ReloadSceneButton");
-		reloadSceneButton.RegisterCallback<PointerDownEvent>(evt => {
-			PointerCaptureHelper.CapturePointer(reloadSceneButton, evt.pointerId);
-	    	Debug.Log("pointer down " + Time.frameCount);
+		var playBtn = root.Q<Button>("PlayButton");
+		playBtn.RegisterCallback<ClickEvent>(evt => {
+			levelRank.Show();
 		});
-		var settingButton = Q<VisualElement>("SettingButton");
-		settingButton.RegisterCallback<ClickEvent>(evt => {
-			console.Activate();
+		var settingBtn = root.Q<Button>("SettingButton");
+		settingBtn.RegisterCallback<ClickEvent>(evt => {
+			setting.Show();
 		});
-		reloadSceneButton.RegisterCallback<ClickEvent>(evt => {
-			Debug.Log("reload scene");
-			RocketGlobal.OnReloadScene();
+		
+		setting = GetComponent<UI_Setting>();
+		levelRank = GetComponent<UI_LevelRank>();
+		/*
+		dialogContainer = Q<VisualElement>("DialogContainer");
+		dialogContainer.RegisterCallback<ClickEvent>(evt => {
+			Debug.Log($"{evt.target} {evt.currentTarget}");
+			if (evt.target == evt.currentTarget) {
+				Hide(dialogContainer);
+				Hide(settingPanel.parent);
+			}
 		});
-		//InitOperate("LeftOperate", RocketGlobal.OnLeftOperateDown, RocketGlobal.OnLeftOperateUp);
-		//InitOperate("RightOperate", RocketGlobal.OnRightOperateDown, RocketGlobal.OnRightOperateUp);
+		settingPanel = Q<VisualElement>("SettingPanel");
+		*/
 	}
-	
-	[Command]
+}
+
+/*
+[Command]
 	bool capture = false;
     
 	void InitOperate(string btnName, Action downAction, Action upAction) {
@@ -55,4 +61,4 @@ public class UI_Main : MonoBehaviour
 			upAction();
 		});
 	}
-}
+*/

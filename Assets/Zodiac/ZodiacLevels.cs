@@ -80,7 +80,6 @@ public class ZodiacLevels : MonoBehaviour
 	
 	private Tween MakeStarsConnTween(ZodiacConnection conn) {
 		conn.Progress = 0;
-		Selection.activeObject = playConnDuration;
 		return DOTween.To(() => conn.Progress, v => conn.Progress = v, 1, playConnDuration).SetTarget(this);
 	}
     

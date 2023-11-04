@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEditor;
 using System;
 
@@ -31,5 +32,12 @@ public static class Utility
 		}
 		int index = Random.Range(0, collection.Count);
 		return collection[index];
+	}
+	
+	public static void ShowUI(VisualElement e) {
+		e.style.display = DisplayStyle.Flex;
+	}
+	public static void HideUI(VisualElement e) {
+		e.style.display = DisplayStyle.None;
 	}
 }
