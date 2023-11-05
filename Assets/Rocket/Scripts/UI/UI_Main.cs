@@ -16,28 +16,24 @@ public class UI_Main : MonoBehaviour
     void Start()
 	{
 		root = GetComponent<UIDocument>().rootVisualElement;
+		
 		var playBtn = root.Q<Button>("PlayButton");
 		playBtn.RegisterCallback<ClickEvent>(evt => {
-			levelRank.Show();
+			
 		});
+		
 		var settingBtn = root.Q<Button>("SettingButton");
 		settingBtn.RegisterCallback<ClickEvent>(evt => {
 			setting.Show();
 		});
 		
+		var levelRankBtn = root.Q<Button>("LevelRankButton");
+		levelRankBtn.RegisterCallback<ClickEvent>(evt => {
+			levelRank.Show();
+		});
+		
 		setting = GetComponent<UI_Setting>();
 		levelRank = GetComponent<UI_LevelRank>();
-		/*
-		dialogContainer = Q<VisualElement>("DialogContainer");
-		dialogContainer.RegisterCallback<ClickEvent>(evt => {
-			Debug.Log($"{evt.target} {evt.currentTarget}");
-			if (evt.target == evt.currentTarget) {
-				Hide(dialogContainer);
-				Hide(settingPanel.parent);
-			}
-		});
-		settingPanel = Q<VisualElement>("SettingPanel");
-		*/
 	}
 }
 
