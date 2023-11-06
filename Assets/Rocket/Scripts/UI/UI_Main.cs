@@ -10,7 +10,7 @@ public class UI_Main : MonoBehaviour
 	private VisualElement root;
 	
 	private UI_Setting setting;
-	private UI_LevelRank levelRank;
+	private UI_LevelRecordList levelRank;
 	
     // Start is called before the first frame update
     void Start()
@@ -33,7 +33,7 @@ public class UI_Main : MonoBehaviour
 		});
 		
 		setting = GetComponent<UI_Setting>();
-		levelRank = GetComponent<UI_LevelRank>();
+		levelRank = GetComponent<UI_LevelRecordList>();
 	}
 }
 

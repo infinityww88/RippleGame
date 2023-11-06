@@ -7,20 +7,13 @@
     background-color: rgba(0, 0, 0, 0.78);
 }
 
-.test {
-    width: 300px;
-    height: 353px;
-    margin-left: 651px;
-    margin-top: -399px;
-}
-
 .level-item {
     flex-grow: 0;
     flex-direction: row;
     margin-top: 0;
     background-color: rgba(168, 201, 253, 0.4);
     margin-right: 0;
-    margin-bottom: 0;
+    margin-bottom: 2px;
     margin-left: 0;
     padding-top: 0;
     padding-bottom: 0;
@@ -29,6 +22,14 @@
     padding-right: 0;
     padding-left: 0;
     display: flex;
+    border-left-color: rgba(2, 24, 61, 0.76);
+    border-right-color: rgba(2, 24, 61, 0.76);
+    border-top-color: rgba(2, 24, 61, 0.76);
+    border-bottom-color: rgba(2, 24, 61, 0.76);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
 }
 
 .level-num {
@@ -46,6 +47,11 @@
     color: rgb(255, 255, 255);
 }
 
+.replay-button-disabled {
+    -unity-background-image-tint-color: rgb(103, 103, 103);
+    color: rgb(108, 108, 108);
+}
+
 .level-best-record {
     width: 50%;
     margin-top: 0;
@@ -59,10 +65,6 @@
     color: rgb(255, 255, 255);
     font-size: 18px;
     -unity-text-align: middle-center;
-}
-
-.level-item-even {
-    background-color: rgba(168, 201, 253, 0.16);
 }
 
 .level-item:selected > Label {
@@ -86,6 +88,7 @@
 
 .replay-button {
     -unity-background-image-tint-color: rgb(195, 195, 195);
+    color: rgb(255, 255, 255);
 }
 
 .replay-button:hover {
@@ -130,4 +133,41 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+}
+
+.level-item-disabled {
+    flex-grow: 0;
+    flex-direction: row;
+    margin-top: 0;
+    background-color: rgba(66, 69, 84, 0.82);
+    margin-right: 0;
+    margin-bottom: 2px;
+    margin-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 80px;
+    align-items: center;
+    padding-right: 0;
+    padding-left: 0;
+    display: flex;
+    border-left-color: rgba(2, 23, 60, 0.76);
+    border-right-color: rgba(2, 23, 60, 0.76);
+    border-top-color: rgba(2, 23, 60, 0.76);
+    border-bottom-color: rgba(2, 23, 60, 0.76);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+
+.page-button {
+    -unity-background-image-tint-color: rgb(115, 178, 255);
+}
+
+.page-button:hover {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.page-button:active {
+    -unity-background-image-tint-color: rgb(84, 131, 190);
 }

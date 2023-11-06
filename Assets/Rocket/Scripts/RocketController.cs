@@ -97,6 +97,16 @@ public class RocketController : MonoBehaviour
 		RocketGlobal.OnRightOperateUp += OnStopRightEngine;
 		RocketGlobal.OnReloadScene += OnReloadScene;
 		RocketGlobal.OnLandingSuccess += OnLandingSuccess;
+		RocketGlobal.OnPause += OnPause;
+		RocketGlobal.OnResume += OnResume;
+	}
+	
+	void OnPause() {
+		rigidbody.simulated = false;
+	}
+	
+	void OnResume() {
+		rigidbody.simulated = true;
 	}
 	
 	// This function is called when the MonoBehaviour will be destroyed.
@@ -128,6 +138,8 @@ public class RocketController : MonoBehaviour
 		RocketGlobal.OnRightOperateUp -= OnStopRightEngine;
 		RocketGlobal.OnReloadScene -= OnReloadScene;
 		RocketGlobal.OnLandingSuccess -= OnLandingSuccess;
+		RocketGlobal.OnPause -= OnPause;
+		RocketGlobal.OnResume -= OnResume;
 	}
 	
 	void OnStartLeftEngine() {
@@ -147,7 +159,7 @@ public class RocketController : MonoBehaviour
 	}
 	
 	void SetEngineState(bool left, bool start) {
-		if (state != State.Running) {
+		if (RocketGlobal.IsPaused || state != State.Running) {
 			return;
 		}
 		

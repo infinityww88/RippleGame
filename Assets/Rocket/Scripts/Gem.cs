@@ -19,6 +19,28 @@ public class Gem : MonoBehaviour
 		rigidbody = GetComponent<Rigidbody2D>();
 	}
 	
+	// This function is called when the object becomes enabled and active.
+	protected void OnEnable()
+	{
+		RocketGlobal.OnPause += OnPause;
+		RocketGlobal.OnResume += OnResume;
+	}
+	
+	// This function is called when the behaviour becomes disabled () or inactive.
+	protected void OnDisable()
+	{
+		RocketGlobal.OnPause -= OnPause;
+		RocketGlobal.OnResume -= OnResume;
+	}
+	
+	void OnPause() {
+		rigidbody.simulated = false;
+	}
+	
+	void OnResume() {
+		rigidbody.simulated = true;
+	}
+	
 	public void Merge(MergeGem center)
 	{
 		rigidbody.bodyType = RigidbodyType2D.Dynamic;

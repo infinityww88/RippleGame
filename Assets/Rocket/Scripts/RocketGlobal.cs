@@ -19,4 +19,7 @@ public static class RocketGlobal
 	public static Action OnGemMerged;
 	public static Action OnRocketHit;
 	public static Action OnNewZodiac;
+	public static Action OnPause;
+	public static Action OnResume;
+	public static bool IsPaused { get; set; }
 }

@@ -13,6 +13,7 @@ public class LevelLoader : MonoBehaviour
 	void Awake()
     {
 	    Instantiate(levelData.GetLevelPrefab(0, 0));
+	    RocketGlobal.IsPaused = false;
     }
     
 	[Button]
