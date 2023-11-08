@@ -44,13 +44,31 @@ public class UI_Setting : MonoBehaviour
 	    });
 	    
 	    toggleMusic = settingPanel.Q<Button>("ToggleMusicButton");
+	    if (ES3.Load<bool>("music_on", true)) {
+	    	toggleMusic.Q<VisualElement>("Marker").AddToClassList("toggle-button-on");
+	    } else {
+	    	toggleMusic.Q<VisualElement>("Marker").RemoveFromClassList("toggle-button-on");
+	    }
 	    toggleMusic.RegisterCallback<ClickEvent>(evt => {
+	    	var on = !ES3.Load<bool>("music_on", true);
 	    	toggleMusic.Q<VisualElement>("Marker").ToggleInClassList("toggle-button-on");
+	    	ES3.Save("music_on", on);
+	    	RocketGlobal.OnMusicSet(on);
 	    });
 	    
 	    toggleSound = settingPanel.Q<Button>("ToggleSoundButton");
+	    if (ES3.Load<bool>("sound_on", true)) {
+	    	toggleSound.Q<VisualElement>("Marker").AddToClassList("toggle-button-on");
+	    } else {
+	    	toggleSound.Q<VisualElement>("Marker").RemoveFromClassList("toggle-button-on");
+	    }
 	    toggleSound.RegisterCallback<ClickEvent>(evt => {
+	    	var on = !ES3.Load<bool>("sound_on", true);
 	    	toggleSound.Q<VisualElement>("Marker").ToggleInClassList("toggle-button-on");
+	    	ES3.Save("sound_on", on);
+	    	if (RocketGlobal.OnSoundSet != null) {
+	    		RocketGlobal.OnSoundSet(on);	
+	    	}
 	    });
 	    
 	    var operationButton = root.Q<Button>("Operation");

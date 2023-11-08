@@ -51,10 +51,13 @@ public class RocketController : MonoBehaviour
 	public AudioClip rocketImpactClip;
 	public AudioClip engineImpactClip;
 	
+	public bool soundOn = true;
+	
     // Start is called before the first frame update
     void Start()
 	{
 		ReadConfig();
+		soundOn = ES3.Load<bool>("sound_on", true);
 		rigidbody = GetComponent<Rigidbody2D>();
 		//rigidbody.centerOfMass = COM.localPosition;
 		startLeftEngineAction.performed += ctx => OnStartLeftEngine();
@@ -112,7 +115,7 @@ public class RocketController : MonoBehaviour
 	// This function is called when the MonoBehaviour will be destroyed.
 	protected void OnDestroy()
 	{
-		DOTween.KillAll();
+		
 	}
 	
 	void OnLandingSuccess() {
@@ -168,7 +171,9 @@ public class RocketController : MonoBehaviour
 			leftParticle.enableEmission = start;
 			if (start) {
 				//Debug.Log("left engine play");
-				leftEngine.GetComponent<AudioSource>().Play();
+				if (soundOn) {
+					leftEngine.GetComponent<AudioSource>().Play();
+				}
 			} else {
 				//Debug.Log("left engine stop");
 				leftEngine.GetComponent<AudioSource>().Stop();
@@ -179,7 +184,9 @@ public class RocketController : MonoBehaviour
 			rightParticle.enableEmission = start;
 			if (start) {
 				//Debug.Log("right engine play");
-				rightEngine.GetComponent<AudioSource>().Play();
+				if (soundOn) {
+					rightEngine.GetComponent<AudioSource>().Play();
+				}
 			} else {
 				//Debug.Log("right engine stop");
 				rightEngine.GetComponent<AudioSource>().Stop();
@@ -206,15 +213,19 @@ public class RocketController : MonoBehaviour
 				SetEngineState(true, false);
 				SetEngineState(false, false);
 				state = State.Destroyed;
-				audioSouce.PlayOneShot(rocketImpactClip);
-				GetComponent<RocketLandingChecker>().enabled = false;
+				if (soundOn) {
+					audioSouce.PlayOneShot(rocketImpactClip);
+				}
+				Debug.Log("Emit landing fail");
 				RocketGlobal.OnLandingFail();
+				GetComponent<RocketLandingChecker>().enabled = false;
 			}
 		}
 	}
 
 	void OnReloadScene() {
-		SceneManager.LoadScene(0);
+		//MusicController.Instance.Stop();
+		SceneManager.LoadScene(1);
 	}
 
     // Update is called once per frame

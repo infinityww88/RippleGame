@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using System.Linq;
+using System;
 
 [CreateAssetMenu(fileName="LevelData", menuName="Rocket/LevelData", order=1)]
 public class LevelData : ScriptableObject
@@ -29,7 +30,7 @@ public class LevelData : ScriptableObject
 		return zodiacLevelNum[zodiacIndex];
 	}
 	
-	private int GetGlobalLevel(int zodiac, int level) {
+	public int GetGlobalLevel(int zodiac, int level) {
 		int index = 0;
 		for (int i = 0; i < zodiac; i++) {
 			index += zodiacLevelNum[i];
@@ -44,14 +45,14 @@ public class LevelData : ScriptableObject
 		return levelPrefabs[0];
 	}
 	
-	public int GetZodiacIndex(int level) {
+	public Tuple<int, int> GetZodiacIndex(int level) {
 		Assert.IsTrue(level <= totalLevelNum, $"level exceeds total num {totalLevelNum}");
 		for (int i = 0; i < zodiacLevelNum.Count; i++) {
-			if (level <= zodiacLevelNum[i]) {
-				return i;
+			if (level < zodiacLevelNum[i]) {
+				return new Tuple<int, int>(i, level);
 			}
 			level -= zodiacLevelNum[i];
 		}
-		return -1;
+		return null;
 	}
 }

@@ -18,13 +18,15 @@ public class LevelLoader : MonoBehaviour
     
 	[Button]
 	void LevelFaild() {
-		LevelManager.levelResult = LevelResult.LevelFailed;
+		//LevelManager.levelResult = LevelResult.LevelFailed;
+		RocketGlobal.OnLandingResult(false, 0);
 		SceneManager.LoadScene(0);
 	}
 	
 	[Button]
-	void LevelSuccess() {
-		LevelManager.levelResult = LevelResult.LevelSuccess;
+	void LevelSuccess(float playTime = 100) {
+		//LevelManager.levelResult = LevelResult.LevelSuccess;
+		RocketGlobal.OnLandingResult(true, playTime);
 		SceneManager.LoadScene(0);
 	}
 }

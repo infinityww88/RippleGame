@@ -14,6 +14,7 @@ public static class RocketGlobal
 	public static Action OnReloadScene;
 	
 	public static Action OnLandingSuccess;
+	public static Action<bool, float> OnLandingResult;
 	public static Action OnLandingFail;
 	public static Action OnSunLightUp;
 	public static Action OnGemMerged;
@@ -22,4 +23,6 @@ public static class RocketGlobal
 	public static Action OnPause;
 	public static Action OnResume;
 	public static bool IsPaused { get; set; }
+	public static Action<bool> OnMusicSet;
+	public static Action<bool> OnSoundSet;
 }

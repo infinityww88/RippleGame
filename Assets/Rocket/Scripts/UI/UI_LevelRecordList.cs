@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.Linq;
+using System;
 
 public class UI_LevelRecordList : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class UI_LevelRecordList : MonoBehaviour
 	private Button replayButton;
 	private Button prevZodiacButton;
 	private Button nextZodiacButton;
+	
+	private static int zodiacIndex = 0;
 	
     // Start is called before the first frame update
     void Start()
@@ -30,28 +33,10 @@ public class UI_LevelRecordList : MonoBehaviour
 	    });
 	    
 	    recordList.makeItem = () => item.Instantiate()[0];
-	    recordList.bindItem = (e, i) => {
-	    	e.userData = i;
-	    	if (i >= 6) {
-	    		//e.AddToClassList("level-item-even");
-	    		e.AddToClassList("level-item-disabled");
-	    		e.RemoveFromClassList("level-item");
-	    	} else {
-	    		//e.RemoveFromClassList("level-item-even");
-	    		e.RemoveFromClassList("level-item-disabled");
-	    		e.AddToClassList("level-item");
-	    	}
-	    	var num = e.Q<Label>(className: "level-num");
-	    	var bestTime = e.Q<Label>(className: "level-best-record");
-	    	num.text = i.ToString();
-	    	bestTime.text = "00:50";
-	    	if (i > 6) {
-	    		bestTime.text = "--:--";
-	    	}
-	    };
+	    recordList.bindItem = BindItem;
 	    recordList.selectionChanged += selection => {
-	    	int index = (int)selection.First();
-	    	if (index >= 6) {
+	    	float time = (float)selection.First();
+	    	if (time == 0) {
 	    		replayButton.SetEnabled(false);
 	    		replayButton.AddToClassList("replay-button-disabled");
 	    		replayButton.RemoveFromClassList("replay-button");
@@ -66,31 +51,61 @@ public class UI_LevelRecordList : MonoBehaviour
 	    	recordList.ScrollToItem(0);
 	    };
 	    recordList.Q<ScrollView>().mouseWheelScrollSize = scrollSize;
-	    Populate();
+	    
 	    replayButton.RegisterCallback<ClickEvent>(evt => {
-	    	Debug.Log("replay " + recordList.selectedItem);
+	    	Debug.Log("replay " + recordList.selectedIndex);
+	    	var level = recordList.selectedIndex;
+	    	Utility.HideUI(GetComponent<UIDocument>().rootVisualElement);
+	    	LevelManager.Instance.Launch(zodiacIndex, level);
 	    });
 	    nextZodiacButton.RegisterCallback<ClickEvent>(NextZodiac);
 	    prevZodiacButton.RegisterCallback<ClickEvent>(PrevZodiac);
     }
     
+	void BindItem(VisualElement e, int index) {
+		float time = (float)recordList.itemsSource[index];
+		if (time == 0) {
+			e.AddToClassList("level-item-disabled");
+			e.RemoveFromClassList("level-item");
+		} else {
+			e.RemoveFromClassList("level-item-disabled");
+			e.AddToClassList("level-item");
+		}
+		var num = e.Q<Label>(className: "level-num");
+		var bestTime = e.Q<Label>(className: "level-best-record");
+		num.text = index.ToString();
+		bestTime.text = time.ToString();
+		if (time == 0) {
+			bestTime.text = "--:--";
+		}
+	}
+    
 	void NextZodiac(ClickEvent evt) {
 		Debug.Log("next zodiac");
-		var data = new List<int>(){0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-		recordList.itemsSource = data;
+		zodiacIndex++;
+		if (zodiacIndex >= 12) {
+			zodiacIndex -= 12;
+		}
+		Populate();
 	}
 	
 	void PrevZodiac(ClickEvent evt) {
 		Debug.Log("prev zodiac");
+		zodiacIndex--;
+		if (zodiacIndex < 0) {
+			zodiacIndex += 12;
+		}
+		Populate();
 	}
     
 	void Populate() {
-		var data = new List<int>(){0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+		var data = LevelManager.Instance.GetLevelsInfo(zodiacIndex);
 		recordList.itemsSource = data;
 	}
 
 	public void Show()
-    {
+	{
+		Populate();
 	    Utility.ShowUI(root.parent);
     }
 }

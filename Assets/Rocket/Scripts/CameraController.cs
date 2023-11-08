@@ -23,12 +23,17 @@ public class CameraController : MonoBehaviour
 		foregroundCamera.DOShakePosition(0.6f, new Vector3(3, 3, 0));
 	}
 	
+	// This function is called when the MonoBehaviour will be destroyed.
+	protected void OnDestroy()
+	{
+		DOTween.Kill(backgroundCamera);
+		DOTween.Kill(foregroundCamera);
+	}
+	
 	// Awake is called when the script instance is being loaded.
 	protected void Awake()
 	{
-		if (Instance == null) {
-			Instance = this;
-		}
+		Instance = this;
 	}
 	
 	// This function is called when the object becomes enabled and active.

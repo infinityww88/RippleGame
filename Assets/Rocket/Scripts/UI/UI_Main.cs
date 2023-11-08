@@ -11,6 +11,7 @@ public class UI_Main : MonoBehaviour
 	
 	private UI_Setting setting;
 	private UI_LevelRecordList levelRank;
+	public MusicController musicController;
 	
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,13 @@ public class UI_Main : MonoBehaviour
 		root = GetComponent<UIDocument>().rootVisualElement;
 		
 		var playBtn = root.Q<Button>("PlayButton");
+		
+		Debug.Log($"playBtn {playBtn}");
 		playBtn.RegisterCallback<ClickEvent>(evt => {
-			
+			Debug.Log("hello, world");
+			Utility.HideUI(root);
+			LevelManager.Instance.Launch();
+			musicController.Stop();
 		});
 		
 		var settingBtn = root.Q<Button>("SettingButton");
