@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
 	public static int CurrZodiac = 0;
 	
 	private static LevelResult levelResult = LevelResult.NoLevel;
-	private static List<float> levelBestTime = new List<float>();
+	private static List<float> levelBestTime = null;
 	private static int PlayLevel = 0;
 	private static int CurrLevel = 0;
 	
