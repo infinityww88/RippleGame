@@ -63,10 +63,14 @@ public class UI_Play : MonoBehaviour
 	    });
 	    
 	    pauseAction.performed += ctx => {
-	    	if (RocketGlobal.IsPaused) {
-	    		Resume();
+	    	if (completed) {
+	    		Utility.ToggleVisible(resultDialog.parent);
 	    	} else {
-	    		Pause();
+	    		if (RocketGlobal.IsPaused) {
+		    		Resume();
+	    		} else {
+		    		Pause();
+	    		}
 	    	}
 	    };
     }

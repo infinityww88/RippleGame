@@ -37,7 +37,21 @@ public static class Utility
 	public static void ShowUI(VisualElement e) {
 		e.style.display = DisplayStyle.Flex;
 	}
+	
 	public static void HideUI(VisualElement e) {
 		e.style.display = DisplayStyle.None;
+	}
+	
+	public static bool Visible(VisualElement e) {
+		return e.style.display == DisplayStyle.Flex;
+		
+	}
+	
+	public static void ToggleVisible(VisualElement e) {
+		if (Visible(e)) {
+			HideUI(e);
+		} else {
+			ShowUI(e);
+		}
 	}
 }

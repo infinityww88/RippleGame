@@ -64,7 +64,7 @@ public class ZodiacLevels : MonoBehaviour
 	public void PlayComplete(TweenCallback onComplete) {
 		var seq = DOTween.Sequence().SetTarget(this);
 		var seq0 = DOTween.Sequence().SetTarget(this);
-		conns.ForEach(conn => {
+		Utility.ForEach(conns, (i, conn) => {
 			seq.Append(MakeStarFadeTween(conn));
 			seq0.Insert(0, MakeStarsConnTween(conn));
 		});
@@ -74,7 +74,7 @@ public class ZodiacLevels : MonoBehaviour
 	
 	private Tween MakeStarFadeTween(ZodiacConnection conn) {
 		conn.Invisible();
-		float t = 0;
+		float t = 0; 
 		return DOTween.To(() => conn.Fade, v => conn.Fade = v, 1, playDuration / conns.Length).SetTarget(this);
 	}
 	
