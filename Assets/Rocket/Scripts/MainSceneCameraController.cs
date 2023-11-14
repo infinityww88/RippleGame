@@ -20,6 +20,7 @@ public class MainSceneCameraController : MonoBehaviour
 	public float stickRotateSpeedFactor = 1;
 	private Vector2 leftStick;
 	private Vector2 rightStick;
+	private bool launched = false;
 	
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,11 @@ public class MainSceneCameraController : MonoBehaviour
 		
 	    var angle = LevelManager.CurrZodiac * 30;
 	    ToAngle(angle, false);
-    }
+	}
+    
+	void OnLaunch() {
+		launched = true;
+	}
 	
 	public void OnNewZodiac() {
 		var angle = LevelManager.CurrZodiac * 30;
@@ -54,7 +59,7 @@ public class MainSceneCameraController : MonoBehaviour
 	}
 	
 	public void DLeft(InputAction.CallbackContext ctx) {
-		if (ViewInAnimation()) {
+		if (launched || ViewInAnimation()) {
 			return;
 		}
 		int index = GetViewZodiac();
@@ -68,7 +73,7 @@ public class MainSceneCameraController : MonoBehaviour
 	
 	public void DRight(InputAction.CallbackContext ctx) {
 		Debug.Log("DRight");
-		if (ViewInAnimation()) {
+		if (launched || ViewInAnimation()) {
 			return;
 		}
 		int index = GetViewZodiac();
@@ -84,12 +89,14 @@ public class MainSceneCameraController : MonoBehaviour
 	protected void OnEnable()
 	{
 		RocketGlobal.OnNewZodiac += OnNewZodiac;
+		RocketGlobal.OnLaunch += OnLaunch;
 	}
 	
 	// This function is called when the behaviour becomes disabled () or inactive.
 	protected void OnDisable()
 	{
 		RocketGlobal.OnNewZodiac -= OnNewZodiac;
+		RocketGlobal.OnLaunch -= OnLaunch;
 	}
 	
 	[Button(ButtonSizes.Medium)]
@@ -168,7 +175,7 @@ public class MainSceneCameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-		if (ViewInAnimation()) {
+		if (launched || ViewInAnimation()) {
 			return;
 		}
 		

@@ -2,40 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 public class SunController : MonoBehaviour
 {
 	[SerializeField]
 	private GameObject sun;
 	
-	[SerializeField]
-	private Spark spark;
-	
-	[SerializeField]
-	private float lightUpSunDelay = 0.5f;
-	
 	protected void OnEnable()
 	{
 		RocketGlobal.OnSunLightUp += Play;
-		RocketGlobal.OnGemMerged += EmitSpart;
 	}
 	
 	// This function is called when the behaviour becomes disabled () or inactive.
 	protected void OnDisable()
 	{
 		RocketGlobal.OnSunLightUp -= Play;
-		RocketGlobal.OnGemMerged -= EmitSpart;
 	}
-	
-	void EmitSpart() {
-		spark.Emit();
-	}
-	
+
+	[Button]
 	void Play() {
-		DOTween.Sequence()
-			.AppendInterval(lightUpSunDelay)
-			.AppendCallback(() => {
-			sun.SetActive(true);
-		});
+		sun.SetActive(true);
+		sun.transform.DOScale(1, 1).SetEase(Ease.OutBack);
 	}
 }

@@ -14,8 +14,25 @@ public class LevelLoader : MonoBehaviour
     {
 	    Instantiate(levelData.GetLevelPrefab(0, 0));
 	    RocketGlobal.IsPaused = false;
+	    RocketGlobal.IsCompleted = false;
     }
     
+	// This function is called when the object becomes enabled and active.
+	protected void OnEnable()
+	{
+		RocketGlobal.OnLandingResult += OnCompleted;
+	}
+	
+	// This function is called when the behaviour becomes disabled () or inactive.
+	protected void OnDisable()
+	{
+		RocketGlobal.OnLandingResult -= OnCompleted;
+	}
+	
+	void OnCompleted(bool result, float playTime) {
+		RocketGlobal.IsCompleted = true;
+	}
+   
 	[Button]
 	void LevelFaild() {
 		//LevelManager.levelResult = LevelResult.LevelFailed;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7868930842276654365}
   - component: {fileID: 5951172604652671780}
   - component: {fileID: -6188213401552801718}
+  - component: {fileID: -4147060755378214944}
   m_Layer: 0
   m_Name: rock_5
   m_TagString: Untagged
@@ -149,3 +150,30 @@ PolygonCollider2D:
       - {x: 0.515, y: -0.235}
       - {x: 0.515, y: -0.015}
   m_UseDelaunayMesh: 0
+--- !u!50 &-4147060755378214944
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939149978748485778}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -1,0 +1,46 @@
+.toggle {
+    flex-grow: 0;
+    position: relative;
+    width: 254px;
+    height: 44px;
+    flex-direction: row;
+}
+
+.toggle-button {
+    flex-grow: 0;
+    flex-direction: row;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left-color: rgb(30, 66, 142);
+    border-right-color: rgb(30, 66, 142);
+    border-top-color: rgb(30, 66, 142);
+    border-bottom-color: rgb(30, 66, 142);
+    height: 30px;
+    align-self: center;
+    min-width: 0;
+    min-height: 0;
+    width: 100px;
+}
+
+.toggle-button-on {
+    margin-left: 45%;
+}
+
+.toggle-label {
+    margin-left: 52px;
+    -unity-text-align: middle-left;
+}

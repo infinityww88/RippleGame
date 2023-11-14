@@ -83,11 +83,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2251574746709567663}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 482a212861775e040a7108def0d95ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gemRoot: {fileID: 0}
+  obstacleRoot: {fileID: 0}
+  hideDuration: 1
 --- !u!1 &7473297055067514906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,11 +1311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6655595168996266356, guid: 73d78ec9d5f6996419ba3d0307806e76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 15.1
       objectReference: {fileID: 0}
     - target: {fileID: 6655595168996266356, guid: 73d78ec9d5f6996419ba3d0307806e76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 6655595168996266356, guid: 73d78ec9d5f6996419ba3d0307806e76, type: 3}
       propertyPath: m_LocalPosition.z

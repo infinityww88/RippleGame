@@ -22,10 +22,10 @@ public class UI_Main : MonoBehaviour
 		
 		Debug.Log($"playBtn {playBtn}");
 		playBtn.RegisterCallback<ClickEvent>(evt => {
-			Debug.Log("hello, world");
 			Utility.HideUI(root);
 			LevelManager.Instance.Launch();
 			musicController.Stop();
+			RocketGlobal.OnLaunch();
 		});
 		
 		var settingBtn = root.Q<Button>("SettingButton");

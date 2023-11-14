@@ -104,6 +104,11 @@ public class LevelManager : MonoBehaviour
 	}
 	
 	public static float GetPlayLevelBestTime() {
+		#if UNITY_EDITOR
+		if (levelBestTime == null) {
+			return 0;
+		}
+		#endif
 		if (PlayLevel >= levelBestTime.Count) {
 			return 0;
 		}
@@ -138,6 +143,12 @@ public class LevelManager : MonoBehaviour
 		if (!success) {
 			return;
 		}
+		
+		#if UNITY_EDITOR
+		if (levelBestTime == null) {
+			return;
+		}
+		#endif
 		
 		if (levelBestTime.Count <= PlayLevel) {
 			Debug.Log($"Append new record {levelBestTime.Count} {PlayLevel} {playTime}");

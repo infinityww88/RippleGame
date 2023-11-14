@@ -20,14 +20,14 @@ public class LightUpSun : MonoBehaviour
 	protected void OnEnable()
 	{
 		RocketGlobal.OnSunLightUp += Play;
-		RocketGlobal.OnGemMerged += EmitSpart;
+		//RocketGlobal.OnGemMerged += EmitSpart;
 	}
 	
 	// This function is called when the behaviour becomes disabled () or inactive.
 	protected void OnDisable()
 	{
 		RocketGlobal.OnSunLightUp -= Play;
-		RocketGlobal.OnGemMerged -= EmitSpart;
+		//RocketGlobal.OnGemMerged -= EmitSpart;
 	}
 	
 	void EmitSpart() {

@@ -62,6 +62,7 @@ public class RocketLandingChecker : MonoBehaviour
 				isLandingSuccess = true;
 				RocketGlobal.OnLandingSuccess();
 				RocketGlobal.OnLandingResult(true, playTime);
+				RocketGlobal.OnSunLightUp();
 			}
 		}
 	}

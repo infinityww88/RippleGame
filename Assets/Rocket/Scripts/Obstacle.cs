@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+	/*
 	public GameObject vfx;
 	
 	public void Explode() {
@@ -14,4 +15,5 @@ public class Obstacle : MonoBehaviour
 		//gameObject.AddComponent<Rigidbody2D>().velocityY = -100f;
 		//Destroy(gameObject, 5);
 	}
+	*/
 }

@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class Gem : MonoBehaviour
 {
+	/*
 	// Start is called before the first frame update
 	private bool beginMerge = false;
 	private MergeGem mergeCenter;
@@ -70,5 +71,6 @@ public class Gem : MonoBehaviour
 		    }
 	    }
 	   
-    }
+	}
+	*/
 }

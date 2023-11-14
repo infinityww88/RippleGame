@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using Sirenix.OdinInspector;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using System;
 
 public class UI_Play : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class UI_Play : MonoBehaviour
 	private Label resultlabel;
 	private Label resultTimeLabel;
 	private bool completed = false;
+	
+	public float failDialogDelay = 2f;
+	public float successDialogDelay = 4f;
 	
 	public InputAction pauseAction;
 	
@@ -39,6 +44,8 @@ public class UI_Play : MonoBehaviour
 	    var replayButtons = root.Query<Button>(className: "replay-button").ToList();
 	    
 	    var backButtons = root.Query<Button>(className: "back-button");
+	 
+	    SetupToggleShowTrail();
 	    
 	    replayButtons.ForEach(btn => {
 	    	btn.RegisterCallback<ClickEvent>(evt => Replay());
@@ -74,6 +81,19 @@ public class UI_Play : MonoBehaviour
 	    	}
 	    };
     }
+    
+	void SetupToggleShowTrail() {
+		var showTrailButton = root.Q<Button>("ToggleShowTrailButton");
+		var marker = showTrailButton.Q<VisualElement>("Marker");
+		showTrailButton.RegisterCallback<ClickEvent>(evt => {
+			marker.ToggleInClassList("toggle-button-on");
+			if (marker.ClassListContains("toggle-button-on")) {
+				RocketGlobal.OnShowTrail(true);
+			} else {
+				RocketGlobal.OnShowTrail(false);
+			}
+		});
+	}
     
 	void Pause() {
 		RocketGlobal.IsPaused = true;
@@ -147,18 +167,25 @@ public class UI_Play : MonoBehaviour
 		RocketGlobal.OnLandingResult -= OnLandingResult;
 	}
 	
+	void DelayCall(TweenCallback action, float delay) {
+		DOTween.Sequence().AppendInterval(delay)
+			.AppendCallback(action);
+	}
+	
 	void OnLandingResult(bool success, float playTime) {
 		// Show Result Panel
 		completed = true;
 		LevelManager.UpdatePlayLevelRecord(success, playTime);
 		var bestTime = LevelManager.GetPlayLevelBestTime();
 		Debug.Log($"On Landing Result {success} {playTime} {bestTime}");
+		resultlabel.text = "Waiting...";
+		resultTimeLabel.text = "";
 		if (!success) {
-			ShowFailResult(playTime, bestTime);
+			DelayCall(() => ShowFailResult(playTime, bestTime), failDialogDelay);
 		} else if (playTime >= bestTime) {
-			ShowSuccessResult(playTime, bestTime);
+			DelayCall(() => ShowSuccessResult(playTime, bestTime), successDialogDelay);
 		} else {
-			ShowBestRecordResult(playTime, bestTime);
+			DelayCall(() => ShowBestRecordResult(playTime, bestTime), successDialogDelay);
 		}
 	}
 

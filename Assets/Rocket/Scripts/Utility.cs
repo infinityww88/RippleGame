@@ -54,4 +54,16 @@ public static class Utility
 			ShowUI(e);
 		}
 	}
+	
+	public static void FadeSprite(SpriteRenderer sr, float fade) {
+		var c = sr.color;
+		c.a = fade;
+		sr.color = c;
+	}
+	
+	public static void FadeSprites(SpriteRenderer[] srs, float fade) {
+		srs.ForEach(e => {
+			FadeSprite(e, fade);
+		});
+	}
 }
