@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using DG.Tweening;
+using System.Linq;
 
 public class RocketLevel : MonoBehaviour
 {
-	public GameObject gemRoot;
-	public GameObject obstacleRoot;
-	
 	private SpriteRenderer[] gems;
 	private SpriteRenderer[] obstacles;
 	
@@ -17,8 +15,8 @@ public class RocketLevel : MonoBehaviour
 	// Start is called on the frame when a script is enabled just before any of the Update methods is called the first time.
 	protected void Start()
 	{
-		gems = gemRoot.GetComponentsInChildren<SpriteRenderer>();
-		obstacles = obstacleRoot.GetComponentsInChildren<SpriteRenderer>();
+		gems = GetComponentsInChildren<Gem>().Select(e => e.GetComponent<SpriteRenderer>()).ToArray();
+		obstacles = GetComponentsInChildren<Obstacle>().Select(e => e.GetComponent<SpriteRenderer>()).ToArray();
 	}
 	
 	// This function is called when the object becomes enabled and active.
@@ -56,57 +54,19 @@ public class RocketLevel : MonoBehaviour
 		});
 	}
 	
+	void SetSpritesVisible(SpriteRenderer[] sprites, bool visible) {
+		Utility.ForEach(sprites, (i, sp) => {
+			sp.gameObject.SetActive(visible);
+		});
+	}
+	
 	void Show() {
-		gemRoot.SetActive(true);
-		obstacleRoot.SetActive(true);
+		SetSpritesVisible(gems, true);
+		SetSpritesVisible(obstacles, true);
 	}
 	
 	void Hide() {
-		gemRoot.SetActive(false);
-		obstacleRoot.SetActive(false);
+		SetSpritesVisible(gems, false);
+		SetSpritesVisible(obstacles, false);
 	}
-	
-	/*
-	private int mergedGemNum = 0;
-	private Gem[] gems;
-	private Obstacle[] obstacles;
-
-    // Start is called before the first frame update
-    void Start()
-	{
-		gems = GetComponentsInChildren<Gem>();
-		obstacles = GetComponentsInChildren<Obstacle>();
-    }
-	
-	// This function is called when the object becomes enabled and active.
-	protected void OnEnable()
-	{
-		RocketGlobal.OnLandingSuccess += MergeGems;
-		RocketGlobal.OnGemMerged += OnGemMerged;
-	}
-	
-	// This function is called when the behaviour becomes disabled () or inactive.
-	protected void OnDisable()
-	{
-		RocketGlobal.OnLandingSuccess -= MergeGems;
-		RocketGlobal.OnGemMerged -= OnGemMerged;
-	}
-	
-	private void OnGemMerged() {
-		mergedGemNum++;
-		if (mergedGemNum == gems.Length) {
-			RocketGlobal.OnSunLightUp();
-		}
-	}
-	
-	[Button(ButtonSizes.Medium)]
-	void MergeGems() {
-		gems.ForEach(g => {
-			g.Merge(this);
-		});
-		obstacles.ForEach(o => {
-			o.Explode();
-		});
-	}
-	*/
 }

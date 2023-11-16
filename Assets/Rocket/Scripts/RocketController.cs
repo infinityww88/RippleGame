@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using QFSW.QC;
 using Sirenix.OdinInspector;
 using DG.Tweening;
 using Com.LuisPedroFonseca.ProCamera2D;
+using ScriptableObjectArchitecture;
 
 public class RocketController : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class RocketController : MonoBehaviour
 	}
 	
 	private State state = State.Running;
-	
+
 	[SerializeField]
 	private Transform leftEngine;
 	
@@ -25,7 +25,7 @@ public class RocketController : MonoBehaviour
 	private Transform rightEngine;
 	
 	[SerializeField]
-	private float force;
+	private FloatVariable force;
 	
 	private Rigidbody2D rigidbody;
 	
@@ -56,7 +56,6 @@ public class RocketController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
 	{
-		ReadConfig();
 		soundOn = ES3.Load<bool>("sound_on", true);
 		rigidbody = GetComponent<Rigidbody2D>();
 		//rigidbody.centerOfMass = COM.localPosition;
@@ -73,20 +72,7 @@ public class RocketController : MonoBehaviour
 		
 		CameraController.Instance.rocket = transform;
 	}
-    
-	private void ReadConfig() {
-		force = PlayerPrefs.GetFloat("force", 100);
-		Debug.Log("read config " + force);
-	}
-	
-	[Command]
-	private void SetForce(float force) {
-		Debug.Log("force " + force);
-		this.force = force;
-		PlayerPrefs.SetFloat("force", force);
-		PlayerPrefs.Save();
-	}
-    
+
 	// This function is called when the object becomes enabled and active.
 	protected void OnEnable()
 	{

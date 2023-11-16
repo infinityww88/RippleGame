@@ -42,11 +42,11 @@ public class RocketLevelEditor : OdinEditorWindow {
 	
 	[Button(ButtonSizes.Medium)]
 	private void RandomSize() {
-		if (Selection.activeGameObject == null || !Selection.activeGameObject.TryGetComponent(out RocketLevel mergeGem)) {
+		if (Selection.activeGameObject == null) {
 			Debug.Log("Select a Level");
 			return;
 		}
-		Gem[] gems = mergeGem.GetComponentsInChildren<Gem>();
+		Gem[] gems = Selection.activeGameObject.GetComponentsInChildren<Gem>();
 		gems.ForEach(gem => {
 			float size = Random.Range(minScale, maxScale);
 			gem.transform.localScale = Vector3.one * size;
