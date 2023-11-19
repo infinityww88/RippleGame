@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.Linq;
 using System;
+using ScriptableObjectArchitecture;
 
 public class UI_LevelRecordList : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class UI_LevelRecordList : MonoBehaviour
 	private Button prevZodiacButton;
 	private Button nextZodiacButton;
 	
+	public StringCollection zodiacDescs;
+	public ObjectCollection zodiacSigns;
+	
+	private Label zodiacDescLabel;
+	private VisualElement zodiacSign;
+	
 	private static int zodiacIndex = 0;
 	
     // Start is called before the first frame update
@@ -25,6 +32,8 @@ public class UI_LevelRecordList : MonoBehaviour
 	    replayButton = root.Q<Button>("ReplayButton");
 	    prevZodiacButton = root.Q<Button>("PrevZodiac");
 	    nextZodiacButton = root.Q<Button>("NextZodiac");
+	    zodiacDescLabel = root.Q<Label>("ZodiacDescLabel");
+	    zodiacSign = root.Q<VisualElement>("ZodiacSign");
 	    
 	    root.parent.RegisterCallback<ClickEvent>(evt => {
 	    	if (evt.target == evt.currentTarget) {
@@ -101,6 +110,9 @@ public class UI_LevelRecordList : MonoBehaviour
 	void Populate() {
 		var data = LevelManager.Instance.GetLevelsInfo(zodiacIndex);
 		recordList.itemsSource = data;
+		zodiacDescLabel.text = zodiacDescs[zodiacIndex];
+		Sprite img = zodiacSigns[zodiacIndex] as Sprite;
+		zodiacSign.style.backgroundImage = new StyleBackground(img);
 	}
 
 	public void Show()

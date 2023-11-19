@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="SettingUXML" src="project://database/Assets/Rocket/UI/SettingUXML.uxml?fileID=9197481963319205126&amp;guid=8063bc5b95e16874ca16a0e68c7309b0&amp;type=3#SettingUXML" />
-    <ui:Template name="LevelRankUXML" src="project://database/Assets/Rocket/UI/LevelRankUXML.uxml?fileID=9197481963319205126&amp;guid=d3c9a9833c51b434b9ad39ac2b1cda7d&amp;type=3#LevelRankUXML" />
-    <Style src="project://database/Assets/Rocket/UI/MainUSS.uss?fileID=7433441132597879392&amp;guid=dda4ec7b96c44e943b0a69183196c054&amp;type=3#MainUSS" />
+    <ui:Template name="SettingUXML" src="project://database/Assets/Rocket/UI/layout/Setting.uxml?fileID=9197481963319205126&amp;guid=8063bc5b95e16874ca16a0e68c7309b0&amp;type=3#Setting" />
+    <ui:Template name="LevelRankUXML" src="project://database/Assets/Rocket/UI/layout/LevelRank.uxml?fileID=9197481963319205126&amp;guid=d3c9a9833c51b434b9ad39ac2b1cda7d&amp;type=3#LevelRank" />
+    <Style src="project://database/Assets/Rocket/UI/stylesheet/Main.uss?fileID=7433441132597879392&amp;guid=dda4ec7b96c44e943b0a69183196c054&amp;type=3#Main" />
     <ui:Button name="PlayButton" class="play-button" style="background-image: none; align-items: center; justify-content: center; right: 102px; cursor: url(&apos;project://database/Assets/SCI-FI%20UI%20Pack%20Pro/Common/White%20Icons/Textures/Icons3/icon_Rocket.png?fileID=2800000&amp;guid=37c7faa38711a6044bf12b84912e0dd5&amp;type=3#icon_Rocket&apos;);">
         <ui:VisualElement style="flex-grow: 1; position: absolute; width: 150px; height: 150px; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Btn_RandomName_p%201.png?fileID=2800000&amp;guid=fa9159349a1c19b4e84a2fc75373a31f&amp;type=3#Btn_RandomName_p 1&apos;);" />
         <ui:VisualElement class="play-button-background" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/SciFi_Circle01Blue_02%201.png?fileID=-443987347&amp;guid=6917089d64bb76a4e8bb30bc6b6e7ca2&amp;type=3#SciFi_Circle01Blue_02 1_0&apos;);" />
@@ -16,4 +16,7 @@
     <ui:VisualElement name="DialogContainer" class="dialog-container" style="flex-grow: 1; display: none; align-items: center; justify-content: center;" />
     <ui:Instance template="SettingUXML" style="display: none;" />
     <ui:Instance template="LevelRankUXML" style="display: none;" />
+    <ui:VisualElement name="ZodiacSign" style="flex-grow: 0; flex-direction: row; width: 300px; height: 100px; right: 498px; bottom: 299px; position: absolute; justify-content: center; align-items: center;">
+        <ui:Label text="Taurus" name="ZodiacTextLabel" style="-unity-text-align: middle-center; color: rgb(255, 255, 255); font-size: 74px; flex-grow: 1; -unity-font-style: normal; margin-right: 10px; -unity-font-definition: url(&apos;project://database/Assets/Rocket/akaDora.otf?fileID=12800000&amp;guid=dbb51cb7cc37252458859f0ae7001508&amp;type=3#akaDora&apos;);" />
+    </ui:VisualElement>
 </ui:UXML>

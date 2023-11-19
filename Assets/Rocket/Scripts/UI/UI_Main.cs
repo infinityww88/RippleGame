@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System;
-using QFSW.QC;
+using ScriptableObjectArchitecture;
 
 public class UI_Main : MonoBehaviour
 {
 	private VisualElement root;
 	
+	public StringCollection zodiacDesc;
+	
 	private UI_Setting setting;
 	private UI_LevelRecordList levelRank;
 	public MusicController musicController;
+	private Label zodiacDescLabel;
+	
+	public void SetZodiac(int index) {
+		Debug.Log($"{zodiacDescLabel.text} {zodiacDesc[index]}");
+		zodiacDescLabel.text = zodiacDesc[index];
+	}
 	
     // Start is called before the first frame update
-    void Start()
+	void Awake()
 	{
 		root = GetComponent<UIDocument>().rootVisualElement;
 		
@@ -40,27 +48,7 @@ public class UI_Main : MonoBehaviour
 		
 		setting = GetComponent<UI_Setting>();
 		levelRank = GetComponent<UI_LevelRecordList>();
+		
+		zodiacDescLabel = root.Q<Label>("ZodiacTextLabel");
 	}
 }
-
-/*
-[Command]
-	bool capture = false;
-    
-	void InitOperate(string btnName, Action downAction, Action upAction) {
-		VisualElement btn = Q<VisualElement>(btnName);
-		btn.RegisterCallback<PointerDownEvent>(evt => {
-			if (capture) {
-				Debug.Log("pointer down capture");
-				PointerCaptureHelper.CapturePointer(btn, evt.pointerId);
-			}
-			downAction();
-		});
-		btn.RegisterCallback<PointerUpEvent>(evt => {
-			if (capture) {
-				PointerCaptureHelper.ReleasePointer(btn, evt.pointerId);
-			}
-			upAction();
-		});
-	}
-*/
