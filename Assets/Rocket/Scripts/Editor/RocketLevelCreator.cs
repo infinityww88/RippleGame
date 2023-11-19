@@ -73,6 +73,28 @@ public class RocketLevelEditor : OdinEditorWindow {
 		var o = ReplaceGem(gem);
 		Selection.activeGameObject = o;
 	}
+	
+	[MenuItem("Tools/Rocket/PopulateLevelArtInfo")]
+	private static void PopulateLevelArtInfo() {
+		var audioPath = "Assets/Rocket/Audio/background";
+		var matPath = "Assets/Rocket/Materials/Nebula";
+		var levelDataPath = "Assets/Rocket/ScriptObjects/LevelData.asset";
+		var levelData = AssetDatabase.LoadAssetAtPath<LevelData>(levelDataPath);
+		var audioClips = RocketLevelUtility.GetAssets<AudioClip>(audioPath, "audioClip");
+		var mats = RocketLevelUtility.GetAssets<Material>(matPath, "material");
+		levelData.artInfo.Clear();
+		for (int i = 0; i < levelData.LevelNum; i++) {
+			var artInfo = new LevelArtInfo();
+			artInfo.audioClip = Utility.RandomElement(audioClips);
+			var t = levelData.GetZodiacIndex(i);
+			artInfo.nebulaMat = mats[t.Item1];
+			artInfo.sunColor = Color.HSVToRGB(Random.Range(0, 1f), 0.7f, 1);
+			artInfo.platformColor = Color.HSVToRGB(Random.Range(0, 1f), 0.7f, 1);
+			artInfo.ringRotateSpeed = 3f * (Random.Range(0, 2) == 0 ? -1 : 1);
+			artInfo.nebulaColorShift = Random.Range(0, 1f);
+			levelData.artInfo.Add(artInfo);
+		}
+	}
 }
 
 public class RocketLevelUtility
@@ -92,6 +114,29 @@ public class RocketLevelUtility
 		});
 	}
 	
+	[MenuItem("Tools/Rocket/PopulateLevel")]
+	private static void PopulateLevel() {
+		var levelPath = "Assets/Rocket/Prefabs/Levels";
+		var levelDataPath = "Assets/Rocket/ScriptObjects/LevelData.asset";
+		var easyLevels = GetAssets<GameObject>(levelPath + "/Easy", "prefab");
+		var hardLevels = GetAssets<GameObject>(levelPath + "/Hard", "prefab");
+		var levelData = AssetDatabase.LoadAssetAtPath<LevelData>(levelDataPath);
+		SerializedObject so = new SerializedObject(levelData);
+		SerializedProperty sp = so.FindProperty("levelPrefabs");
+		sp.ClearArray();
+		easyLevels.ForEach(e => {
+			sp.InsertArrayElementAtIndex(sp.arraySize);
+			var index = sp.arraySize - 1;
+			sp.GetArrayElementAtIndex(index).objectReferenceValue = e;
+		});
+		hardLevels.ForEach(e => {
+			sp.InsertArrayElementAtIndex(sp.arraySize);
+			var index = sp.arraySize - 1;
+			sp.GetArrayElementAtIndex(index).objectReferenceValue = e;
+		});
+		
+		so.ApplyModifiedProperties();
+	}
 	
 	public static List<T> GetAssets<T>(string folder, string type) where T : UnityEngine.Object {
 		string[] assetNames = AssetDatabase.FindAssets($"t:{type}", new string[] { folder });

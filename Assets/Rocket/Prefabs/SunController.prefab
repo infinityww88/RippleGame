@@ -1375,9 +1375,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.6321795, g: 0.8679245, b: 0.09416164, a: 0}
-        key1: {r: 0.63529414, g: 0.87058824, b: 0.09803922, a: 1}
-        key2: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 0.6002613, b: 0.23921567, a: 0}
+        key1: {r: 1, g: 0.6002613, b: 0.23921567, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1385,7 +1385,7 @@ ParticleSystem:
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
         ctime1: 65535
-        ctime2: 65535
+        ctime2: 0
         ctime3: 0
         ctime4: 0
         ctime5: 0
@@ -1400,7 +1400,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 4
       minGradient:
@@ -4911,7 +4911,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ea383983e0b037f41b7b97f291c023f4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 0.24056602, b: 0.24056602, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4949,13 +4949,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5225006616323682961}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.9086157, z: 0, w: 0.41763318}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0000019073486, y: 0, z: 0.0000009857362}
   m_LocalScale: {x: 10.67, y: 10.67, z: 10.67}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1471421434529258772}
-  m_LocalEulerAnglesHint: {x: 0, y: -3730.63, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5642015545957910813
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5058,7 +5058,7 @@ GameObject:
   - component: {fileID: 6872035481138084412}
   m_Layer: 0
   m_Name: SunController
-  m_TagString: Untagged
+  m_TagString: Sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5092,6 +5092,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sun: {fileID: 8658135351466295728}
+  color: {r: 0.25712055, g: 0.23921567, b: 1, a: 1}
+  corona: {fileID: 332385156501963493}
+  loop: {fileID: 1675269813533157532}
+  sunRender: {fileID: 1959544129545472468}
+  flareRender: {fileID: 3903199585427310103}
 --- !u!1 &8626052883465121090
 GameObject:
   m_ObjectHideFlags: 0
@@ -6400,8 +6405,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.63529414, g: 0.87058824, b: 0.09803922, a: 0}
-        key1: {r: 0.63529414, g: 0.87058824, b: 0.09803922, a: 1}
+        key0: {r: 1, g: 0.6002613, b: 0.23921567, a: 0}
+        key1: {r: 1, g: 0.6002613, b: 0.23921567, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6425,7 +6430,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 3
       minGradient:
@@ -9956,7 +9961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1471421434529258772
 Transform:
   m_ObjectHideFlags: 0

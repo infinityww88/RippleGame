@@ -28,6 +28,8 @@ public class UI_Play : MonoBehaviour
 	
 	private VisualElement root;
 	
+	public float totalTime = 180;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -55,14 +57,6 @@ public class UI_Play : MonoBehaviour
 	    	btn.RegisterCallback<ClickEvent>(evt => BackToMain());
 	    });
 	    
-	    /*
-	    pauseDialog.parent.RegisterCallback<ClickEvent>(evt => {
-	    	if (evt.target == evt.currentTarget) {
-		    	//Utility.HideUI(pauseDialog.parent);
-	    	}
-	    });
-	    */
-	    
 	    var continueButton = root.Q<Button>("ContinueButton");
 	    
 	    continueButton.RegisterCallback<ClickEvent>(evt => {
@@ -80,6 +74,11 @@ public class UI_Play : MonoBehaviour
 	    		}
 	    	}
 	    };
+	    
+	    float bestTime = LevelManager.GetPlayLevelBestTime();
+	    bestTime = Mathf.Min(totalTime, bestTime);
+	    float angle = bestTime / totalTime * 360;
+	    innerTimeRing.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
     
 	void SetupToggleShowTrail() {
@@ -188,7 +187,7 @@ public class UI_Play : MonoBehaviour
 			DelayCall(() => ShowBestRecordResult(playTime, bestTime), successDialogDelay);
 		}
 	}
-
+	
     // Update is called once per frame
     void Update()
     {
@@ -198,10 +197,10 @@ public class UI_Play : MonoBehaviour
 	    
 	    time += Time.deltaTime;
 	    
-	    time = Mathf.Min(time, 300);
+	    time = Mathf.Min(time, totalTime);
 	    var timeDesc = FormatPlayTime(time);
 	    timeLabel.text = timeDesc;
-	    float angle = time / 300 * 360;
+	    float angle = time / totalTime * 360;
 	    outTimeRing.transform.rotation = Quaternion.Euler(0, 0, angle);
 	    Color c = gradient.Evaluate(time / 60);
 	    outTimeRing.style.unityBackgroundImageTintColor = c;

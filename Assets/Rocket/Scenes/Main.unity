@@ -8228,6 +8228,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1283818929}
     m_Modifications:
+    - target: {fileID: -3359211855571435742, guid: ee05560b492e19d4590547b96aa58a80, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: aab57268e515da94db1f9dc960bd0f2d, type: 2}
     - target: {fileID: 3192216055098024658, guid: ee05560b492e19d4590547b96aa58a80, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -8236,6 +8240,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 3210594912937736363, guid: ee05560b492e19d4590547b96aa58a80, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aab57268e515da94db1f9dc960bd0f2d, type: 2}
     - target: {fileID: 3246944301343285073, guid: ee05560b492e19d4590547b96aa58a80, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8288,6 +8296,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Silhouette10
       objectReference: {fileID: 0}
+    - target: {fileID: 7476405264701875918, guid: ee05560b492e19d4590547b96aa58a80, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aab57268e515da94db1f9dc960bd0f2d, type: 2}
+    - target: {fileID: 8208842632921700061, guid: ee05560b492e19d4590547b96aa58a80, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: aab57268e515da94db1f9dc960bd0f2d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

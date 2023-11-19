@@ -3,18 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.SceneManagement;
+using CW.Backgrounds;
+using System.Linq;
 
 public class LevelLoader : MonoBehaviour
 {
 	[SerializeField]
 	private LevelData levelData;
+	
+	[SerializeField]
+	private CwBackgroundTexture cwBackground;
+	
+	[SerializeField]
+	private SunController sun;
+	
+	private GameObject levelRoot;
+		
+	void LoadArtInfo() {
+		var level = LevelManager.PlayLevel;
+		//level = levelData.GetGlobalLevel(zodiacIndex, levelIndex);
+		LevelArtInfo artInfo = levelData.GetLevelArtInfo(level);
+		//var targetPlatform = GameObject.FindGameObjectWithTag("TargetPlatform");
+		
+		Debug.Log($"{LevelManager.PlayLevel} {artInfo}");
+		cwBackground.Material = artInfo.nebulaMat;
+		artInfo.nebulaMat.SetFloat("_CW_AlbedoShift", artInfo.nebulaColorShift * 6.28f);
+		artInfo.nebulaMat.SetFloat("_CW_Brightness", levelData.nebulaDarkBrightness);
+		MusicController.Instance.clip = artInfo.audioClip;
+		sun.SetColor(artInfo.sunColor);
+		
+		var targetPlatformRender = levelRoot.GetComponentsInChildren<SpriteRenderer>()
+			.Where(e => e.gameObject.tag == "TargetPlatform")
+			.First();
+		
+		targetPlatformRender.color = artInfo.platformColor;
+		
+	}
 
     // Start is called before the first frame update
 	void Awake()
-    {
-	    Instantiate(levelData.GetLevelPrefab(0, 0));
-	    RocketGlobal.IsPaused = false;
-	    RocketGlobal.IsCompleted = false;
+	{
+		RocketGlobal.IsPaused = false;
+		RocketGlobal.IsCompleted = false;
+		levelRoot = Instantiate(levelData.GetLevelPrefab(LevelManager.PlayLevel));
+		LoadArtInfo();
     }
     
 	// This function is called when the object becomes enabled and active.

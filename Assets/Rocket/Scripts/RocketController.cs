@@ -182,7 +182,7 @@ public class RocketController : MonoBehaviour
 	
 	// Sent when an incoming collider makes contact with this object's collider (2D physics only).
 	protected void OnCollisionEnter2D(Collision2D collisionInfo)
-	{
+	{	
 		if (collisionInfo.gameObject.tag == "TargetPlatform" && collisionInfo.otherCollider.tag == "RocketEngine") {
 			Debug.Log("OK");
 			if (state == State.Running) {

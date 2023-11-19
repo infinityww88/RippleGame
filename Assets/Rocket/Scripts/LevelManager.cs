@@ -19,8 +19,8 @@ public class LevelManager : MonoBehaviour
 	
 	private static LevelResult levelResult = LevelResult.NoLevel;
 	private static List<float> levelBestTime = null;
-	private static int PlayLevel = 0;
-	private static int CurrLevel = 0;
+	public static int PlayLevel = 0;
+	public  static int CurrLevel = 0;
 	
 	static LevelManager() {
 		RocketGlobal.OnLandingResult += UpdatePlayLevelRecord;
@@ -106,7 +106,7 @@ public class LevelManager : MonoBehaviour
 	public static float GetPlayLevelBestTime() {
 		#if UNITY_EDITOR
 		if (levelBestTime == null) {
-			return 0;
+			return 45;
 		}
 		#endif
 		if (PlayLevel >= levelBestTime.Count) {
