@@ -126,7 +126,7 @@ public class UI_Play : MonoBehaviour
 	void ShowSuccessResult(float playTime, float bestTime) {
 		Utility.ShowUI(resultDialog.parent);
 		resultlabel.text = "Success";
-		resultTimeLabel.text = $"BestTime: {FormatPlayTime(bestTime)}";
+		resultTimeLabel.text = bestTime == 0 ? "" : $"BestTime: {FormatPlayTime(bestTime)}";
 		resultlabel.AddToClassList("success-result");
 		resultlabel.RemoveFromClassList("fail-result");
 		resultlabel.RemoveFromClassList("new-record");
@@ -174,8 +174,8 @@ public class UI_Play : MonoBehaviour
 	void OnLandingResult(bool success, float playTime) {
 		// Show Result Panel
 		completed = true;
-		LevelManager.UpdatePlayLevelRecord(success, playTime);
 		var bestTime = LevelManager.GetPlayLevelBestTime();
+		LevelManager.UpdatePlayLevelRecord(success, playTime);
 		Debug.Log($"On Landing Result {success} {playTime} {bestTime}");
 		resultlabel.text = "Waiting...";
 		resultTimeLabel.text = "";
@@ -191,7 +191,7 @@ public class UI_Play : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    if (RocketGlobal.IsPaused || completed) {
+	    if (RocketGlobal.InTutorial || RocketGlobal.IsPaused || completed) {
 	    	return;
 	    }
 	    

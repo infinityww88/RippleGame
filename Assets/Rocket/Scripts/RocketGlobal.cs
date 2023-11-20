@@ -25,6 +25,7 @@ public static class RocketGlobal
 	public static Action OnLaunch;
 	public static Action<bool> OnShowTrail;
 	public static bool IsPaused { get; set; }
+	public static bool InTutorial { get; set; }
 	public static bool IsCompleted { get; set; }
 	public static Action<bool> OnMusicSet;
 	public static Action<bool> OnSoundSet;

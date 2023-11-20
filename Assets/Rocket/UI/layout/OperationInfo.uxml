@@ -1,41 +1,37 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Rocket/UI/OperationInfo.uss?fileID=7433441132597879392&amp;guid=8785a610d23666b419930a07ccc93736&amp;type=3#OperationInfo" />
-    <ui:VisualElement name="OperationInfoPanel" class="table" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=21300000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;);">
+    <Style src="project://database/Assets/Rocket/UI/stylesheet/OperationInfo.uss?fileID=7433441132597879392&amp;guid=8785a610d23666b419930a07ccc93736&amp;type=3#OperationInfo" />
+    <ui:VisualElement name="OperationInfoPanel" class="table" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=21300000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;); height: 387px;">
         <ui:VisualElement name="Row" class="row header">
             <ui:Label text="Action" class="cell function-cell" />
             <ui:Label text="Controls" class="cell description-cell" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
             <ui:Label text="Left Engine" class="cell function-cell" />
-            <ui:Label text="press F key&#10;push up  Left Joystick" class="cell description-cell" />
+            <ui:Label text="F key&#10;Left Joystick" class="cell description-cell" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
             <ui:Label text="Right Engine" class="cell function-cell" />
-            <ui:Label text="press J key&#10;push up right Joystick" class="cell description-cell" />
+            <ui:Label text="J key&#10;Right Joystick" class="cell description-cell" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
             <ui:Label text="Pause" class="cell function-cell" />
-            <ui:Label text="press Esc key&#10;press Circle button" class="cell description-cell" />
+            <ui:Label text=" Esc key&#10;Circle/B button on gamepad" class="cell description-cell" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
             <ui:Label text="Restart" class="cell function-cell" />
-            <ui:Label text="press J key&#10;push up right Joystick" class="cell description-cell" />
-        </ui:VisualElement>
-        <ui:VisualElement name="Row" class="row">
-            <ui:Label text="Play" class="cell function-cell" />
-            <ui:Label text="press J key&#10;push up right Joystick" class="cell description-cell" />
+            <ui:Label text="R key&#10;Square/X button on gamepad" class="cell description-cell" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
             <ui:Label text="Look around" class="cell function-cell" />
-            <ui:Label text="press J key&#10;push up right Joystick" class="cell description-cell" />
+            <ui:Label text="Left/Right Joystick" class="cell description-cell" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
             <ui:Label text="Look at next constellation" class="cell function-cell" />
-            <ui:Label text="press J key&#10;push up right Joystick" class="cell description-cell" />
+            <ui:Label text="Left Arrow key&#10;Left Arrow button on gamepad" class="cell description-cell" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
             <ui:Label text="Look at previous constellation " class="cell function-cell" />
-            <ui:Label text="press J key&#10;push up right Joystick" class="cell description-cell" />
+            <ui:Label text="Right Arrow key&#10;Right Arrow button on gamepad" class="cell description-cell" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

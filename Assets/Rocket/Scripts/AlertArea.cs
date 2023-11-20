@@ -53,7 +53,7 @@ public class AlertArea : MonoBehaviour
 	// Sent when another object enters a trigger collider attached to this object (2D physics only).
 	protected void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Player") {
+		if (other.tag == "RocketBody") {
 			SetSpeedX(alertX);
 		}
 	}
@@ -61,14 +61,8 @@ public class AlertArea : MonoBehaviour
 	// Sent when another object leaves a trigger collider attached to this object (2D physics only).
 	protected void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.tag == "Player") {
+		if (other.tag == "RocketBody") {
 			SetSpeedX(1);
 		}	
 	}
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

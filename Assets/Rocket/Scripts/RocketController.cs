@@ -45,6 +45,9 @@ public class RocketController : MonoBehaviour
 	private bool leftEngineStart = false;
 	private bool rightEngineStart = false;
 	
+	public bool LeftEngineRunning => leftEngineStart;
+	public bool RightEngineRunning => rightEngineStart;
+	
 	public ParticleSystem leftParticle;
 	public ParticleSystem rightParticle;
 	
@@ -53,11 +56,17 @@ public class RocketController : MonoBehaviour
 	
 	public bool soundOn = true;
 	
+	// Awake is called when the script instance is being loaded.
+	protected void Awake()
+	{
+		rigidbody = GetComponent<Rigidbody2D>();
+	}
+	
     // Start is called before the first frame update
     void Start()
 	{
 		soundOn = ES3.Load<bool>("sound_on", true);
-		rigidbody = GetComponent<Rigidbody2D>();
+		
 		//rigidbody.centerOfMass = COM.localPosition;
 		startLeftEngineAction.performed += ctx => OnStartLeftEngine();
 		startRightEngineAction.performed += ctx => OnStartRightEngine();
@@ -80,14 +89,22 @@ public class RocketController : MonoBehaviour
 		startRightEngineAction.Enable();
 		reloadSceneAction.Enable();
 		
-		RocketGlobal.OnLeftOperateDown += OnStartLeftEngine;
-		RocketGlobal.OnLeftOperateUp += OnStopLeftEngine;
-		RocketGlobal.OnRightOperateDown += OnStartRightEngine;
-		RocketGlobal.OnRightOperateUp += OnStopRightEngine;
+		//RocketGlobal.OnLeftOperateDown += OnStartLeftEngine;
+		//RocketGlobal.OnLeftOperateUp += OnStopLeftEngine;
+		//RocketGlobal.OnRightOperateDown += OnStartRightEngine;
+		//RocketGlobal.OnRightOperateUp += OnStopRightEngine;
+		
 		RocketGlobal.OnReloadScene += OnReloadScene;
 		RocketGlobal.OnLandingSuccess += OnLandingSuccess;
 		RocketGlobal.OnPause += OnPause;
 		RocketGlobal.OnResume += OnResume;
+	}
+	
+	public void StartTutorial() {
+		rigidbody.bodyType = RigidbodyType2D.Kinematic;
+	}
+	public void StopTutorial() {
+		rigidbody.bodyType = RigidbodyType2D.Dynamic;
 	}
 	
 	void OnPause() {
@@ -121,10 +138,12 @@ public class RocketController : MonoBehaviour
 		startLeftEngineAction.Disable();
 		startRightEngineAction.Disable();
 		reloadSceneAction.Disable();
-		RocketGlobal.OnLeftOperateDown -= OnStartLeftEngine;
-		RocketGlobal.OnLeftOperateUp -= OnStopLeftEngine;
-		RocketGlobal.OnRightOperateDown -= OnStartRightEngine;
-		RocketGlobal.OnRightOperateUp -= OnStopRightEngine;
+		
+		//RocketGlobal.OnLeftOperateDown -= OnStartLeftEngine;
+		//RocketGlobal.OnLeftOperateUp -= OnStopLeftEngine;
+		//RocketGlobal.OnRightOperateDown -= OnStartRightEngine;
+		//RocketGlobal.OnRightOperateUp -= OnStopRightEngine;
+		
 		RocketGlobal.OnReloadScene -= OnReloadScene;
 		RocketGlobal.OnLandingSuccess -= OnLandingSuccess;
 		RocketGlobal.OnPause -= OnPause;
@@ -132,18 +151,22 @@ public class RocketController : MonoBehaviour
 	}
 	
 	void OnStartLeftEngine() {
+		//RocketGlobal.OnLeftOperateDown?.Invoke();
 		SetEngineState(true, true);
 	}
 	
 	void OnStopLeftEngine() {
+		//RocketGlobal.OnLeftOperateUp?.Invoke();
 		SetEngineState(true, false);
 	}
 	
 	void OnStartRightEngine() {
+		//RocketGlobal.OnRightOperateDown?.Invoke();
 		SetEngineState(false, true);
 	}
 	
 	void OnStopRightEngine() {
+		//RocketGlobal.OnRightOperateUp?.Invoke();
 		SetEngineState(false, false);
 	}
 	

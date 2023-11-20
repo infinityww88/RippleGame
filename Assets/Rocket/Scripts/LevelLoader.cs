@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine.SceneManagement;
 using CW.Backgrounds;
 using System.Linq;
+using DG.Tweening;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -21,14 +22,12 @@ public class LevelLoader : MonoBehaviour
 		
 	void LoadArtInfo() {
 		var level = LevelManager.PlayLevel;
-		//level = levelData.GetGlobalLevel(zodiacIndex, levelIndex);
 		LevelArtInfo artInfo = levelData.GetLevelArtInfo(level);
-		//var targetPlatform = GameObject.FindGameObjectWithTag("TargetPlatform");
 		
-		Debug.Log($"{LevelManager.PlayLevel} {artInfo}");
 		cwBackground.Material = artInfo.nebulaMat;
-		artInfo.nebulaMat.SetFloat("_CW_AlbedoShift", artInfo.nebulaColorShift * 6.28f);
-		artInfo.nebulaMat.SetFloat("_CW_Brightness", levelData.nebulaDarkBrightness);
+		cwBackground.Material.SetFloat("_CW_AlbedoShift", artInfo.nebulaColorShift * 6.28f);
+		cwBackground.Material.SetFloat("_CW_Brightness", levelData.nebulaDarkBrightness);
+		SetBackgroundBrightness(cwBackground.Material, levelData.nebulaDarkBrightness);
 		MusicController.Instance.clip = artInfo.audioClip;
 		sun.SetColor(artInfo.sunColor);
 		
@@ -37,7 +36,10 @@ public class LevelLoader : MonoBehaviour
 			.First();
 		
 		targetPlatformRender.color = artInfo.platformColor;
-		
+	}
+	
+	void SetBackgroundBrightness(Material mat, float brightness) {
+		mat.SetFloat("_CW_Brightness", brightness);
 	}
 
     // Start is called before the first frame update
@@ -53,12 +55,23 @@ public class LevelLoader : MonoBehaviour
 	protected void OnEnable()
 	{
 		RocketGlobal.OnLandingResult += OnCompleted;
+		RocketGlobal.OnSunLightUp += OnSunLightUp;
 	}
 	
 	// This function is called when the behaviour becomes disabled () or inactive.
 	protected void OnDisable()
 	{
 		RocketGlobal.OnLandingResult -= OnCompleted;
+		RocketGlobal.OnSunLightUp += OnSunLightUp;
+	}
+	
+	void OnSunLightUp() {
+		var t = levelData.nebulaDarkBrightness;
+		DOTween.To(() => t, v => {
+			SetBackgroundBrightness(cwBackground.Material, v);
+			t = v;
+		}, levelData.nebulaLightBrightness, 0.2f)
+			.SetTarget(cwBackground);
 	}
 	
 	void OnCompleted(bool result, float playTime) {
@@ -67,14 +80,12 @@ public class LevelLoader : MonoBehaviour
    
 	[Button]
 	void LevelFaild() {
-		//LevelManager.levelResult = LevelResult.LevelFailed;
 		RocketGlobal.OnLandingResult(false, 0);
 		SceneManager.LoadScene(0);
 	}
 	
 	[Button]
 	void LevelSuccess(float playTime = 100) {
-		//LevelManager.levelResult = LevelResult.LevelSuccess;
 		RocketGlobal.OnLandingResult(true, playTime);
 		SceneManager.LoadScene(0);
 	}

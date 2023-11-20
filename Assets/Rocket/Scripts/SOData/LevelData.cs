@@ -51,6 +51,9 @@ public class LevelData : ScriptableObject
 	}
 	
 	public int GetGlobalLevel(int zodiac, int level) {
+		if (zodiac >= ZODIAC_NUM) {
+			return LevelNum;
+		}
 		int index = 0;
 		for (int i = 0; i < zodiac; i++) {
 			index += zodiacLevelNum[i];
@@ -69,7 +72,9 @@ public class LevelData : ScriptableObject
 	}
 	
 	public Tuple<int, int> GetZodiacIndex(int level) {
-		Assert.IsTrue(level <= totalLevelNum, $"level exceeds total num {totalLevelNum}");
+		if (level >= LevelNum) {
+			return new Tuple<int, int>(ZODIAC_NUM, 0);
+		}
 		for (int i = 0; i < zodiacLevelNum.Count; i++) {
 			if (level < zodiacLevelNum[i]) {
 				return new Tuple<int, int>(i, level);

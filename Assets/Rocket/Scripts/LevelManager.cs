@@ -6,6 +6,12 @@ using UnityEngine.Assertions;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using System.Text;
+using System.IO;
+using System;
+using System.Security.Cryptography;
+
+using Random = UnityEngine.Random;
 
 public enum LevelResult {
 	NoLevel,
@@ -19,12 +25,24 @@ public class LevelManager : MonoBehaviour
 	
 	private static LevelResult levelResult = LevelResult.NoLevel;
 	private static List<float> levelBestTime = null;
-	public static int PlayLevel = 0;
-	public  static int CurrLevel = 0;
 	
-	static LevelManager() {
-		RocketGlobal.OnLandingResult += UpdatePlayLevelRecord;
+	public static int PlayLevel = 0;
+	public static int CurrLevel = 0;
+	
+	/*
+	void InitES3() {
+		byte[] seed = new byte[] {10, 26, 11, 20};
+		var hash = MD5.Create().ComputeHash(seed);
+		var hashStr = BitConverter.ToString(hash);
+		var settings = ES3Settings.defaultSettings;
+		settings.encryptionType = ES3.EncryptionType.AES;
+		settings.encryptionPassword = hashStr;
+		settings.encoding = Encoding.UTF8;
+		settings.directory = ES3.Directory.PersistentDataPath;
+		settings.path = "std";
+		Debug.Log(settings.FullPath);
 	}
+	*/
 	
 	[SerializeField]
 	private LevelData levelData;
@@ -37,6 +55,9 @@ public class LevelManager : MonoBehaviour
 	
 	[SerializeField]
 	private PlayableDirector landingTimeline;
+	
+	[SerializeField]
+	private UI_Main uiMain;
 
 	//public static LevelManager Instance;
 	
@@ -44,12 +65,7 @@ public class LevelManager : MonoBehaviour
 	
 	public bool InCompleteAnimation { get; set; }
 	
-	public List<float> testBestLevelTime = new List<float>();
-	
-	[Button]
-	void SetLevelBestTime() {
-		ES3.Save("levelBestTime", testBestLevelTime);
-	}
+	public bool GameComplete { get; private set; }
 	
 	[Button]
 	void CurrentLevelInfo() {
@@ -59,19 +75,14 @@ public class LevelManager : MonoBehaviour
 	}
 	
 	[Button]
-	void SetPlayLevel(int level) {
-		PlayLevel = level;
-	}
-	
-	[Button]
-	void TestLandingResult(bool success, float playTime) {
-		RocketGlobal.OnLandingResult(success, playTime);
-		SceneManager.LoadScene(0);
-	}
-	
-	[Button]
-	void TestLoadScene() {
-		SceneManager.LoadScene(0);
+	void SetLevels(int levelNum) {
+		List<float> bestTime = new List<float>();
+		
+		for (int i = 0; i < levelNum; i++) {
+			bestTime.Add(Random.Range(1, 30f));
+		}
+		
+		ES3.Save("levelBestTime", bestTime);
 	}
 	
 	public static LevelManager Instance { get; set; }
@@ -83,16 +94,26 @@ public class LevelManager : MonoBehaviour
 			Instance = this;
 		}
 		
+		//InitES3();
+		
 		zodiacs = GetComponentsInChildren<Zodiac>();
 		Assert.IsTrue(zodiacs.Length == LevelData.ZODIAC_NUM);
 		
 		if (levelBestTime == null) {
 			levelBestTime = ES3.Load<List<float>>("levelBestTime", new List<float>());
-			Debug.Log($"load LevelBestTime {string.Join(',', levelBestTime)} {levelBestTime.Count}");
-			var index = levelData.GetZodiacIndex(levelBestTime.Count);
-			CurrZodiac = index.Item1;
-			CurrLevel = index.Item2;
-			PlayLevel = levelData.GetGlobalLevel(CurrZodiac, CurrLevel);
+			//Debug.Log(">> " + levelBestTime.Count + ", " + levelData);
+			if (levelBestTime.Count >= levelData.LevelNum) {
+				CurrZodiac = LevelData.ZODIAC_NUM;
+				CurrLevel = 0;
+				PlayLevel = levelData.LevelNum;
+				GameComplete = true;
+			} else {
+				var index = levelData.GetZodiacIndex(levelBestTime.Count);
+				CurrZodiac = index.Item1;
+				CurrLevel = index.Item2;
+				PlayLevel = levelData.GetGlobalLevel(CurrZodiac, CurrLevel);
+			}
+			
 			Debug.Log($"CurrZodiac {CurrZodiac} CurrLevel {CurrLevel} PlayLevel {PlayLevel}");
 		}
 		
@@ -115,12 +136,6 @@ public class LevelManager : MonoBehaviour
 		return levelBestTime[PlayLevel];
 	}
 	
-	[Button]
-	void TestGetLevelsInfo(int zodiac) {
-		var ret = GetLevelsInfo(zodiac);
-		Debug.Log(string.Join(", ", ret));
-	}
-	
 	public List<float> GetLevelsInfo(int zodiac) {
 		int n = levelData.GetZodiacLevelNum(zodiac);
 		Debug.Log($"zodiac num {n}");
@@ -137,7 +152,10 @@ public class LevelManager : MonoBehaviour
 	}
 	
 	public static void UpdatePlayLevelRecord(bool success, float playTime) {
-		Debug.Log($"UpdatePlayLevelRecord {success} {playTime}");
+		if (!success && levelResult == LevelResult.LevelSuccess) {
+			return;
+		}
+		
 		levelResult = success ? LevelResult.LevelSuccess : LevelResult.LevelFailed;
 		
 		if (!success) {
@@ -189,7 +207,7 @@ public class LevelManager : MonoBehaviour
 		} else {
 			landingTimeline.stopped += pd => {
 				if (levelResult == LevelResult.LevelSuccess) {
-					if (PlayLevel == levelData.GetGlobalLevel(CurrZodiac, CurrLevel)) {
+					if (PlayLevel == levelData.GetGlobalLevel(CurrZodiac, CurrLevel) && PlayLevel < levelData.LevelNum) {
 						NextLevel();
 					}
 				}
@@ -212,7 +230,8 @@ public class LevelManager : MonoBehaviour
 				CurrZodiac++;
 				CurrLevel = 0;
 				if (CurrZodiac >= LevelData.ZODIAC_NUM) {
-					Debug.Log("Game Complete");                      
+					Debug.Log("Game Complete");  
+					uiMain.GameComplete();
 				} else {
 					Debug.Log($"To New Zodiac {CurrZodiac}");
 					RocketGlobal.OnNewZodiac();

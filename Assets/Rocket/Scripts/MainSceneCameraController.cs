@@ -40,7 +40,7 @@ public class MainSceneCameraController : MonoBehaviour
 	    var angle = LevelManager.CurrZodiac * 30;
 		ToAngle(angle, false);
 		zodiacIndex = LevelManager.CurrZodiac;
-		uiMain.SetZodiac(LevelManager.CurrZodiac);
+		uiMain.SetZodiac(LevelManager.CurrZodiac % LevelData.ZODIAC_NUM);
 	}
     
 	void OnLaunch() {

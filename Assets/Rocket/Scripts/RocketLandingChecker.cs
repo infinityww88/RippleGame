@@ -52,7 +52,7 @@ public class RocketLandingChecker : MonoBehaviour
 	// Update is called every frame, if the MonoBehaviour is enabled.
 	protected void Update()
 	{
-		if (!RocketGlobal.IsPaused) {
+		if (!RocketGlobal.IsPaused && !RocketGlobal.InTutorial) {
 			playTime += Time.deltaTime;
 		}
 		

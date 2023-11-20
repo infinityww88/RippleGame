@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
+using System.Text;
 
 public class ES3Test : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class ES3Test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+	    var s = new ES3Settings();
+	    ES3Settings.defaultSettings.encryptionType = ES3.EncryptionType.AES;
+	    ES3Settings.defaultSettings.encryptionPassword = "hello";
+	    ES3Settings.defaultSettings.encoding = Encoding.UTF8;
     }
     
 	// This function is called when the object becomes enabled and active.

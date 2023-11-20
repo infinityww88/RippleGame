@@ -1174,6 +1174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SunController
       objectReference: {fileID: 0}
+    - target: {fileID: 8658135351466295728, guid: eba4e016a94b48948be2713bf759f324, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1289,7 +1293,7 @@ MonoBehaviour:
       m_Action: Pause
       m_Flags: 0
     m_Flags: 0
-  totalTime: 45
+  totalTime: 180
 --- !u!1 &556059236756628663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,7 +1512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4b0c236f6700e40a116030a266e5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 3441cb8f2e7541544b7bcf4ae57bad9c, type: 2}
+  material: {fileID: 2100000, guid: 56dafbb172a4a0444adda64dae60ce52, type: 2}
   arc: {x: 100, y: 100}
   offset: {x: 0, y: 0}
   rect:
@@ -1560,7 +1564,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3441cb8f2e7541544b7bcf4ae57bad9c, type: 2}
+  - {fileID: 2100000, guid: 56dafbb172a4a0444adda64dae60ce52, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
