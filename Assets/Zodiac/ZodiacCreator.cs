@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 
 public class ZodiacCreator : MonoBehaviour
 {
+	
 	[SerializeField]
 	[Range(5, 100)]
 	[OnValueChanged("OnChange")]

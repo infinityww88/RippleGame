@@ -75,6 +75,9 @@ public class RocketController : MonoBehaviour
 		startRightEngineAction.canceled += ctx => OnStopRightEngine();
 	    
 		reloadSceneAction.performed += ctx => OnReloadScene();
+		reloadSceneAction.performed += ctx => {
+			Debug.Log("Reload Scene Press");
+		};
 		audioSouce = GetComponent<AudioSource>();
 		var proCamera = Camera.main.GetComponent<ProCamera2D>();
 		proCamera.AddCameraTarget(transform);

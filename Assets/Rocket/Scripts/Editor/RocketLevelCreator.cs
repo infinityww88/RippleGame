@@ -7,6 +7,8 @@ using System.IO;
 using UnityEngine.Assertions;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.OdinInspector;
+using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 
 using Random = UnityEngine.Random;
 
@@ -16,9 +18,122 @@ public class RocketLevelEditor : OdinEditorWindow {
 	public float minScale = 1;
 	public float maxScale = 3;
 	
-	[MenuItem("Tools/Rocket/LevelEditor")]
+	[MenuItem("Tools/Rocket/LevelEditor #e")]
 	private static void OpenWindow() {
 		var window = GetWindow<RocketLevelEditor>();
+		window.levelData = AssetDatabase.LoadAssetAtPath<LevelData>("Assets/Rocket/ScriptObjects/LevelData.asset");
+	}
+	
+	[Button]
+	void Test(Vector3 pos) {
+		var svs = SceneView.sceneViews;
+		for (int i = 0; i < svs.Count; i++) {
+			Debug.Log($">> {svs[i]}");
+			var sv = svs[i] as SceneView;
+			Debug.Log(sv.position + ", " + sv.camera.scaledPixelHeight + ", " + sv.camera.pixelHeight);
+			Debug.Log(sv.size);
+			Debug.Log("world pos " + sv.camera.WorldToScreenPoint(pos));
+			Debug.Log("world pos " + sv.camera.ScreenToWorldPoint(pos));
+			Debug.Log(sv.camera.orthographic);
+		}
+	}
+	
+	void OnKeyDown(KeyDownEvent evt) {
+		if (evt.keyCode !=	KeyCode.Y || rocket == null) {
+			return;
+		}
+		VisualElement ve = evt.currentTarget as VisualElement;
+		Vector2 p = Mouse.current.position.value;
+		p = ve.WorldToLocal(p);
+		
+		Ray ray = HandleUtility.GUIPointToWorldRay(p);
+		
+		Vector2 pos = ray.origin;
+		rocket.transform.position = pos;
+	}
+	
+	void OnPrevLevel(ClickEvent evt) {
+		JumpLevel(levelNum - 1);
+	}
+	
+	void OnNextLevel(ClickEvent evt) {
+		JumpLevel(levelNum + 1);
+	}
+	
+	void OnJumpLevel(ClickEvent evt) {
+		JumpLevel(jumpNum.value);
+	}
+	
+	private Vector3 initRocketPos;
+	private RocketLevel editLevel;
+	private RocketController rocket;
+	private LevelData levelData;
+	private IntegerField jumpNum;
+	private int levelNum = 0;
+	
+	void JumpLevel(int levelNum) {
+		if (levelNum < 0 || levelNum >= levelData.LevelNum) {
+			SceneView sv = SceneView.sceneViews[0] as SceneView;
+			sv.ShowNotification(new GUIContent("Level exceeds level range"));
+			return;
+		}
+		if (editLevel == null) {
+			editLevel = GameObject.FindObjectOfType<RocketLevel>();
+		}
+		if (editLevel != null) {
+			rocket.transform.position = initRocketPos;
+			PrefabUtility.ApplyPrefabInstance(editLevel.gameObject, InteractionMode.UserAction);
+			DestroyImmediate(editLevel.gameObject);
+		}
+		this.levelNum = levelNum;
+		jumpNum.value = levelNum;
+		var level = levelData.GetLevelPrefab(levelNum);
+		editLevel = (PrefabUtility.InstantiatePrefab(level) as GameObject).GetComponent<RocketLevel>();
+		rocket = editLevel.GetComponentInChildren<RocketController>();
+		initRocketPos = rocket.transform.position;
+	}
+	
+	void SetUI(VisualElement root, string name) {
+		var path = "Assets/Rocket/Scripts/Editor/LevelEditor.uxml";
+		var vtAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(path);
+		var panel = vtAsset.Instantiate();
+		panel.Q<Button>("PrevLevel").RegisterCallback<ClickEvent>(OnPrevLevel);
+		panel.Q<Button>("NextLevel").RegisterCallback<ClickEvent>(OnNextLevel);
+		panel.Q<Button>("JumpButton").RegisterCallback<ClickEvent>(OnJumpLevel);
+		jumpNum = panel.Q<IntegerField>("JumpNum");
+		panel.name = name;
+		root.Add(panel);
+		root.RegisterCallback<KeyDownEvent>(OnKeyDown);
+	}
+	
+	void UnsetUI(VisualElement root, string name) {
+		var e = root.Q<VisualElement>(name);
+		if (e != null) {
+			root.Remove(e);
+		}
+		root.UnregisterCallback<KeyDownEvent>(OnKeyDown);
+	}
+	
+	void OnBecameVisible() {
+		var svs = SceneView.sceneViews;
+		for (int i = 0; i < svs.Count; i++) {
+			var sv = svs[i] as SceneView;
+			SetUI(sv.rootVisualElement, "LevelEditorPanel");
+		}
+	}
+	
+	void OnUpdate(SceneView sv) {
+		if (Event.current.type == EventType.MouseDown && Event.current.button == 0) {
+			Debug.Log("mouse down " + Event.current.mousePosition + ", " + Mouse.current.position.value);
+		}
+	}
+	
+	void OnBecameInvisible() {
+		var svs = SceneView.sceneViews;
+		for (int i = 0; i < svs.Count; i++) {
+			var sv = svs[i] as SceneView;
+			UnsetUI(sv.rootVisualElement, "LevelEditorPanel");
+		}
 	}
 	
 	private List<GameObject> GetGemPrefabs() {

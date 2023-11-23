@@ -264,16 +264,16 @@ MonoBehaviour:
     m_Flags: 0
   reloadSceneAction:
     m_Name: Reload Scene
-    m_Type: 0
-    m_ExpectedControlType: 
+    m_Type: 1
+    m_ExpectedControlType: Button
     m_Id: 788eb649-7bb6-45cb-9696-2fe361402c4e
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Press
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 5d8286ba-a535-4064-b676-f078bf3f088f
       m_Path: <Gamepad>/buttonWest
-      m_Interactions: 
+      m_Interactions: Press
       m_Processors: 
       m_Groups: 
       m_Action: Reload Scene
@@ -281,7 +281,7 @@ MonoBehaviour:
     - m_Name: 
       m_Id: bde79f64-c97a-42b5-b131-db30ebac8104
       m_Path: <Keyboard>/r
-      m_Interactions: 
+      m_Interactions: Press
       m_Processors: 
       m_Groups: 
       m_Action: Reload Scene

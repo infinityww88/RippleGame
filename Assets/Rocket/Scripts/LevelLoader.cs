@@ -47,6 +47,7 @@ public class LevelLoader : MonoBehaviour
 	{
 		RocketGlobal.IsPaused = false;
 		RocketGlobal.IsCompleted = false;
+		Debug.Log($"Level Load {LevelManager.PlayLevel}");
 		levelRoot = Instantiate(levelData.GetLevelPrefab(LevelManager.PlayLevel));
 		LoadArtInfo();
     }

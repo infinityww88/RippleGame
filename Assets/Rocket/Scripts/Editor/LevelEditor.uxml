@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Rocket/Scripts/Editor/LevelEditor.uss?fileID=7433441132597879392&amp;guid=798c9231d959b2f4c999bae1092ef6dc&amp;type=3#LevelEditor" />
+    <ui:Button text="上一个" name="PrevLevel" class="button" />
+    <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: center;">
+        <ui:IntegerField label="Integer Field" value="0" name="JumpNum" class="jump-number" />
+        <ui:Button text="跳到" name="JumpButton" class="jump-button" />
+    </ui:VisualElement>
+    <ui:Button text="下一个" name="NextLevel" class="button" />
+</ui:UXML>
