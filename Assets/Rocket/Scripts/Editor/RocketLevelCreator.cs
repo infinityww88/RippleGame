@@ -20,6 +20,7 @@ public class RocketLevelEditor : OdinEditorWindow {
 	
 	[MenuItem("Tools/Rocket/LevelEditor #e")]
 	private static void OpenWindow() {
+		Debug.Log("Open Window");
 		var window = GetWindow<RocketLevelEditor>();
 		window.levelData = AssetDatabase.LoadAssetAtPath<LevelData>("Assets/Rocket/ScriptObjects/LevelData.asset");
 	}
@@ -39,7 +40,8 @@ public class RocketLevelEditor : OdinEditorWindow {
 	}
 	
 	void OnKeyDown(KeyDownEvent evt) {
-		if (evt.keyCode !=	KeyCode.Y || rocket == null) {
+		RocketController rocket = FindObjectOfType<RocketController>();
+		if (evt.keyCode != KeyCode.Y || rocket == null) {
 			return;
 		}
 		VisualElement ve = evt.currentTarget as VisualElement;
@@ -64,11 +66,10 @@ public class RocketLevelEditor : OdinEditorWindow {
 		JumpLevel(jumpNum.value);
 	}
 	
-	private Vector3 initRocketPos;
-	private RocketLevel editLevel;
-	private RocketController rocket;
 	private LevelData levelData;
 	private IntegerField jumpNum;
+	
+	private Vector3 initRocketPos;
 	private int levelNum = 0;
 	
 	void JumpLevel(int levelNum) {
@@ -77,20 +78,17 @@ public class RocketLevelEditor : OdinEditorWindow {
 			sv.ShowNotification(new GUIContent("Level exceeds level range"));
 			return;
 		}
-		if (editLevel == null) {
-			editLevel = GameObject.FindObjectOfType<RocketLevel>();
-		}
+		RocketLevel editLevel = GameObject.FindObjectOfType<RocketLevel>();
 		if (editLevel != null) {
-			rocket.transform.position = initRocketPos;
+			editLevel.GetComponentInChildren<RocketController>().transform.position = initRocketPos;
 			PrefabUtility.ApplyPrefabInstance(editLevel.gameObject, InteractionMode.UserAction);
 			DestroyImmediate(editLevel.gameObject);
 		}
 		this.levelNum = levelNum;
 		jumpNum.value = levelNum;
 		var level = levelData.GetLevelPrefab(levelNum);
-		editLevel = (PrefabUtility.InstantiatePrefab(level) as GameObject).GetComponent<RocketLevel>();
-		rocket = editLevel.GetComponentInChildren<RocketController>();
-		initRocketPos = rocket.transform.position;
+		var o = PrefabUtility.InstantiatePrefab(level) as GameObject;
+		initRocketPos = o.GetComponentInChildren<RocketController>().transform.position;
 	}
 	
 	void SetUI(VisualElement root, string name) {
@@ -114,7 +112,8 @@ public class RocketLevelEditor : OdinEditorWindow {
 		root.UnregisterCallback<KeyDownEvent>(OnKeyDown);
 	}
 	
-	void OnBecameVisible() {
+	void Awake() {
+		Debug.Log("Window visible");
 		var svs = SceneView.sceneViews;
 		for (int i = 0; i < svs.Count; i++) {
 			var sv = svs[i] as SceneView;
@@ -122,13 +121,7 @@ public class RocketLevelEditor : OdinEditorWindow {
 		}
 	}
 	
-	void OnUpdate(SceneView sv) {
-		if (Event.current.type == EventType.MouseDown && Event.current.button == 0) {
-			Debug.Log("mouse down " + Event.current.mousePosition + ", " + Mouse.current.position.value);
-		}
-	}
-	
-	void OnBecameInvisible() {
+	void OnDestroy() {
 		var svs = SceneView.sceneViews;
 		for (int i = 0; i < svs.Count; i++) {
 			var sv = svs[i] as SceneView;
