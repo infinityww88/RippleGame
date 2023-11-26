@@ -19,8 +19,9 @@ public class MusicController : MonoBehaviour
 	protected void Awake()
 	{
 		if (Instance != null && Instance != this) {
-			Destroy(this);
+			Destroy(this.gameObject);
 		} else {
+			Debug.Log("awake music controller " + this.gameObject.name);
 			Instance = this;
 		}
 	}

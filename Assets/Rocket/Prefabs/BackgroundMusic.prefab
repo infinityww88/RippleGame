@@ -43,13 +43,13 @@ AudioSource:
   m_GameObject: {fileID: 1784446798204530896}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 662efee0eb0614f49a3c3cb2b75f36e1, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 79f8100f8f3a07a4ba1a18ec48cb1f6b, type: 3}
-  delay: 5
+  delay: 1
   interval: 5
   fadeDuration: 2.8
 --- !u!114 &555859832120372338

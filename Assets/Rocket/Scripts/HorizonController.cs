@@ -11,7 +11,7 @@ public class HorizonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
 	{
-		int zodiacIndex = LevelManager.CurrZodiac;
+		int zodiacIndex = Mathf.Min(LevelManager.CurrZodiac, materials.Count-1);
 	    var textures = horizon.GetComponentsInChildren<CwBackgroundTexture>();
 	    var mat = materials[zodiacIndex];
 	    textures.ForEach(t => {

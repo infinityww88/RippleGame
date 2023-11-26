@@ -83,7 +83,9 @@ public class UI_LevelRecordList : MonoBehaviour
 		var num = e.Q<Label>(className: "level-num");
 		var bestTime = e.Q<Label>(className: "level-best-record");
 		num.text = index.ToString();
-		bestTime.text = time.ToString();
+		int mins = (int)(time / 60f);
+		int secs = (int)(time - mins * 60f);
+		bestTime.text = $"{mins:D2}:{secs:D2}";
 		if (time == 0) {
 			bestTime.text = "--:--";
 		}

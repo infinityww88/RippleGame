@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="EndDialog" style="flex-grow: 1; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5);">
         <ui:VisualElement style="flex-grow: 0; width: 500px; height: 300px; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=21300000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;); align-items: center; justify-content: center; -unity-background-image-tint-color: rgba(255, 255, 255, 0.9);">
-            <ui:Label text="Congratulation!" style="-unity-text-align: middle-center; font-size: 36px; white-space: normal; color: rgb(123, 255, 117); margin-bottom: 24px;" />
-            <ui:Label text="You complete all the constellations.&#10;Thanks to play" style="-unity-text-align: middle-center; font-size: 25px; white-space: normal; color: rgb(255, 255, 255);" />
+            <ui:Label text="Congratulation!" class="localization loc-key-complete-title" style="-unity-text-align: middle-center; font-size: 36px; white-space: normal; color: rgb(123, 255, 117); margin-bottom: 24px;" />
+            <ui:Label text="You complete all the constellations.&#10;Thanks to play" class="localization loc-key-complete-content" style="-unity-text-align: middle-center; font-size: 25px; white-space: normal; color: rgb(255, 255, 255);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -49,8 +49,13 @@ public class LevelLoader : MonoBehaviour
 		RocketGlobal.IsCompleted = false;
 		Debug.Log($"Level Load {LevelManager.PlayLevel}");
 		levelRoot = Instantiate(levelData.GetLevelPrefab(LevelManager.PlayLevel));
+	}
+    
+	// Start is called on the frame when a script is enabled just before any of the Update methods is called the first time.
+	protected void Start()
+	{
 		LoadArtInfo();
-    }
+	}
     
 	// This function is called when the object becomes enabled and active.
 	protected void OnEnable()
@@ -77,17 +82,5 @@ public class LevelLoader : MonoBehaviour
 	
 	void OnCompleted(bool result, float playTime) {
 		RocketGlobal.IsCompleted = true;
-	}
-   
-	[Button]
-	void LevelFaild() {
-		RocketGlobal.OnLandingResult(false, 0);
-		SceneManager.LoadScene(0);
-	}
-	
-	[Button]
-	void LevelSuccess(float playTime = 100) {
-		RocketGlobal.OnLandingResult(true, playTime);
-		SceneManager.LoadScene(0);
 	}
 }

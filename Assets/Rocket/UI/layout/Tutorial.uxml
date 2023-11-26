@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: flex-start;">
         <ui:VisualElement style="flex-grow: 0; flex-shrink: 1; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=21300000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;); padding-top: 50px; padding-right: 50px; padding-bottom: 50px; padding-left: 50px; margin-top: 135px; overflow: hidden; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; -unity-background-scale-mode: stretch-to-fill; min-width: 200px; max-width: 600px;">
-            <ui:Label name="TutorialLabel" style="position: relative; -unity-text-align: middle-center; color: rgb(255, 255, 255); font-size: 24px; flex-grow: 1; white-space: normal;" />
+            <ui:Label name="TutorialLabel" class="localization loc-key-tutorial" style="position: relative; -unity-text-align: middle-center; color: rgb(255, 255, 255); font-size: 24px; flex-grow: 1; white-space: normal;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

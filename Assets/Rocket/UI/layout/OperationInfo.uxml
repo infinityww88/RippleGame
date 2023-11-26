@@ -2,36 +2,36 @@
     <Style src="project://database/Assets/Rocket/UI/stylesheet/OperationInfo.uss?fileID=7433441132597879392&amp;guid=8785a610d23666b419930a07ccc93736&amp;type=3#OperationInfo" />
     <ui:VisualElement name="OperationInfoPanel" class="table" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=21300000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;); height: 387px;">
         <ui:VisualElement name="Row" class="row header">
-            <ui:Label text="Action" class="cell function-cell" />
-            <ui:Label text="Controls" class="cell description-cell" />
+            <ui:Label text="Action" class="cell function-cell localization loc-key-operation-action" />
+            <ui:Label text="Controls" class="cell description-cell localization loc-key-operation-controls" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
-            <ui:Label text="Left Engine" class="cell function-cell" />
-            <ui:Label text="F key&#10;Left Joystick" class="cell description-cell" />
+            <ui:Label text="Left Engine" class="cell function-cell localization loc-key-operation-left-engine-action" />
+            <ui:Label text="F key&#10;Left Joystick" class="cell description-cell localization loc-key-operation-left-engine-controls" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
-            <ui:Label text="Right Engine" class="cell function-cell" />
-            <ui:Label text="J key&#10;Right Joystick" class="cell description-cell" />
+            <ui:Label text="Right Engine" class="cell function-cell localization loc-key-operation-right-engine-action" />
+            <ui:Label text="J key&#10;Right Joystick" class="cell description-cell localization loc-key-operation-right-engine-controls" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
-            <ui:Label text="Pause" class="cell function-cell" />
-            <ui:Label text=" Esc key&#10;Circle/B button on gamepad" class="cell description-cell" />
+            <ui:Label text="Pause" class="cell function-cell localization loc-key-operation-pause-action" />
+            <ui:Label text="Esc key&#10;Circle/B button on gamepad" class="cell description-cell localization loc-key-operation-pause-controls" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
-            <ui:Label text="Restart" class="cell function-cell" />
-            <ui:Label text="R key&#10;Square/X button on gamepad" class="cell description-cell" />
+            <ui:Label text="Restart" class="cell function-cell localization loc-key-operation-restart-action" />
+            <ui:Label text="R key&#10;Square/X button on gamepad" class="cell description-cell localization loc-key-operation-restart-controls" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
-            <ui:Label text="Look around" class="cell function-cell" />
-            <ui:Label text="Left/Right Joystick" class="cell description-cell" />
+            <ui:Label text="Look around" class="cell function-cell localization loc-key-operation-look-around-action" />
+            <ui:Label text="Left/Right Joystick" class="cell description-cell localization loc-key-operation-look-around-controls" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
-            <ui:Label text="Look at next constellation" class="cell function-cell" />
-            <ui:Label text="Left Arrow key&#10;Left Arrow button on gamepad" class="cell description-cell" />
+            <ui:Label text="Look at next constellation" class="cell function-cell localization loc-key-operation-look-next-constellation-action" />
+            <ui:Label text="Left Arrow key&#10;Left Arrow button on gamepad" class="cell description-cell localization loc-key-operation-look-at-next-constellation-controls" />
         </ui:VisualElement>
         <ui:VisualElement name="Row" class="row">
-            <ui:Label text="Look at previous constellation " class="cell function-cell" />
-            <ui:Label text="Right Arrow key&#10;Right Arrow button on gamepad" class="cell description-cell" />
+            <ui:Label text="Look at previous constellation " class="cell function-cell localization loc-key-operation-look-prev-constellation-action" />
+            <ui:Label text="Right Arrow key&#10;Right Arrow button on gamepad" class="cell description-cell localization loc-key-operation-look-at-prev-constellation-controls" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

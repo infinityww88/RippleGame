@@ -101,22 +101,23 @@ public class LevelManager : MonoBehaviour
 		
 		if (levelBestTime == null) {
 			levelBestTime = ES3.Load<List<float>>("levelBestTime", new List<float>());
-			//Debug.Log(">> " + levelBestTime.Count + ", " + levelData);
-			if (levelBestTime.Count >= levelData.LevelNum) {
-				CurrZodiac = LevelData.ZODIAC_NUM;
-				CurrLevel = 0;
-				PlayLevel = levelData.LevelNum;
-				GameComplete = true;
-			} else {
-				var index = levelData.GetZodiacIndex(levelBestTime.Count);
-				CurrZodiac = index.Item1;
-				CurrLevel = index.Item2;
-				PlayLevel = levelData.GetGlobalLevel(CurrZodiac, CurrLevel);
-			}
-			
-			Debug.Log($"CurrZodiac {CurrZodiac} CurrLevel {CurrLevel} PlayLevel {PlayLevel}");
+			Debug.Log(">> " + levelBestTime.Count + ", " + levelData);
 		}
 		
+		if (levelBestTime.Count >= levelData.LevelNum) {
+			CurrZodiac = LevelData.ZODIAC_NUM;
+			CurrLevel = 0;
+			PlayLevel = levelData.LevelNum;
+			GameComplete = true;
+		} else {
+			var index = levelData.GetZodiacIndex(levelBestTime.Count);
+			CurrZodiac = index.Item1;
+			CurrLevel = index.Item2;
+			PlayLevel = levelData.GetGlobalLevel(CurrZodiac, CurrLevel);
+		}
+			
+		Debug.Log($"CurrZodiac {CurrZodiac} CurrLevel {CurrLevel} PlayLevel {PlayLevel}");
+
 		if (levelResult == LevelResult.NoLevel) {
 			//Load level from db
 			//CurrZodiac = PlayerPrefs.GetInt("currZodiac", 0);
@@ -251,6 +252,7 @@ public class LevelManager : MonoBehaviour
 			SceneManager.LoadScene(1);
 		};
 		launchTimeline.Play();
+		MusicController.Instance.Stop();
 	}
 	
 	public void Launch(int zodiac, int level) {
@@ -261,5 +263,6 @@ public class LevelManager : MonoBehaviour
 			SceneManager.LoadScene(1);
 		};
 		launchTimeline.Play();
+		MusicController.Instance.Stop();
 	}
 }

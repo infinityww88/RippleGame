@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using System.Linq;
 using System;
+using Sirenix.OdinInspector;
+
+using Random = UnityEngine.Random;
 
 [Serializable]
 public class LevelArtInfo {
@@ -35,6 +38,16 @@ public class LevelData : ScriptableObject
 	private int totalLevelNum = 0;
 	
 	public int LevelNum => totalLevelNum;
+	
+	[Button]
+	void RandomLevels(int left, int right) {
+		for (int i = left; i < right - 1; i++) {
+			int j = Random.Range(i+1, right);
+			var t = levelPrefabs[j];
+			levelPrefabs[j] = levelPrefabs[i];
+			levelPrefabs[i] = t;
+		}
+	}
 	
 	public LevelArtInfo GetLevelArtInfo(int level) {
 		return artInfo[level];

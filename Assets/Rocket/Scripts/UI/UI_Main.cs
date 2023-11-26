@@ -11,10 +11,9 @@ public class UI_Main : MonoBehaviour
 	private VisualElement root;
 	
 	public StringCollection zodiacDesc;
-	
+
 	private UI_Setting setting;
 	private UI_LevelRecordList levelRank;
-	public MusicController musicController;
 	private Label zodiacDescLabel;
 	private Button playBtn;
 	
@@ -58,7 +57,6 @@ public class UI_Main : MonoBehaviour
 			playBtn.RegisterCallback<ClickEvent>(evt => {
 				Utility.HideUI(root);
 				LevelManager.Instance.Launch();
-				musicController.Stop();
 				RocketGlobal.OnLaunch();
 			});
 		}

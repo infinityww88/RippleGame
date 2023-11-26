@@ -25,20 +25,6 @@ public class RocketLevelEditor : OdinEditorWindow {
 		window.levelData = AssetDatabase.LoadAssetAtPath<LevelData>("Assets/Rocket/ScriptObjects/LevelData.asset");
 	}
 	
-	[Button]
-	void Test(Vector3 pos) {
-		var svs = SceneView.sceneViews;
-		for (int i = 0; i < svs.Count; i++) {
-			Debug.Log($">> {svs[i]}");
-			var sv = svs[i] as SceneView;
-			Debug.Log(sv.position + ", " + sv.camera.scaledPixelHeight + ", " + sv.camera.pixelHeight);
-			Debug.Log(sv.size);
-			Debug.Log("world pos " + sv.camera.WorldToScreenPoint(pos));
-			Debug.Log("world pos " + sv.camera.ScreenToWorldPoint(pos));
-			Debug.Log(sv.camera.orthographic);
-		}
-	}
-	
 	void OnKeyDown(KeyDownEvent evt) {
 		RocketController rocket = FindObjectOfType<RocketController>();
 		if (evt.keyCode != KeyCode.Y || rocket == null) {
