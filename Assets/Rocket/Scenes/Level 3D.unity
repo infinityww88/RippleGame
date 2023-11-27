@@ -512,6 +512,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6473840923494308163, guid: 621266f636d08a84db6729fabb066d11, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1789bd7f617e7004eb66243d9e3068c6, type: 3}
+    - target: {fileID: 6473840923494308163, guid: 621266f636d08a84db6729fabb066d11, type: 3}
       propertyPath: delay
       value: 3
       objectReference: {fileID: 0}
@@ -1267,6 +1271,14 @@ MonoBehaviour:
     - m_Name: 
       m_Id: ab0f2281-779e-48ae-94c5-3db01dca493a
       m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pause
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 303e4b5b-a6e2-44ab-81d1-01a1db5fe7ad
+      m_Path: <Gamepad>/buttonEast
       m_Interactions: 
       m_Processors: 
       m_Groups: 

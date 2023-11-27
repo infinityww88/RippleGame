@@ -57,7 +57,6 @@ public class UI_Main : MonoBehaviour
 			playBtn.RegisterCallback<ClickEvent>(evt => {
 				Utility.HideUI(root);
 				LevelManager.Instance.Launch();
-				RocketGlobal.OnLaunch();
 			});
 		}
 	}
