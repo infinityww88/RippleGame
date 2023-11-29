@@ -92,10 +92,10 @@ public class RocketController : MonoBehaviour
 		startRightEngineAction.Enable();
 		reloadSceneAction.Enable();
 		
-		//RocketGlobal.OnLeftOperateDown += OnStartLeftEngine;
-		//RocketGlobal.OnLeftOperateUp += OnStopLeftEngine;
-		//RocketGlobal.OnRightOperateDown += OnStartRightEngine;
-		//RocketGlobal.OnRightOperateUp += OnStopRightEngine;
+		RocketGlobal.OnLeftOperateDown += OnStartLeftEngine;
+		RocketGlobal.OnLeftOperateUp += OnStopLeftEngine;
+		RocketGlobal.OnRightOperateDown += OnStartRightEngine;
+		RocketGlobal.OnRightOperateUp += OnStopRightEngine;
 		
 		RocketGlobal.OnReloadScene += OnReloadScene;
 		RocketGlobal.OnLandingSuccess += OnLandingSuccess;
@@ -142,10 +142,10 @@ public class RocketController : MonoBehaviour
 		startRightEngineAction.Disable();
 		reloadSceneAction.Disable();
 		
-		//RocketGlobal.OnLeftOperateDown -= OnStartLeftEngine;
-		//RocketGlobal.OnLeftOperateUp -= OnStopLeftEngine;
-		//RocketGlobal.OnRightOperateDown -= OnStartRightEngine;
-		//RocketGlobal.OnRightOperateUp -= OnStopRightEngine;
+		RocketGlobal.OnLeftOperateDown -= OnStartLeftEngine;
+		RocketGlobal.OnLeftOperateUp -= OnStopLeftEngine;
+		RocketGlobal.OnRightOperateDown -= OnStartRightEngine;
+		RocketGlobal.OnRightOperateUp -= OnStopRightEngine;
 		
 		RocketGlobal.OnReloadScene -= OnReloadScene;
 		RocketGlobal.OnLandingSuccess -= OnLandingSuccess;
