@@ -102,18 +102,20 @@ public class LevelManager : MonoBehaviour
 		if (levelBestTime == null) {
 			levelBestTime = ES3.Load<List<float>>("levelBestTime", new List<float>());
 			Debug.Log(">> " + levelBestTime.Count + ", " + levelData);
+			if (levelBestTime.Count >= levelData.LevelNum) {
+				CurrZodiac = LevelData.ZODIAC_NUM;
+				CurrLevel = 0;
+				PlayLevel = levelData.LevelNum;
+			} else {
+				var index = levelData.GetZodiacIndex(levelBestTime.Count);
+				CurrZodiac = index.Item1;
+				CurrLevel = index.Item2;
+				PlayLevel = levelData.GetGlobalLevel(CurrZodiac, CurrLevel);
+			}
 		}
 		
-		if (levelBestTime.Count >= levelData.LevelNum) {
-			CurrZodiac = LevelData.ZODIAC_NUM;
-			CurrLevel = 0;
-			PlayLevel = levelData.LevelNum;
+		if (levelBestTime.Count >= Instance.levelData.LevelNum) {
 			GameComplete = true;
-		} else {
-			var index = levelData.GetZodiacIndex(levelBestTime.Count);
-			CurrZodiac = index.Item1;
-			CurrLevel = index.Item2;
-			PlayLevel = levelData.GetGlobalLevel(CurrZodiac, CurrLevel);
 		}
 			
 		Debug.Log($"CurrZodiac {CurrZodiac} CurrLevel {CurrLevel} PlayLevel {PlayLevel}");
