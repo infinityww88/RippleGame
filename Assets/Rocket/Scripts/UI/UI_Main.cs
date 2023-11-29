@@ -20,7 +20,6 @@ public class UI_Main : MonoBehaviour
 	private VisualElement endDialog;
 	
 	public void SetZodiac(int index) {
-		Debug.Log($"{zodiacDescLabel.text} {zodiacDesc[index]}");
 		zodiacDescLabel.text = zodiacDesc[index];
 	}
 	

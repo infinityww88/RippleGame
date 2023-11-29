@@ -20,7 +20,6 @@ public class AudioController : MonoBehaviour
     {
 	    var musicOn = ES3.Load<bool>("music_on", true);
 	    var soundOn = ES3.Load<bool>("sound_on", true);
-	    Debug.Log($"musicOn {musicOn} soundOn {soundOn}");
 	    audioSource = GetComponent<AudioSource>();
 	    OnAudioSet(flag == Flag.Music ? musicOn : soundOn);
     }

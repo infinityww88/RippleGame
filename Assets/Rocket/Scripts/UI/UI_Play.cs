@@ -28,6 +28,8 @@ public class UI_Play : MonoBehaviour
 	
 	private VisualElement root;
 	
+	public UI_Localization localization;
+	
 	public float totalTime = 180;
 	
     // Start is called before the first frame update
@@ -125,8 +127,8 @@ public class UI_Play : MonoBehaviour
 	[Button]
 	void ShowSuccessResult(float playTime, float bestTime) {
 		Utility.ShowUI(resultDialog.parent);
-		resultlabel.text = "Success";
-		resultTimeLabel.text = bestTime == 0 ? "" : $"BestTime: {FormatPlayTime(bestTime)}";
+		resultlabel.text = localization.GetText("result-success");
+		resultTimeLabel.text = bestTime == 0 ? "" : $"{localization.GetText("result-best-time")}: {FormatPlayTime(bestTime)}";
 		resultlabel.AddToClassList("success-result");
 		resultlabel.RemoveFromClassList("fail-result");
 		resultlabel.RemoveFromClassList("new-record");
@@ -135,7 +137,7 @@ public class UI_Play : MonoBehaviour
 	[Button]
 	void ShowFailResult(float playTime, float bestTime) {
 		Utility.ShowUI(resultDialog.parent);
-		resultlabel.text = "Fail";
+		resultlabel.text = localization.GetText("result-fail");
 		resultTimeLabel.text = "";
 		resultlabel.RemoveFromClassList("success-result");
 		resultlabel.AddToClassList("fail-result");
@@ -145,7 +147,7 @@ public class UI_Play : MonoBehaviour
 	[Button]
 	void ShowBestRecordResult(float playTime, float bestTime) {
 		Utility.ShowUI(resultDialog.parent);
-		resultlabel.text = "New Record";
+		resultlabel.text = localization.GetText("result-new-record");
 		resultTimeLabel.text = "";
 		resultlabel.RemoveFromClassList("success-result");
 		resultlabel.RemoveFromClassList("fail-result");
@@ -170,7 +172,7 @@ public class UI_Play : MonoBehaviour
 		DOTween.Sequence().AppendInterval(delay)
 			.AppendCallback(action);
 	}
-	
+
 	void OnLandingResult(bool success, float playTime) {
 		// Show Result Panel
 		completed = true;

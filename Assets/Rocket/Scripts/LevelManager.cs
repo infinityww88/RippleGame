@@ -130,7 +130,7 @@ public class LevelManager : MonoBehaviour
 	public static float GetPlayLevelBestTime() {
 		#if UNITY_EDITOR
 		if (levelBestTime == null) {
-			return 45;
+			return 1;
 		}
 		#endif
 		if (PlayLevel >= levelBestTime.Count) {

@@ -67,7 +67,11 @@
     -unity-slice-bottom: 15;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(255, 255, 255);
-    font-size: 18px;
+    font-size: 24px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
 }
 
 .info-button:hover {
@@ -76,4 +80,49 @@
 
 .info-button:active {
     -unity-background-image-tint-color: rgb(176, 176, 176);
+}
+
+.lang-dropdown {
+    margin-bottom: 10px;
+    margin-top: 0;
+    -unity-text-align: middle-left;
+}
+
+.lang-dropdown > .unity-popup-field__input {
+    display: flex;
+    -unity-text-align: middle-left;
+    background-color: rgb(16, 28, 51);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: rgb(255, 255, 255);
+    border-left-color: rgb(117, 173, 255);
+    border-right-color: rgb(117, 173, 255);
+    border-top-color: rgb(117, 173, 255);
+    border-bottom-color: rgb(117, 173, 255);
+}
+
+.lang-dropdown .unity-base-popup-field__arrow {
+    background-image: url('project://database/Assets/SCI-FI%20UI%20Pack%20Pro/Common/White%20Icons/Textures/Icons4/ICON_down02.png?fileID=2800000&guid=ccbc5960842102744a8da2f729d5ffca&type=3#ICON_down02');
+    width: 20px;
+    height: 20px;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.lang-dropdown .unity-base-popup-field__text {
+    -unity-text-align: middle-left;
+    margin-right: 0;
+}
+
+.loc-key-setting-lang {
+    width: 110px;
+    font-size: 24px;
+    -unity-text-align: upper-left;
+    color: rgb(255, 255, 255);
+    margin-left: 70px;
 }
