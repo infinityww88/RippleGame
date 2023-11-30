@@ -12,15 +12,6 @@ public class Tutorial : MonoBehaviour
 		LandingOnPlatform
 	}
 	
-	[SerializeField]
-	private TextAsset checkLeftEngineDesc;
-	[SerializeField]
-	private TextAsset checkRightEngineDesc;
-	[SerializeField]
-	private TextAsset checkBothEngineDesc;
-	[SerializeField]
-	private TextAsset LandingOnPlatformDesc;
-	
 	private Step step =	Step.CheckLeftEngine;
 	
 	[SerializeField]
@@ -31,6 +22,8 @@ public class Tutorial : MonoBehaviour
 	
 	[SerializeField]
 	private GameObject shadowRocket;
+	
+	public UI_Localization localization;
 	
 	private Label tutorialLabel;
 	
@@ -50,7 +43,7 @@ public class Tutorial : MonoBehaviour
     void Start()
 	{
 		tutorialLabel = uiDoc.rootVisualElement.Q<Label>("TutorialLabel");
-		tutorialLabel.text = checkLeftEngineDesc.text;
+		tutorialLabel.text = localization.GetText("tutorial-check-left-engine");
 		rocket.StartTutorial();
 		RocketGlobal.InTutorial = true;
 	}
@@ -60,17 +53,17 @@ public class Tutorial : MonoBehaviour
     {
 	    if (step == Step.CheckLeftEngine) {
 	    	if (rocket.LeftEngineRunning) {
-	    		tutorialLabel.text = checkRightEngineDesc.text;
+	    		tutorialLabel.text = localization.GetText("tutorial-check-right-engine");
 	    		step = Step.CheckRightEngine;
 	    	}
 	    } else if (step == Step.CheckRightEngine) {
 	    	if (rocket.RightEngineRunning) {
-	    		tutorialLabel.text = checkBothEngineDesc.text;
+	    		tutorialLabel.text = localization.GetText("tutorial-check-both-engine");
 	    		step = Step.CheckBothEngine;
 	    	}
 	    } else if (step == Step.CheckBothEngine) {
 	    	if (rocket.LeftEngineRunning && rocket.RightEngineRunning) {
-	    		tutorialLabel.text = LandingOnPlatformDesc.text;
+	    		tutorialLabel.text = localization.GetText("tutorial-landing-on-platform");
 	    		step = Step.LandingOnPlatform;
 	    		shadowRocket.SetActive(true);
 	    		startTime = Time.time;
