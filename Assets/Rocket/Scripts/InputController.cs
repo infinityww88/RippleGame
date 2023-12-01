@@ -8,14 +8,12 @@ using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class InputController : MonoBehaviour
 {
-	public Rect margin;
-	private UIDocument uiDoc;
+	public UIDocument uiDoc;
 	private VisualElement leftRect;
 	private VisualElement rightRect;
     
     void Start()
-	{
-		uiDoc = FindObjectOfType<UIDocument>();
+	{ 
 		leftRect = uiDoc.rootVisualElement.Q<VisualElement>("LeftOperate");
 		rightRect = uiDoc.rootVisualElement.Q<VisualElement>("RightOperate");
     }
