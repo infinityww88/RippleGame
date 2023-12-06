@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+        <ui:Label text="Play" />
+        <ui:VisualElement class="gamepad gamepad-play-ps4 gamepad-play" />
+    </ui:VisualElement>
+</ui:UXML>

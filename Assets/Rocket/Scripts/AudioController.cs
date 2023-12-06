@@ -25,7 +25,6 @@ public class AudioController : MonoBehaviour
     }
     
 	void OnAudioSet(bool set) {
-		Debug.Log($"set {gameObject.name} {set}");
 		audioSource.volume = set ? 1 : 0;
 	}
     

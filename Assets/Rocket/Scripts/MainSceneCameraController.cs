@@ -66,6 +66,10 @@ public class MainSceneCameraController : MonoBehaviour
 	}
 	
 	public void DLeft(InputAction.CallbackContext ctx) {
+		if (ctx.phase !=	InputActionPhase.Performed) {
+			return;
+		}
+		Debug.Log("Dleft");
 		if (launched || ViewInAnimation()) {
 			return;
 		}
@@ -194,7 +198,11 @@ public class MainSceneCameraController : MonoBehaviour
 			return;
 		}
 		
-		MouseUpdate();
+				
+		if (UnityEngine.Cursor.visible) {
+			MouseUpdate();
+		}
+		
 		StickUpdate();
 		
 		int t = GetViewZodiac();

@@ -5,10 +5,16 @@ using UnityEngine.UIElements;
 using System;
 using ScriptableObjectArchitecture;
 using Sirenix.OdinInspector;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.XInput;
+using UnityEngine.InputSystem.DualShock;
+using UnityEngine.SceneManagement;
 
 public class UI_Main : MonoBehaviour
 {
 	private VisualElement root;
+	private VisualElement gamepadPanel = null;
 	
 	public StringCollection zodiacDesc;
 
@@ -17,22 +23,66 @@ public class UI_Main : MonoBehaviour
 	private Label zodiacDescLabel;
 	private Button playBtn;
 	
+	public EventSystem eventSystem;
+	
 	private VisualElement endDialog;
+	
+	public PlayerInput playInput;
+	
+	public bool useGamePad = false;
 	
 	public void SetZodiac(int index) {
 		zodiacDescLabel.text = zodiacDesc[index];
+	}
+	
+	public void OnPlay(InputAction.CallbackContext ctx) {
+		if (ctx.phase != InputActionPhase.Performed) {
+			return;
+		}
+		if (LevelManager.Instance.GameComplete) {
+			return;
+		} else {
+			Utility.HideUI(root);
+			LevelManager.Instance.Launch();
+		}
+		playInput.enabled = false;
+	}
+	
+	private void OpenSetting() {
+		setting.Show(useGamePad);
+		playInput.SwitchCurrentActionMap("Setting");
+		Utility.HideUI(gamepadPanel);
+	}
+	
+	private void OpenBestRecord() {
+		levelRank.Show(useGamePad);
+		playInput.SwitchCurrentActionMap("BestRecord");
+		Utility.HideUI(gamepadPanel);
+	}
+	
+	public void OnSetting(InputAction.CallbackContext ctx) {
+		if (ctx.phase != InputActionPhase.Performed) {
+			return;
+		}
+		OpenSetting();
+	}
+	
+	public void OnBestRecord(InputAction.CallbackContext ctx) {
+		if (ctx.phase != InputActionPhase.Performed) {
+			return;
+		}
+		OpenBestRecord();
 	}
 	
     // Start is called before the first frame update
 	void Awake()
 	{
 		root = GetComponent<UIDocument>().rootVisualElement;
-		
 		playBtn = root.Q<Button>("PlayButton");
 		
 		var settingBtn = root.Q<Button>("SettingButton");
 		settingBtn.RegisterCallback<ClickEvent>(evt => {
-			setting.Show();
+			OpenSetting();
 		});
 		
 		var levelRankBtn = root.Q<Button>("LevelRankButton");
@@ -47,6 +97,7 @@ public class UI_Main : MonoBehaviour
 		
 		endDialog = root.Q<VisualElement>("EndDialog");
 	}
+	
 	// Start is called on the frame when a script is enabled just before any of the Update methods is called the first time.
 	protected void Start()
 	{
@@ -57,6 +108,55 @@ public class UI_Main : MonoBehaviour
 				Utility.HideUI(root);
 				LevelManager.Instance.Launch();
 			});
+		}
+
+		Debug.Log($"Gamepad {Gamepad.current}");
+		if (Utility.HasController()) {
+			if (Utility.ControllerIsPS4(Gamepad.current)) {
+				gamepadPanel = root.Q<VisualElement>("GamepadMain_PS4");
+			}
+			else if (Utility.ControllerIsXBOX(Gamepad.current)) {
+				gamepadPanel = root.Q<VisualElement>("GamepadMain_XBOX");
+			}
+			SetupGamepadController();
+		}
+		else {
+			SetupUIController();
+		}
+	}
+	
+	void SetupGamepadController() {
+		UnityEngine.Cursor.visible = false;
+		eventSystem.gameObject.SetActive(false);
+		
+		playInput.SwitchCurrentActionMap("MainScene");
+		useGamePad = true;
+		Utility.ShowUI(gamepadPanel);
+		Debug.Log($"SetupGamepadController {gamepadPanel.name} {gamepadPanel.style.display}");
+	}
+	
+	public void OnCancelDeviceChange() {
+		SetupUIController();
+	}
+	
+	void SetupUIController() {
+		Debug.Log("SetupUIController");
+		UnityEngine.Cursor.visible = true;
+		eventSystem.gameObject.SetActive(true);
+		playInput.SwitchCurrentActionMap("MainSceneKeyboard");
+		useGamePad = false;
+		setting.SetupUIController();
+		levelRank.SetupUIController();
+		Utility.HideUI(gamepadPanel);
+	}
+	
+	public void SwitchAction() {
+		if (useGamePad) {
+			playInput.SwitchCurrentActionMap("MainScene");
+			Utility.ShowUI(gamepadPanel);
+		} else {
+			playInput.SwitchCurrentActionMap("MainSceneKeyboard");
+			Utility.HideUI(gamepadPanel);
 		}
 	}
 	

@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor;
 using System;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XInput;
+using UnityEngine.InputSystem.DualShock;
+using System.Linq;
 
 using Random = UnityEngine.Random;
 
@@ -33,24 +37,28 @@ public static class Utility
 		int index = Random.Range(0, collection.Count);
 		return collection[index];
 	}
-	
+
 	public static void ShowUI(VisualElement e) {
-		e.style.display = DisplayStyle.Flex;
+		if (e != null) {
+			e.style.display = DisplayStyle.Flex;
+		}
 	}
 	
 	public static void HideUI(VisualElement e) {
-		e.style.display = DisplayStyle.None;
+		if (e != null) {
+			e.style.display = DisplayStyle.None;
+		}
 	}
 	
 	public static bool Visible(VisualElement e) {
-		return e.style.display == DisplayStyle.Flex;
+		return e.resolvedStyle.display == DisplayStyle.Flex;
 		
 	}
 	
 	public static void ToggleVisible(VisualElement e) {
 		if (Visible(e)) {
 			HideUI(e);
-		} else {
+		} else {  
 			ShowUI(e);
 		}
 	}
@@ -65,5 +73,31 @@ public static class Utility
 		srs.ForEach(e => {
 			FadeSprite(e, fade);
 		});
+	}
+	
+	public static bool ControllerIsPS4(Gamepad controller) {
+		return controller is DualShockGamepad;
+	}
+	
+	public static bool ControllerIsXBOX(Gamepad controller) {
+		return controller is XInputController;
+	}
+	
+	/*
+	public static Gamepad GetFirstController() {
+		Debug.Log($"current {Gamepad.current}");
+		Gamepad.all.ForEach(dev => {
+			Debug.Log($"all dev {dev}");	
+		});
+		return Gamepad.all.Where(dev => (Gamepad.current is XInputController) || (Gamepad.current is DualShockGamepad)).Where(dev => dev.added).FirstOrDefault();
+	}
+	*/
+	
+	public static bool HasController() {
+		return Gamepad.current != null;
+	}
+	
+	public static bool isGamePad(InputDevice dev) {
+		return dev is Gamepad;
 	}
 }

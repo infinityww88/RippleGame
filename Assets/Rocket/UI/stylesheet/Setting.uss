@@ -83,8 +83,6 @@
 }
 
 .lang-dropdown {
-    margin-bottom: 10px;
-    margin-top: 0;
     -unity-text-align: middle-left;
 }
 
@@ -119,10 +117,24 @@
     margin-right: 0;
 }
 
-.loc-key-setting-lang {
-    width: 110px;
-    font-size: 24px;
-    -unity-text-align: upper-left;
-    color: rgb(255, 255, 255);
-    margin-left: 70px;
+.focusable {
+    margin-top: 3px;
+}
+
+.focus {
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-left-color: rgba(255, 255, 255, 0.53);
+    border-right-color: rgba(255, 255, 255, 0.53);
+    border-top-color: rgba(255, 255, 255, 0.53);
+    border-bottom-color: rgba(255, 255, 255, 0.53);
+}
+
+.item {
+    padding-left: 48px;
+    padding-right: 54px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }

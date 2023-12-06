@@ -1,35 +1,39 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="GamepadSetting" src="project://database/Assets/Rocket/UI/layout/GamepadSetting_PS4.uxml?fileID=9197481963319205126&amp;guid=b8557e2f0b502e842b2a0b1bd9a89bf6&amp;type=3#GamepadSetting_PS4" />
+    <ui:Template name="GamepadSetting_XBOX" src="project://database/Assets/Rocket/UI/layout/GamepadSetting_XBOX.uxml?fileID=9197481963319205126&amp;guid=9997c198ae273af40b789e824a502240&amp;type=3#GamepadSetting_XBOX" />
     <ui:Template name="OperationInfo" src="project://database/Assets/Rocket/UI/layout/OperationInfo.uxml?fileID=9197481963319205126&amp;guid=6fc6b297d298b8c4cae6ed3eeb2fd661&amp;type=3#OperationInfo" />
     <ui:Template name="ContactUXML" src="project://database/Assets/Rocket/UI/layout/Contact.uxml?fileID=9197481963319205126&amp;guid=7c3b370cfe252cd47b0bf043415db686&amp;type=3#Contact" />
     <Style src="project://database/Assets/Rocket/UI/stylesheet/Setting.uss?fileID=7433441132597879392&amp;guid=aaafa547fd95741438f72d50dec6fb60&amp;type=3#Setting" />
     <Style src="project://database/Assets/Rocket/UI/stylesheet/Toggle.uss?fileID=7433441132597879392&amp;guid=5b477fc4ee7267c45b40b6869c6fa755&amp;type=3#Toggle" />
-    <ui:VisualElement name="SettingPanel" style="flex-grow: 1; position: absolute; width: 400px; height: 348px; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=21300000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;); -unity-slice-left: 19; -unity-slice-top: 19; -unity-slice-right: 19; -unity-slice-bottom: 19;">
-        <ui:VisualElement name="MusicAndSoundButton" style="flex-grow: 0; height: 106px; justify-content: space-around; margin-top: 18px; margin-right: 18px; margin-bottom: 10px; margin-left: 18px;">
-            <ui:VisualElement name="Toggle" template="Toggle">
-                <ui:VisualElement name="ToggleMusic" class="toggle">
-                    <ui:Label text="Music" name="ToggleLabel" class="toggle-label localization loc-key-setting-music" style="flex-grow: 1; font-size: 24px; -unity-text-align: middle-left; color: rgb(255, 255, 255); width: 0; flex-shrink: 1; min-width: 0;" />
-                    <ui:Button name="ToggleMusicButton" class="toggle-button">
-                        <ui:VisualElement name="OnArea" style="flex-grow: 1; background-color: rgb(23, 195, 67);" />
-                        <ui:VisualElement name="OffArea" style="flex-grow: 1; background-color: rgb(154, 154, 154);" />
-                        <ui:VisualElement name="Marker" class="toggle-button-on" style="flex-grow: 1; width: 55%; position: absolute; height: 100%; background-color: rgb(255, 255, 255); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; transition-duration: 0.2s;" />
-                    </ui:Button>
-                </ui:VisualElement>
-            </ui:VisualElement>
-            <ui:VisualElement name="ToggleSound" class="toggle">
-                <ui:Label text="Sound" name="ToggleLabel" class="toggle-label localization loc-key-setting-sound" style="flex-grow: 1; font-size: 24px; -unity-text-align: middle-left; color: rgb(255, 255, 255); width: 0; flex-shrink: 1; min-width: 0;" />
-                <ui:Button name="ToggleSoundButton" class="toggle-button">
-                    <ui:VisualElement name="OnArea" style="flex-grow: 1; background-color: rgb(23, 195, 67);" />
-                    <ui:VisualElement name="OffArea" style="flex-grow: 1; background-color: rgb(154, 154, 154);" />
-                    <ui:VisualElement name="Marker" class="toggle-button-on" style="flex-grow: 1; width: 55%; position: absolute; height: 100%; background-color: rgb(255, 255, 255); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; transition-duration: 0.2s;" />
-                </ui:Button>
-            </ui:VisualElement>
+    <ui:Instance template="GamepadSetting" name="GamepadSetting_PS4" style="align-self: center; bottom: 0;" />
+    <ui:Instance template="GamepadSetting_XBOX" name="GamepadSetting_XBOX" style="align-self: center; bottom: 0;" />
+    <ui:VisualElement name="SettingPanel" style="flex-grow: 1; position: absolute; width: 400px; height: 348px; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=21300000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;); -unity-slice-left: 19; -unity-slice-top: 19; -unity-slice-right: 19; -unity-slice-bottom: 19; padding-top: 16px;">
+        <ui:VisualElement name="ToggleMusic" class="toggle focusable item focus-item-music">
+            <ui:Label text="Music" name="ToggleLabel" class="toggle-label localization loc-key-setting-music" style="flex-grow: 1; font-size: 24px; color: rgb(255, 255, 255); width: 0; flex-shrink: 1; min-width: 0;" />
+            <ui:Button name="ToggleMusicButton" class="toggle-button">
+                <ui:VisualElement name="OnArea" style="flex-grow: 1; background-color: rgb(23, 195, 67);" />
+                <ui:VisualElement name="OffArea" style="flex-grow: 1; background-color: rgb(154, 154, 154);" />
+                <ui:VisualElement name="Marker" class="toggle-button-on" style="flex-grow: 1; width: 55%; position: absolute; height: 100%; background-color: rgb(255, 255, 255); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; transition-duration: 0.2s;" />
+            </ui:Button>
         </ui:VisualElement>
-        <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row; align-items: flex-start; justify-content: flex-start; margin-bottom: 8px;">
-            <ui:Label text="Language" class="localization loc-key-setting-lang" />
-            <ui:DropdownField choices="English,简体中文,Русский" index="0" class="lang-dropdown" style="width: 163px; align-self: center; -unity-font-definition: url(&apos;project://database/Assets/Rocket/Font/CALIBRI%20SDF.asset?fileID=11400000&amp;guid=f082f0043830a374385e36504d4694c3&amp;type=2#CALIBRI SDF&apos;); font-size: 24px; margin-bottom: 0;" />
+        <ui:VisualElement name="ToggleSound" class="toggle focusable item focus-item-sound">
+            <ui:Label text="Sound" name="ToggleLabel" class="toggle-label localization loc-key-setting-sound" style="flex-grow: 1; font-size: 24px; color: rgb(255, 255, 255); width: 0; flex-shrink: 1; min-width: 0;" />
+            <ui:Button name="ToggleSoundButton" class="toggle-button">
+                <ui:VisualElement name="OnArea" style="flex-grow: 1; background-color: rgb(23, 195, 67);" />
+                <ui:VisualElement name="OffArea" style="flex-grow: 1; background-color: rgb(154, 154, 154);" />
+                <ui:VisualElement name="Marker" class="toggle-button-on" style="flex-grow: 1; width: 55%; position: absolute; height: 100%; background-color: rgb(255, 255, 255); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; transition-duration: 0.2s;" />
+            </ui:Button>
         </ui:VisualElement>
-        <ui:Button text="Operation" name="Operation" class="info-button localization loc-key-setting-operation" style="width: 44%; align-self: center; margin-bottom: 13px; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Btn08Blue_n%201.png?fileID=21300000&amp;guid=1d29a017345ae77479d03c2b685d8aff&amp;type=3#Btn08Blue_n 1&apos;); -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
-        <ui:Button text="Contact" name="Contact" class="info-button localization loc-key-setting-contact" style="width: 44%; align-self: center; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Btn08Blue_n%201.png?fileID=21300000&amp;guid=1d29a017345ae77479d03c2b685d8aff&amp;type=3#Btn08Blue_n 1&apos;); -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
+        <ui:VisualElement name="VisualElement" class="focusable item focus-item-lang" style="flex-grow: 0; flex-direction: row; align-items: flex-start; justify-content: space-between;">
+            <ui:Label text="Language" class="localization loc-key-setting-lang" style="font-size: 24px; color: rgb(255, 255, 255); -unity-text-align: middle-left;" />
+            <ui:DropdownField choices="English,简体中文,Русский" index="0" class="lang-dropdown" style="width: 163px; align-self: center; -unity-font-definition: url(&apos;project://database/Assets/Rocket/Font/CALIBRI%20SDF.asset?fileID=11400000&amp;guid=f082f0043830a374385e36504d4694c3&amp;type=2#CALIBRI SDF&apos;); font-size: 24px;" />
+        </ui:VisualElement>
+        <ui:VisualElement class="focusable focus-item-operate-info" style="flex-grow: 0;">
+            <ui:Button text="Operation" name="Operation" class="info-button localization loc-key-setting-operation focusable" style="width: 44%; align-self: center; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Btn08Blue_n%201.png?fileID=21300000&amp;guid=1d29a017345ae77479d03c2b685d8aff&amp;type=3#Btn08Blue_n 1&apos;); -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement class="focusable focus-item-contact" style="flex-grow: 0;">
+            <ui:Button text="Contact" name="Contact" class="info-button localization loc-key-setting-contact focusable" style="width: 44%; align-self: center; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Btn08Blue_n%201.png?fileID=21300000&amp;guid=1d29a017345ae77479d03c2b685d8aff&amp;type=3#Btn08Blue_n 1&apos;); -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
+        </ui:VisualElement>
     </ui:VisualElement>
     <ui:Instance template="OperationInfo" style="display: none;" />
     <ui:Instance template="ContactUXML" style="display: none;" />

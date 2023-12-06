@@ -1,0 +1,45 @@
+:root {
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+Label {
+    -unity-font-definition: url('project://database/Assets/Rocket/Font/CALIBRI%20SDF.asset?fileID=11400000&guid=f082f0043830a374385e36504d4694c3&type=2#CALIBRI SDF');
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+}
+
+.d-pad {
+    width: 60px;
+    height: 60px;
+}
+
+.gamepad {
+    margin-bottom: 0;
+    flex-direction: row;
+}
+
+.item {
+}
+
+.gamepad > VisualElement {
+    margin-right: 40px;
+}
+
+.localization {
+}

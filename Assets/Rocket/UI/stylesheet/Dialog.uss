@@ -54,3 +54,16 @@
 .button:active {
     -unity-background-image-tint-color: rgb(183, 183, 183);
 }
+
+.focus {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-right: 10px;
+}

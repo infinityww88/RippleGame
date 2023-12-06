@@ -1,0 +1,67 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Rocket/UI/stylesheet/CtrlBar.uss?fileID=7433441132597879392&amp;guid=1bb24785ddca4d04a99cafb78a7c122f&amp;type=3#CtrlBar" />
+    <ui:VisualElement name="GamepadPlay" focusable="false" class="gamepad" style="flex-direction: row; display: none;">
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="LeftEngine" class="localization loc-key-operation-left-engine-action" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1706736356&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_47&apos;); height: 77px;" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="RightEngine" class="localization loc-key-operation-right-engine-action" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1891203940&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_43&apos;); height: 77px;" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Pause" class="localization loc-key-operation-pause-action" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1801544266&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_39&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Restart" class="localization loc-key-pause-replay" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1203390859&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_41&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="GamepadPause" focusable="false" class="gamepad" style="flex-direction: row; display: none;">
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Navigate" class="localization loc-key-navigate" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1055778651&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_10&apos;); rotate: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Confirm" class="localization loc-key-confirm" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1847318144&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_40&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Resume" class="localization loc-key-resume" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1801544266&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_39&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Restart" class="localization loc-key-pause-replay" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1203390859&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_41&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="GamepadResult" focusable="false" class="gamepad" style="flex-direction: row; display: none;">
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Navigate" class="localization loc-key-navigate" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1055778651&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_10&apos;); rotate: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Confirm" class="localization loc-key-confirm" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1847318144&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_40&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Dismiss" class="localization loc-key-dismiss" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1801544266&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_39&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Restart" class="localization loc-key-pause-replay" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1203390859&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_41&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="GamepadResultDismiss" focusable="false" class="gamepad" style="flex-direction: row; display: none;">
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Show Result" class="localization loc-key-show-result" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1801544266&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_39&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Restart" class="localization loc-key-pause-replay" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1203390859&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_41&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -256,6 +256,7 @@ public class LevelManager : MonoBehaviour
 		launchTimeline.Play();
 		MusicController.Instance.Stop();
 		RocketGlobal.OnLaunch();
+		UnityEngine.Cursor.visible = false;
 	}
 	
 	public void Launch(int zodiac, int level) {
@@ -268,5 +269,6 @@ public class LevelManager : MonoBehaviour
 		launchTimeline.Play();
 		MusicController.Instance.Stop();
 		RocketGlobal.OnLaunch();
+		UnityEngine.Cursor.visible = false;
 	}
 }

@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Rocket/UI/stylesheet/CtrlBar.uss?fileID=7433441132597879392&amp;guid=1bb24785ddca4d04a99cafb78a7c122f&amp;type=3#CtrlBar" />
+    <ui:VisualElement name="VisualElement" class="gamepad" style="flex-direction: row;">
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Select Constellation" class="localization loc-key-select-constellation" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/ps4_gamepad.png?fileID=1759643544&amp;guid=5bcaf266818a91847a1d9b4932d694cd&amp;type=3#ps4_gamepad_5&apos;); rotate: 90deg;" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Select Level" class="localization loc-key-select-level" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/ps4_gamepad.png?fileID=722213706&amp;guid=5bcaf266818a91847a1d9b4932d694cd&amp;type=3#ps4_gamepad_21&apos;); rotate: 90deg;" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Play" class="localization loc-key-play-button" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/ps4_gamepad.png?fileID=-1469608731&amp;guid=5bcaf266818a91847a1d9b4932d694cd&amp;type=3#ps4_gamepad_12&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement class="item" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Back" class="localization loc-key-pause-back" />
+            <ui:VisualElement class="button" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/ps4_gamepad.png?fileID=1971793846&amp;guid=5bcaf266818a91847a1d9b4932d694cd&amp;type=3#ps4_gamepad_11&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

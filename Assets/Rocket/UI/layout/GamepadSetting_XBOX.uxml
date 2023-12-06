@@ -1,0 +1,51 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Rocket/UI/stylesheet/CtrlBar.uss?fileID=7433441132597879392&amp;guid=1bb24785ddca4d04a99cafb78a7c122f&amp;type=3#CtrlBar" />
+    <ui:VisualElement name="GamePadToggle" class="gamepad" style="display: none;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Navigate" class="loc-key-navigate localization" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1055778651&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_10&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Toggle" class="loc-key-toggle localization" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1847318144&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_40&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Back" class="loc-key-pause-back localization" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1801544266&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_39&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="GamePadDropDown" class="gamepad" style="display: none;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Navigate" class="loc-key-navigate localization" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1055778651&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_10&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Language" class="loc-key-setting-lang localization" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1455006768&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_24&apos;); rotate: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Back" class="loc-key-pause-back localization" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1801544266&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_39&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="GamePadButton" class="gamepad" style="display: none;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Navigate" class="loc-key-navigate localization" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=1055778651&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_10&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Confirm" class="loc-key-confirm localization" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1847318144&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_40&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Back" class="loc-key-pause-back localization" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1801544266&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_39&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="GamePadCancel" class="gamepad" style="display: none;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Back" class="loc-key-pause-back localization" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/xbox_gamepad.png?fileID=-1801544266&amp;guid=f63677e085e9aa74098c1c26598780f4&amp;type=3#xbox_gamepad_39&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

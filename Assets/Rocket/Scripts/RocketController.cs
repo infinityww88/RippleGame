@@ -31,15 +31,6 @@ public class RocketController : MonoBehaviour
 	
 	private AudioSource audioSouce;
 	
-	[SerializeField]
-	private InputAction startLeftEngineAction;
-	
-	[SerializeField]
-	private InputAction startRightEngineAction;
-	
-	[SerializeField]
-	private InputAction reloadSceneAction;
-	
 	public Transform COM;
 	
 	private bool leftEngineStart = false;
@@ -67,17 +58,6 @@ public class RocketController : MonoBehaviour
 	{
 		soundOn = ES3.Load<bool>("sound_on", true);
 		
-		//rigidbody.centerOfMass = COM.localPosition;
-		startLeftEngineAction.performed += ctx => OnStartLeftEngine();
-		startRightEngineAction.performed += ctx => OnStartRightEngine();
-	    
-		startLeftEngineAction.canceled += ctx => OnStopLeftEngine();
-		startRightEngineAction.canceled += ctx => OnStopRightEngine();
-	    
-		reloadSceneAction.performed += ctx => OnReloadScene();
-		reloadSceneAction.performed += ctx => {
-			Debug.Log("Reload Scene Press");
-		};
 		audioSouce = GetComponent<AudioSource>();
 		var proCamera = Camera.main.GetComponent<ProCamera2D>();
 		proCamera.AddCameraTarget(transform);
@@ -88,19 +68,14 @@ public class RocketController : MonoBehaviour
 	// This function is called when the object becomes enabled and active.
 	protected void OnEnable()
 	{
-		startLeftEngineAction.Enable();
-		startRightEngineAction.Enable();
-		reloadSceneAction.Enable();
-		
-		//RocketGlobal.OnLeftOperateDown += OnStartLeftEngine;
-		//RocketGlobal.OnLeftOperateUp += OnStopLeftEngine;
-		//RocketGlobal.OnRightOperateDown += OnStartRightEngine;
-		//RocketGlobal.OnRightOperateUp += OnStopRightEngine;
-		
-		RocketGlobal.OnReloadScene += OnReloadScene;
 		RocketGlobal.OnLandingSuccess += OnLandingSuccess;
 		RocketGlobal.OnPause += OnPause;
 		RocketGlobal.OnResume += OnResume;
+		
+		RocketGlobal.OnLeftOperateDown += OnStartLeftEngine;
+		RocketGlobal.OnRightOperateDown += OnStartRightEngine;
+		RocketGlobal.OnLeftOperateUp += OnStopLeftEngine;
+		RocketGlobal.OnRightOperateUp += OnStopRightEngine;
 	}
 	
 	public void StartTutorial() {
@@ -138,19 +113,14 @@ public class RocketController : MonoBehaviour
 	// This function is called when the behaviour becomes disabled () or inactive.
 	protected void OnDisable()
 	{
-		startLeftEngineAction.Disable();
-		startRightEngineAction.Disable();
-		reloadSceneAction.Disable();
-		
-		//RocketGlobal.OnLeftOperateDown -= OnStartLeftEngine;
-		//RocketGlobal.OnLeftOperateUp -= OnStopLeftEngine;
-		//RocketGlobal.OnRightOperateDown -= OnStartRightEngine;
-		//RocketGlobal.OnRightOperateUp -= OnStopRightEngine;
-		
-		RocketGlobal.OnReloadScene -= OnReloadScene;
 		RocketGlobal.OnLandingSuccess -= OnLandingSuccess;
 		RocketGlobal.OnPause -= OnPause;
 		RocketGlobal.OnResume -= OnResume;
+		
+		RocketGlobal.OnLeftOperateDown -= OnStartLeftEngine;
+		RocketGlobal.OnRightOperateDown -= OnStartRightEngine;
+		RocketGlobal.OnLeftOperateUp -= OnStopLeftEngine;
+		RocketGlobal.OnRightOperateUp -= OnStopRightEngine;
 	}
 	
 	void OnStartLeftEngine() {
@@ -233,11 +203,6 @@ public class RocketController : MonoBehaviour
 				GetComponent<RocketLandingChecker>().enabled = false;
 			}
 		}
-	}
-
-	void OnReloadScene() {
-		//MusicController.Instance.Stop();
-		SceneManager.LoadScene(1);
 	}
 
     // Update is called once per frame

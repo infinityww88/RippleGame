@@ -19,7 +19,7 @@ public class UI_Localization : MonoBehaviour
 	{
 		langIndex = LoadLangIndex();
 	}
-	
+
     // Start is called before the first frame update
     void Start()
     {
