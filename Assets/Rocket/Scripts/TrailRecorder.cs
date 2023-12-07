@@ -22,7 +22,7 @@ public class TrailRecorder : MonoBehaviour
 		RocketGlobal.OnShowTrail += OnShowTrail;
 	}
 	
-	void OnShowTrail(bool show) {
+	void OnShowTrail(bool landingSuccess, bool show) {
 		if (show) {
 			lineRenderer.enabled = true;
 			if (lineRenderer.positionCount == 0 && points.Count > 0) {

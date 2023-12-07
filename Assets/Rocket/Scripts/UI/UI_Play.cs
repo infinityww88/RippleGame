@@ -39,6 +39,7 @@ public class UI_Play : MonoBehaviour
 	private Label resultlabel;
 	private Label resultTimeLabel;
 	private bool completed = false;
+	private bool landingSuccess = false;
 	
 	public float failDialogDelay = 2f;
 	public float successDialogDelay = 4f;
@@ -94,17 +95,24 @@ public class UI_Play : MonoBehaviour
 	    resultRestartBtnFrame = resultDialog.Q<VisualElement>("ReplayBtnFrame");
 	    resultBackBtnFrame = resultDialog.Q<VisualElement>("BackBtnFrame");
 	    
-	    gamepadPanel = root.Q<VisualElement>("Gamepad_PS4");
-	    gamepadPlay = gamepadPanel.Q<VisualElement>("GamepadPlay");
-	    gamepadPause = gamepadPanel.Q<VisualElement>("GamepadPause");
-	    gamepadResult = gamepadPanel.Q<VisualElement>("GamepadResult");
-	    gamepadResultDismiss = gamepadPanel.Q<VisualElement>("GamepadResultDismiss");
+	    if (Utility.HasController()) {
+	    	if (Utility.ControllerIsPS4(Gamepad.current)) {
+	    		gamepadPanel = root.Q<VisualElement>("GamepadPlay_PS4");
+	    	}
+	    	else if (Utility.ControllerIsXBOX(Gamepad.current)) {
+	    		gamepadPanel = root.Q<VisualElement>("GamepadPlay_XBOX");
+	    	}
+	    	
+		    gamepadPlay = gamepadPanel.Q<VisualElement>("GamepadPlay");
+		    gamepadPause = gamepadPanel.Q<VisualElement>("GamepadPause");
+		    gamepadResult = gamepadPanel.Q<VisualElement>("GamepadResult");
+		    gamepadResultDismiss = gamepadPanel.Q<VisualElement>("GamepadResultDismiss");
+	    	Assert.IsNotNull(gamepadPlay);
+		    Assert.IsNotNull(gamepadPause);
+		    Assert.IsNotNull(gamepadResultDismiss);
+		    Assert.IsNotNull(gamepadResult);
+	    }
 
-	    Assert.IsNotNull(gamepadPlay);
-	    Assert.IsNotNull(gamepadPause);
-	    Assert.IsNotNull(gamepadResultDismiss);
-	    Assert.IsNotNull(gamepadResult);
-	    
 	    float bestTime = LevelManager.GetPlayLevelBestTime();
 	    bestTime = Mathf.Min(totalTime, bestTime);
 	    float angle = bestTime / totalTime * 360;
@@ -183,9 +191,9 @@ public class UI_Play : MonoBehaviour
 		var marker = showTrailButton.Q<VisualElement>("Marker");
 		marker.ToggleInClassList("toggle-button-on");
 		if (marker.ClassListContains("toggle-button-on")) {
-			RocketGlobal.OnShowTrail(true);
+			RocketGlobal.OnShowTrail(landingSuccess, true);
 		} else {
-			RocketGlobal.OnShowTrail(false);
+			RocketGlobal.OnShowTrail(landingSuccess, false);
 		}
 	}
     
@@ -323,6 +331,7 @@ public class UI_Play : MonoBehaviour
 	
 	void SetupResult(bool success, float playTime) {
 		completed = true;
+		landingSuccess = success;
 		var bestTime = LevelManager.GetPlayLevelBestTime();
 		LevelManager.UpdatePlayLevelRecord(success, playTime);
 		Debug.Log($"On Landing Result {success} {playTime} {bestTime}");
@@ -401,11 +410,17 @@ public class UI_Play : MonoBehaviour
 		}
 		
 		public override void OnEnter() {
+			if (gamepad == null) {
+				return;
+			}
 			Utility.ShowUI(gamepad.parent);
 			Utility.ShowUI(gamepad);
 		}
 		
 		public override void OnExit() {
+			if (gamepad == null) {
+				return;
+			}
 			Utility.HideUI(gamepad.parent);
 			Utility.HideUI(gamepad);
 		}

@@ -39,8 +39,11 @@ public class UI_DeviceChange : MonoBehaviour
 	}
 		
 	void OnDeviceChange(InputDevice dev, InputDeviceChange devChange) {
-		if (!Utility.isGamePad(dev) || (devChange != InputDeviceChange.Reconnected && 
-			devChange != InputDeviceChange.Disconnected)) {
+		if (Utility.isGamePad(dev)) {
+			Debug.Log($"device is game {dev} {devChange}");
+		}
+		if (!Utility.isGamePad(dev) || (devChange != InputDeviceChange.Added && 
+			devChange != InputDeviceChange.Removed)) {
 			return;
 		}
 		Utility.ShowUI(deviceChangeConfirm.parent);

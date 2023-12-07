@@ -33,11 +33,11 @@ public class RocketLevel : MonoBehaviour
 		RocketGlobal.OnShowTrail -= OnShowTrail;
 	}
 	
-	void OnShowTrail(bool show) {
+	void OnShowTrail(bool landingSuccess, bool show) {
 		if (show) {
-			Show();
+			Show(landingSuccess);
 		} else {
-			Hide();
+			Hide(landingSuccess);
 		}
 	}
 	
@@ -50,7 +50,7 @@ public class RocketLevel : MonoBehaviour
 		}, 0, hideDuration).SetTarget(gameObject).OnComplete(() => {
 			Utility.FadeSprites(gems, 1);
 			Utility.FadeSprites(obstacles, 1);
-			Hide();
+			Hide(true);
 		});
 	}
 	
@@ -60,13 +60,15 @@ public class RocketLevel : MonoBehaviour
 		});
 	}
 	
-	void Show() {
+	void Show(bool landingSuccess) {
 		SetSpritesVisible(gems, true);
 		SetSpritesVisible(obstacles, true);
 	}
 	
-	void Hide() {
-		SetSpritesVisible(gems, false);
-		SetSpritesVisible(obstacles, false);
+	void Hide(bool landingSuccess) {
+		if (landingSuccess) {
+			SetSpritesVisible(gems, false);
+			SetSpritesVisible(obstacles, false);
+		}
 	}
 }
