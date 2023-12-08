@@ -128,7 +128,7 @@ public class UI_Play : MonoBehaviour
 	    RocketGlobal.IsCompleted = false;
 	    RocketGlobal.IsPaused = false;
 	    
-	    UnityEngine.Cursor.visible = false;
+	    Utility.SetMouse(false);
     }
     
 	public void OnReload(InputAction.CallbackContext ctx) {
@@ -152,9 +152,31 @@ public class UI_Play : MonoBehaviour
 			}
 		}
 	}
+	
+	[Button]
+	void OnGameOverlayActivated(bool activated) {
+		if (activated) {
+			if (!RocketGlobal.IsCompleted && !RocketGlobal.IsPaused) {
+				RocketGlobal.IsPaused = true;
+				RocketGlobal.OnPause?.Invoke();
+			}
+			playerInput.enabled = false;
+		}
+		else {
+			if (RocketGlobal.IsPaused) {
+				RocketGlobal.IsPaused = false;
+				RocketGlobal.OnResume?.Invoke();
+			}
+			playerInput.enabled = true;
+			if (useGamePad) {
+				playerInput.SwitchCurrentActionMap("Gamepad");
+			} else {
+				playerInput.SwitchCurrentActionMap("Keyboard");
+			}
+		}
+	}
     
 	void SetupGamepadController() {
-		Debug.Log($"==> SetupGamepadController");
 		playerInput.SwitchCurrentActionMap("Gamepad");
 		eventSystem.gameObject.SetActive(false);
 		useGamePad = true;
@@ -198,7 +220,6 @@ public class UI_Play : MonoBehaviour
 	}
     
 	void Pause() {
-		Debug.Log("paused");
 		RocketGlobal.IsPaused = true;
 		RocketGlobal.OnPause();
 		Utility.ShowUI(pauseDialog.parent);
@@ -228,7 +249,7 @@ public class UI_Play : MonoBehaviour
     
 	[Button]
 	void ShowSuccessResult(float playTime, float bestTime) {
-		UnityEngine.Cursor.visible = !useGamePad;
+		Utility.SetMouse(!useGamePad);
 		Utility.ShowUI(resultDialog.parent);
 		resultlabel.text = localization.GetText("result-success");
 		resultTimeLabel.text = bestTime == 0 ? "" : $"{localization.GetText("result-best-time")}: {FormatPlayTime(bestTime)}";
@@ -240,7 +261,7 @@ public class UI_Play : MonoBehaviour
 	
 	[Button]
 	void ShowFailResult(float playTime, float bestTime) {
-		UnityEngine.Cursor.visible = !useGamePad;
+		Utility.SetMouse(!useGamePad);
 		Utility.ShowUI(resultDialog.parent);
 		resultlabel.text = localization.GetText("result-fail");
 		resultTimeLabel.text = "";
@@ -259,7 +280,7 @@ public class UI_Play : MonoBehaviour
 	
 	[Button]
 	void ShowBestRecordResult(float playTime, float bestTime) {
-		UnityEngine.Cursor.visible = !useGamePad;
+		Utility.SetMouse(!useGamePad);
 		Utility.ShowUI(resultDialog.parent);
 		resultlabel.text = localization.GetText("result-new-record");
 		resultTimeLabel.text = "";
@@ -275,17 +296,18 @@ public class UI_Play : MonoBehaviour
 		RocketGlobal.OnLandingResult += OnLandingResult;
 		RocketGlobal.OnResume += OnResume;
 		RocketGlobal.OnPause += OnPause;
+		RocketGlobal.OnGameOverlayActivated += OnGameOverlayActivated;
 	}
 	
 	void OnPause() {
 		if (!useGamePad) {
-			UnityEngine.Cursor.visible = true;
+			Utility.SetMouse(true);
 		}
 	}
 	
 	void OnResume() {
 		if (!useGamePad) {
-			UnityEngine.Cursor.visible = false;
+			Utility.SetMouse(false);
 		}
 	}
 	
@@ -295,34 +317,39 @@ public class UI_Play : MonoBehaviour
 		RocketGlobal.OnLandingResult -= OnLandingResult;
 		RocketGlobal.OnResume -= OnResume;
 		RocketGlobal.OnPause -= OnPause;
+		RocketGlobal.OnGameOverlayActivated -= OnGameOverlayActivated;
 	}
 		
 	public void OnLeftEngine(InputAction.CallbackContext ctx) {
 		if (ctx.phase == InputActionPhase.Performed) {
-			Debug.Log($"==> left engine down {RocketGlobal.OnLeftOperateDown}");
-			RocketGlobal.OnLeftOperateDown();
+			RocketGlobal.OnLeftOperateDown?.Invoke();
 		} else if (ctx.phase == InputActionPhase.Canceled) {
-			Debug.Log("==> left engine up");
-			RocketGlobal.OnLeftOperateUp();
+			RocketGlobal.OnLeftOperateUp?.Invoke();
 		}
 	}
 	
 	public void OnRightEngine(InputAction.CallbackContext ctx) {
 		if (ctx.phase == InputActionPhase.Performed) {
-			RocketGlobal.OnRightOperateDown();
+			RocketGlobal.OnRightOperateDown?.Invoke();
 		} else if (ctx.phase == InputActionPhase.Canceled) {
-			RocketGlobal.OnRightOperateUp();
+			RocketGlobal.OnRightOperateUp?.Invoke();
 		}
+	}
+	
+	// This function is called when the MonoBehaviour will be destroyed.
+	protected void OnDestroy()
+	{
+		DOTween.Kill(gameObject, false);
 	}
 	
 	void DelayCall(TweenCallback action, float delay) {
 		DOTween.Sequence().AppendInterval(delay)
-			.AppendCallback(action);
+			.AppendCallback(action)
+			.SetTarget(gameObject);
 	}
 
 	void OnLandingResult(bool success, float playTime) {
 		// Show Result Panel
-		Debug.Log($"{playerInput.currentActionMap}");
 		SetupResult(success, playTime);
 		if (useGamePad) {
 			Trigger(CtrlEvent.LandingResult);

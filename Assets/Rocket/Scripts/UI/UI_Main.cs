@@ -96,6 +96,7 @@ public class UI_Main : MonoBehaviour
 		zodiacDescLabel = root.Q<Label>("ZodiacTextLabel");
 		
 		endDialog = root.Q<VisualElement>("EndDialog");
+		Screen.SetResolution(1920, 1080, FullScreenMode.Windowed);
 	}
 	
 	// Start is called on the frame when a script is enabled just before any of the Update methods is called the first time.
@@ -126,7 +127,7 @@ public class UI_Main : MonoBehaviour
 	}
 	
 	void SetupGamepadController() {
-		UnityEngine.Cursor.visible = false;
+		Utility.SetMouse(false);
 		eventSystem.gameObject.SetActive(false);
 		
 		playInput.SwitchCurrentActionMap("MainScene");
@@ -141,7 +142,7 @@ public class UI_Main : MonoBehaviour
 	
 	void SetupUIController() {
 		Debug.Log("SetupUIController");
-		UnityEngine.Cursor.visible = true;
+		Utility.SetMouse(true);
 		eventSystem.gameObject.SetActive(true);
 		playInput.SwitchCurrentActionMap("MainSceneKeyboard");
 		useGamePad = false;

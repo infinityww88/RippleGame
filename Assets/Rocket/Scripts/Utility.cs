@@ -100,4 +100,12 @@ public static class Utility
 	public static bool isGamePad(InputDevice dev) {
 		return dev is Gamepad;
 	}
+	
+	public static void SetMouse(bool visible) {
+		UnityEngine.Cursor.visible = visible;
+	}
+	
+	public static bool MouseVisible() {
+		return UnityEngine.Cursor.visible;
+	}
 }

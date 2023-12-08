@@ -6,7 +6,6 @@ using Steamworks;
 public class SteamScript : MonoBehaviour
 {
 	private Callback<GameOverlayActivated_t> gameOverlayActivated;
-	public SteamManager sm;
 	
     // Start is called before the first frame update
     void Start()
@@ -18,21 +17,14 @@ public class SteamScript : MonoBehaviour
 	    	Debug.Log("Steam not inited");
 	    }
     }
-    
+   
 	private void OnGameOverlayActivated(GameOverlayActivated_t callback) {
+		Debug.Log($"Steam OnGameOverlayActivated {callback.m_bActive != 0}");
 		if (callback.m_bActive != 0) {
-			RocketGlobal.OnPause();
+			RocketGlobal.OnGameOverlayActivated?.Invoke(true);
 		}
 		else {
-			RocketGlobal.OnResume();
-		}
-	}
-	
-	// Update is called every frame, if the MonoBehaviour is enabled.
-	protected void Update()
-	{
-		if (SteamUtils.IsOverlayEnabled()) {
-			Debug.Log("Steam overlay enabled");
+			RocketGlobal.OnGameOverlayActivated?.Invoke(false);
 		}
 	}
 }

@@ -25,11 +25,9 @@ namespace StateMachine
 		}
 		
 		public virtual void OnEnter() {
-			Debug.Log($"state enter {this}");
 		}
 		
 		public virtual void OnExit() {
-			Debug.Log($"state exit {this}");
 		}
 		
 		public virtual State<T> Trigger(T transition) {
@@ -42,7 +40,6 @@ namespace StateMachine
 					nextState.parentState?.OnEnter();
 				}
 				nextState.OnEnter();
-				Debug.Log($"tranisition {this} -> {nextState}");
 				return nextState;
 			}
 			return this;

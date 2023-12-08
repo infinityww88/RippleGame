@@ -902,6 +902,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 54c7e4f4-6c10-4525-86f7-d010f4834c6e
     m_ActionName: 'Keyboard/Reload[/Keyboard/r]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1883980713}
+        m_TargetAssemblyTypeName: UI_Play, Assembly-CSharp
+        m_MethodName: OnTestSteamOverlayToggle
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c9589f18-6fb7-434b-828e-17cc66f5dd59
+    m_ActionName: 'Keyboard/test[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1883980713}
+        m_TargetAssemblyTypeName: UI_Play, Assembly-CSharp
+        m_MethodName: OnTestSteamOverlayToggle
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3d5de5a1-20ef-482b-95f1-8be11ae01a29
+    m_ActionName: 'Gamepad/test[/XInputControllerWindows/buttonNorth]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Keyboard
@@ -1030,12 +1062,12 @@ GameObject:
   - component: {fileID: 1043949076}
   - component: {fileID: 1043949075}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Steam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1043949075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,7 +1080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9770312047ead43bbbc59d9fa98c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sm: {fileID: 0}
 --- !u!4 &1043949076
 Transform:
   m_ObjectHideFlags: 0

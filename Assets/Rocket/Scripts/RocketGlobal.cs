@@ -23,6 +23,7 @@ public static class RocketGlobal
 	public static Action OnPause;
 	public static Action OnResume;
 	public static Action OnLaunch;
+	public static Action<bool> OnGameOverlayActivated;
 	public static Action<bool, bool> OnShowTrail;
 	public static bool IsPaused { get; set; }
 	public static bool InTutorial { get; set; }

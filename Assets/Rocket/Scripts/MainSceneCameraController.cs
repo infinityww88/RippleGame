@@ -199,7 +199,7 @@ public class MainSceneCameraController : MonoBehaviour
 		}
 		
 				
-		if (UnityEngine.Cursor.visible) {
+		if (Utility.MouseVisible()) {
 			MouseUpdate();
 		}
 		

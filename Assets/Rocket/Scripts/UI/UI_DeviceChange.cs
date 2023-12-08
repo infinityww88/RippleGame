@@ -47,7 +47,7 @@ public class UI_DeviceChange : MonoBehaviour
 			return;
 		}
 		Utility.ShowUI(deviceChangeConfirm.parent);
-		UnityEngine.Cursor.visible = true;
+		Utility.SetMouse(true);
 		eventSystem.gameObject.SetActive(true);
 		onDeviceChange.Invoke();
 	}

@@ -17,6 +17,26 @@ public class RocketLevelEditor : OdinEditorWindow {
 	private List<GameObject> gemPrefabs;
 	public float minScale = 1;
 	public float maxScale = 3;
+	public RenderTextureFormat format;
+	
+	[Button]
+	private void CaptureCamera(int width, int height, string fileName) {
+		Debug.Log($"{Camera.main.name}");
+		RenderTexture rt = new RenderTexture(width, height, 32, format);
+		var t = RenderTexture.active;
+		RenderTexture.active = rt;
+		Camera.main.targetTexture = rt;
+		Camera.main.Render();
+		Texture2D tex = new Texture2D(rt.width, rt.height);
+		tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
+		tex.Apply();
+		byte[] data = ImageConversion.EncodeToPNG(tex);
+		string filePath = Application.dataPath + $"/Rocket/{fileName}.png";
+		Debug.Log($"{filePath}");
+		File.WriteAllBytes(filePath, data);
+		Camera.main.targetTexture = null;
+		RenderTexture.active = t;
+	}
 	
 	[MenuItem("Tools/Rocket/LevelEditor #e")]
 	private static void OpenWindow() {
