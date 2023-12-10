@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Rocket/UI/stylesheet/RequestAd.uss?fileID=7433441132597879392&amp;guid=ae73fc8183692894c928c1b427aa7e1a&amp;type=3#RequestAd" />
+    <ui:VisualElement class="background" style="flex-grow: 1; width: 350px; height: auto; position: absolute; scale: 2 2; top: 36%; left: 40%;">
+        <ui:Label text="View AD to get 10 rockets?" name="RequestText" style="color: rgb(255, 255, 255); font-size: 28px; white-space: normal; -unity-text-align: upper-center; margin-bottom: 30px;" />
+        <ui:VisualElement style="flex-grow: 0; flex-direction: row; justify-content: center;">
+            <ui:Button text="Confirm" name="ConfirmBtn" class="button localization loc-key-confirm" />
+            <ui:Button text="Cancel" name="CancelBtn" class="button localization loc-key-cancel" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

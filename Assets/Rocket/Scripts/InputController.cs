@@ -50,12 +50,12 @@ public class InputController : MonoBehaviour
 	    		if (t.began) {
 	    			if (leftRect.worldBound.Contains(pos) &&
 		    			leftEngine == false) {
-	    				RocketGlobal.OnLeftOperateDown();
+	    				RocketGlobal.OnLeftOperateDown?.Invoke();
 	    				leftTouchId = t.touchId;
 	    				leftEngine = true;
 		    			} else if (rightRect.worldBound.Contains(pos) &&
 		    			rightEngine == false) {
-	    				RocketGlobal.OnRightOperateDown();
+			    			RocketGlobal.OnRightOperateDown?.Invoke();
 	    				rightTouchId = t.touchId;
 	    				rightEngine = true;
 	    			}
@@ -63,11 +63,11 @@ public class InputController : MonoBehaviour
 	    			if (t.touchId == leftTouchId && leftEngine) {
 	    				leftEngine = false;
 	    				leftTouchId = -1000;
-	    				RocketGlobal.OnLeftOperateUp();
+	    				RocketGlobal.OnLeftOperateUp?.Invoke();
 	    			} else if (t.touchId == rightTouchId && rightEngine) {
 	    				rightEngine = false;
 	    				rightTouchId = -1000;
-	    				RocketGlobal.OnRightOperateUp();
+	    				RocketGlobal.OnRightOperateUp?.Invoke();
 	    			}
 	    		}
 	    	}

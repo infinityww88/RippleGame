@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Rocket/UI/stylesheet/OperationInfo.uss?fileID=7433441132597879392&amp;guid=8785a610d23666b419930a07ccc93736&amp;type=3#OperationInfo" />
-    <ui:VisualElement name="OperationInfoPanel" class="table" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=21300000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;); height: 387px;">
+    <ui:VisualElement name="OperationInfoPanel" class="table" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=21300000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;); height: 387px; scale: 2 2;">
         <ui:VisualElement name="Row" class="row header">
             <ui:Label text="Action" class="cell function-cell localization loc-key-operation-action" />
             <ui:Label text="Controls" class="cell description-cell localization loc-key-operation-controls" />

@@ -34,7 +34,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 43
+      Data: 47
     - Name: 
       Entry: 7
       Data: 
@@ -488,9 +488,7 @@ MonoBehaviour:
       Data: tutorial-check-both-engine
     - Name: $v
       Entry: 1
-      Data: Press <color=green>F</color> Key and <color=green>J</color> Key, or push
-        <color=green>Left Joystick</color> and <color=green>Right Joystick</color>
-        simulateously to start both engines
+      Data: Touch both rectangles to start both engines simultaneously
     - Name: 
       Entry: 8
       Data: 
@@ -502,8 +500,7 @@ MonoBehaviour:
       Data: tutorial-check-left-engine
     - Name: $v
       Entry: 1
-      Data: Press <color=green>F</color> Key or push <color=green>Left Joystick</color>
-        to start left engine
+      Data: Touch left rectangle to start left engine
     - Name: 
       Entry: 8
       Data: 
@@ -515,8 +512,7 @@ MonoBehaviour:
       Data: tutorial-check-right-engine
     - Name: $v
       Entry: 1
-      Data: Press <color=green>J</color> Key or push <color=green>Right Joystick</color>
-        to start right engine
+      Data: Touch right rectangle to start  right engine
     - Name: 
       Entry: 8
       Data: 
@@ -553,6 +549,54 @@ MonoBehaviour:
     - Name: $v
       Entry: 1
       Data: Restart
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: request-ad-main
+    - Name: $v
+      Entry: 1
+      Data: Watch ad to get 10 more rockets?
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: confirm
+    - Name: $v
+      Entry: 1
+      Data: Confirm
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: cancel
+    - Name: $v
+      Entry: 1
+      Data: Cancel
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: request-ad-play
+    - Name: $v
+      Entry: 1
+      Data: No more rockets. Watch ad to get more rockets?
     - Name: 
       Entry: 8
       Data: 

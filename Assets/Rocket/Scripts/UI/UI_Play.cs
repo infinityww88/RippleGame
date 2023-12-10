@@ -27,10 +27,14 @@ public class UI_Play : MonoBehaviour
 	public InputAction pauseAction;
 	
 	private VisualElement root;
+	public UI_RequestAd requestAdDialog;
 	
 	public UI_Localization localization;
 	
 	public float totalTime = 180;
+	public RocketReward rocketReward;
+	public float rewardAnimationDuration = 5f;
+	public AdsTest googleAds;
 	
     // Start is called before the first frame update
     void Start()
@@ -52,7 +56,7 @@ public class UI_Play : MonoBehaviour
 	    SetupToggleShowTrail();
 	    
 	    replayButtons.ForEach(btn => {
-	    	btn.RegisterCallback<ClickEvent>(evt => Replay());
+	    	btn.RegisterCallback<ClickEvent>(OnReplay);
 	    });
 	    
 	    backButtons.ForEach(btn => {
@@ -82,6 +86,30 @@ public class UI_Play : MonoBehaviour
 	    float angle = bestTime / totalTime * 360;
 	    innerTimeRing.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
+    
+	void OnReplay(ClickEvent evt) {
+		if (rocketReward.RocketNum > 0) {
+			rocketReward.Use1Rocket();
+			Replay();
+		} else {
+			Utility.HideUI(resultDialog);
+			requestAdDialog.Show();
+		}
+	}
+
+	public void ShowResultDialog() {
+		Utility.ShowUI(resultDialog);
+	}
+	
+	public void OnRequestAd() {
+		//rocketReward.Play(() => ShowResultDialog());
+		googleAds.Open();
+	}
+	
+	public void AdReward() {
+		rocketReward.Play();
+		DelayCall(ShowResultDialog, rewardAnimationDuration);
+	}
     
 	void SetupToggleShowTrail() {
 		var showTrailButton = root.Q<Button>("ToggleShowTrailButton");
@@ -168,9 +196,16 @@ public class UI_Play : MonoBehaviour
 		RocketGlobal.OnLandingResult -= OnLandingResult;
 	}
 	
+	// This function is called when the MonoBehaviour will be destroyed.
+	protected void OnDestroy()
+	{
+		DOTween.Kill(gameObject, false);
+	}
+	
 	void DelayCall(TweenCallback action, float delay) {
 		DOTween.Sequence().AppendInterval(delay)
-			.AppendCallback(action);
+			.AppendCallback(action)
+			.SetTarget(gameObject);
 	}
 
 	void OnLandingResult(bool success, float playTime) {
@@ -184,9 +219,15 @@ public class UI_Play : MonoBehaviour
 		if (!success) {
 			DelayCall(() => ShowFailResult(playTime, bestTime), failDialogDelay);
 		} else if (playTime >= bestTime) {
-			DelayCall(() => ShowSuccessResult(playTime, bestTime), successDialogDelay);
+			DelayCall(() => {
+				rocketReward.Play();
+				DelayCall(() => ShowSuccessResult(playTime, bestTime), rewardAnimationDuration);
+			}, successDialogDelay);
 		} else {
-			DelayCall(() => ShowBestRecordResult(playTime, bestTime), successDialogDelay);
+			DelayCall(() => {
+				rocketReward.Play();
+				DelayCall(() => ShowBestRecordResult(playTime, bestTime), rewardAnimationDuration);
+			}, successDialogDelay);
 		}
 	}
 	

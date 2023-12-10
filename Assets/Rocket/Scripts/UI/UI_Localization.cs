@@ -35,6 +35,7 @@ public class UI_Localization : MonoBehaviour
    
 	[Button]
 	public void SetLocalization(SystemLanguage lang) {
+		langIndex = langs.IndexOf(lang);
 		locElements.ForEach(e => {
 			var key = GetLocKey(e);
 			var text = locConfig.locMap[lang].text[key];

@@ -210,7 +210,6 @@ public class RocketController : MonoBehaviour
 	protected void OnCollisionEnter2D(Collision2D collisionInfo)
 	{	
 		if (collisionInfo.gameObject.tag == "TargetPlatform" && collisionInfo.otherCollider.tag == "RocketEngine") {
-			Debug.Log("OK");
 			if (state == State.Running) {
 				//audioSouce.PlayOneShot(engineImpactClip);
 			} else if (state == State.Destroyed) {

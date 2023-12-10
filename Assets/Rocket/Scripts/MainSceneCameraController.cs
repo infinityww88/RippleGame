@@ -6,6 +6,10 @@ using UnityEngine.InputSystem.Controls;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem.EnhancedTouch;
+
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
+using TouchPhase = UnityEngine.InputSystem.TouchPhase;
 
 public class MainSceneCameraController : MonoBehaviour
 {
@@ -169,6 +173,27 @@ public class MainSceneCameraController : MonoBehaviour
 		}
 	}
 	
+	void TouchUpdate() {
+		if (Touch.activeTouches.Count == 0) {
+			return;
+		}
+		var touch = Touch.activeTouches[0];
+		
+		if (touch.phase != TouchPhase.Moved) {
+			return;
+		}
+		
+		Vector2 pos = touch.startScreenPosition;
+		pos.y = Screen.height - pos.y;
+		if (PositionOnUI(pos)) {
+			return;
+		}
+		
+		Vector2 d = touch.delta;
+		var angle = d.x * dragFactor;
+		transform.Rotate(0, angle, 0, Space.World);
+	}
+	
 	void StickUpdate() {
 		var d = leftStick + rightStick;
 		var speed = d.x * stickRotateSpeedFactor;
@@ -194,8 +219,9 @@ public class MainSceneCameraController : MonoBehaviour
 			return;
 		}
 		
-		MouseUpdate();
-		StickUpdate();
+		//MouseUpdate();
+		//StickUpdate();
+		TouchUpdate();
 		
 		int t = GetViewZodiac();
 		if (t != zodiacIndex) {

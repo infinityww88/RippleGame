@@ -54,8 +54,9 @@ public class UI_Main : MonoBehaviour
 			Utility.HideUI(playBtn);
 		} else {
 			playBtn.RegisterCallback<ClickEvent>(evt => {
-				Utility.HideUI(root);
-				LevelManager.Instance.Launch();
+				if (LevelManager.Instance.Launch()) {
+					Utility.HideUI(root);
+				}
 			});
 		}
 	}

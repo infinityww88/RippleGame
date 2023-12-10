@@ -30,6 +30,9 @@ public class Tutorial : MonoBehaviour
 	public float animationDuration = 5f;
 	private float startTime = 0;
 	
+	private VisualElement leftOperateRect;
+	private VisualElement rightOperateRect;
+	
 	// Awake is called when the script instance is being loaded.
 	protected void Awake()
 	{
@@ -42,10 +45,15 @@ public class Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
 	{
-		tutorialLabel = uiDoc.rootVisualElement.Q<Label>("TutorialLabel");
+		var root = uiDoc.rootVisualElement;
+		tutorialLabel = root.Q<Label>("TutorialLabel");
 		tutorialLabel.text = localization.GetText("tutorial-check-left-engine");
 		rocket.StartTutorial();
 		RocketGlobal.InTutorial = true;
+		var playDoc = GameObject.FindGameObjectWithTag("PlayUI").GetComponent<UIDocument>();
+		leftOperateRect = playDoc.rootVisualElement.Q<VisualElement>("LeftOperate");
+		rightOperateRect = playDoc.rootVisualElement.Q<VisualElement>("RightOperate");
+		leftOperateRect.AddToClassList("hint-border");
 	}
 
     // Update is called once per frame
@@ -55,11 +63,14 @@ public class Tutorial : MonoBehaviour
 	    	if (rocket.LeftEngineRunning) {
 	    		tutorialLabel.text = localization.GetText("tutorial-check-right-engine");
 	    		step = Step.CheckRightEngine;
+	    		leftOperateRect.RemoveFromClassList("hint-border");
+	    		rightOperateRect.AddToClassList("hint-border");
 	    	}
 	    } else if (step == Step.CheckRightEngine) {
 	    	if (rocket.RightEngineRunning) {
 	    		tutorialLabel.text = localization.GetText("tutorial-check-both-engine");
 	    		step = Step.CheckBothEngine;
+	    		leftOperateRect.AddToClassList("hint-border");
 	    	}
 	    } else if (step == Step.CheckBothEngine) {
 	    	if (rocket.LeftEngineRunning && rocket.RightEngineRunning) {
@@ -67,6 +78,8 @@ public class Tutorial : MonoBehaviour
 	    		step = Step.LandingOnPlatform;
 	    		shadowRocket.SetActive(true);
 	    		startTime = Time.time;
+	    		leftOperateRect.RemoveFromClassList("hint-border");
+	    		rightOperateRect.RemoveFromClassList("hint-border");
 	    	}
 	    } else {
 	    	if ((rocket.LeftEngineRunning || rocket.RightEngineRunning) && (Time.time - startTime) >= animationDuration) {

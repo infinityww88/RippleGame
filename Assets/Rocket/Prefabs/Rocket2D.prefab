@@ -212,22 +212,6 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Start Left Engine
       m_Flags: 0
-    - m_Name: 
-      m_Id: dee455e4-9203-4f66-abdd-5888a57e60dc
-      m_Path: <Gamepad>/leftStick/up
-      m_Interactions: Press
-      m_Processors: 
-      m_Groups: 
-      m_Action: Start Left Engine
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 3099220c-0838-452a-8d68-741abb54f60b
-      m_Path: <Keyboard>/leftCtrl
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Start Left Engine
-      m_Flags: 0
     m_Flags: 0
   startRightEngineAction:
     m_Name: Start Right Engine
@@ -238,24 +222,8 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: c7abdea6-d26b-455e-b0ea-531dfe2d3875
+      m_Id: 6a1d6bf2-3587-4ef4-a7fc-1019d00259ad
       m_Path: <Keyboard>/j
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Start Right Engine
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 5ed6e7f7-b177-4011-b4c8-2cc024bfac25
-      m_Path: <Gamepad>/rightStick/up
-      m_Interactions: Press
-      m_Processors: 
-      m_Groups: 
-      m_Action: Start Right Engine
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 0a8bc74c-b567-4519-93e8-7710c7177f7e
-      m_Path: <Keyboard>/rightCtrl
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -269,23 +237,7 @@ MonoBehaviour:
     m_Id: 788eb649-7bb6-45cb-9696-2fe361402c4e
     m_Processors: 
     m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 5d8286ba-a535-4064-b676-f078bf3f088f
-      m_Path: <Gamepad>/buttonWest
-      m_Interactions: Press
-      m_Processors: 
-      m_Groups: 
-      m_Action: Reload Scene
-      m_Flags: 0
-    - m_Name: 
-      m_Id: bde79f64-c97a-42b5-b131-db30ebac8104
-      m_Path: <Keyboard>/r
-      m_Interactions: Press
-      m_Processors: 
-      m_Groups: 
-      m_Action: Reload Scene
-      m_Flags: 0
+    m_SingletonActionBindings: []
     m_Flags: 0
   COM: {fileID: 7547395627372881970}
   leftParticle: {fileID: 8553387963078262804}

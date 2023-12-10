@@ -28,6 +28,8 @@ public class LevelManager : MonoBehaviour
 	
 	public static int PlayLevel = 0;
 	public static int CurrLevel = 0;
+	public RocketReward rocketReward;
+	public UI_RequestAd requestAdDialog;
 	
 	/*
 	void InitES3() {
@@ -248,25 +250,48 @@ public class LevelManager : MonoBehaviour
 	}
 	
 	[Button]
-	public void Launch() {
-		launchTimeline.stopped += pd => {
-			Debug.Log("launch timeline stopped");
-			SceneManager.LoadScene(1);
-		};
-		launchTimeline.Play();
-		MusicController.Instance.Stop();
-		RocketGlobal.OnLaunch();
+	public bool Launch() {
+		if (rocketReward.RocketNum > 0) {
+			rocketReward.Use1Rocket();
+			launchTimeline.stopped += pd => {
+				Debug.Log("launch timeline stopped");
+				SceneManager.LoadScene(1);
+			};
+			launchTimeline.Play();
+			MusicController.Instance.Stop();
+			RocketGlobal.OnLaunch();
+			return true;
+		} else {
+			RequestMoreRocket();
+			return false;
+		}
 	}
 	
-	public void Launch(int zodiac, int level) {
-		PlayLevel = levelData.GetGlobalLevel(zodiac, level);
-		Debug.Log("Launch level " + PlayLevel);
-		launchTimeline.stopped += pd => {
-			Debug.Log("launch timeline stopped");
-			SceneManager.LoadScene(1);
-		};
-		launchTimeline.Play();
-		MusicController.Instance.Stop();
-		RocketGlobal.OnLaunch();
+	public bool Launch(int zodiac, int level) {
+		if (rocketReward.RocketNum > 0) {
+			rocketReward.Use1Rocket();
+			PlayLevel = levelData.GetGlobalLevel(zodiac, level);
+			Debug.Log("Launch level " + PlayLevel);
+			launchTimeline.stopped += pd => {
+				Debug.Log("launch timeline stopped");
+				SceneManager.LoadScene(1);
+			};
+			launchTimeline.Play();
+			MusicController.Instance.Stop();
+			RocketGlobal.OnLaunch();
+			return true;
+		} else {
+			RequestMoreRocket();
+			return false;
+		}
+	}
+	
+	void RequestMoreRocket() {
+		requestAdDialog.ShowRequestMoreAd();
+	}
+	
+	[Button]
+	void UnsetTutorial(bool enable) {
+		ES3.Save("tutorial", enable);
 	}
 }

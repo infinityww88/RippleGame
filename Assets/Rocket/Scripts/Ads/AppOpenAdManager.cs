@@ -1,6 +1,7 @@
 ﻿using System;
 using GoogleMobileAds.Api;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AppOpenAdManager
 {
@@ -48,14 +49,18 @@ public class AppOpenAdManager
 		});
 	}
 	
-	public void ShowAdIfAvailable() {
+	public void ShowAdIfAvailable(UnityEvent onOpened,
+		UnityEvent onClosed, UnityEvent onError) {
 		Debug.Log($"{IsAdAvailable} {isShowingAd} {ad.CanShowAd()}");
 		if (!IsAdAvailable || isShowingAd) {
 			return;
 		}
 		ad.OnAdFullScreenContentOpened += HandleAdOpened;
+		ad.OnAdFullScreenContentOpened += () => onOpened?.Invoke();
 		ad.OnAdFullScreenContentClosed += HandleAdClosed;
+		ad.OnAdFullScreenContentClosed += () => onClosed?.Invoke();
 		ad.OnAdFullScreenContentFailed += HandleAdFail;
+		ad.OnAdFullScreenContentFailed += err => onError?.Invoke();
 		ad.Show();
 	}
 	

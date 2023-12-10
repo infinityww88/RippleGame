@@ -62,10 +62,10 @@ public class UI_LevelRecordList : MonoBehaviour
 	    recordList.Q<ScrollView>().mouseWheelScrollSize = scrollSize;
 	    
 	    replayButton.RegisterCallback<ClickEvent>(evt => {
-	    	Debug.Log("replay " + recordList.selectedIndex);
 	    	var level = recordList.selectedIndex;
-	    	Utility.HideUI(GetComponent<UIDocument>().rootVisualElement);
-	    	LevelManager.Instance.Launch(zodiacIndex, level);
+	    	if (LevelManager.Instance.Launch(zodiacIndex, level)) {
+	    		Utility.HideUI(GetComponent<UIDocument>().rootVisualElement);
+	    	}
 	    });
 	    nextZodiacButton.RegisterCallback<ClickEvent>(NextZodiac);
 	    prevZodiacButton.RegisterCallback<ClickEvent>(PrevZodiac);

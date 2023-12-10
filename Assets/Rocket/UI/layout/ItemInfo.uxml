@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Rocket/UI/stylesheet/ItemInfo.uss?fileID=7433441132597879392&amp;guid=dae21bd31f9abef44aca26fa2c4c4f26&amp;type=3#ItemInfo" />
+    <ui:VisualElement style="flex-grow: 0; width: 200px; height: 200px; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/icon_Rocket%201.png?fileID=2800000&amp;guid=03ee11339e9f32f46a9af12ffca27f81&amp;type=3#icon_Rocket 1&apos;);">
+        <ui:VisualElement style="flex-grow: 0; width: 70px; height: 70px; bottom: 0; right: 0; position: absolute; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/IconButton10White_1%201.png?fileID=2800000&amp;guid=5549bb2237692744db757b563e5c0fb5&amp;type=3#IconButton10White_1 1&apos;); -unity-background-image-tint-color: rgb(19, 190, 3); align-items: center; justify-content: center;">
+            <ui:VisualElement style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/ICON_Plus%201.png?fileID=2800000&amp;guid=595604bb52f237047a97b77691cef9cb&amp;type=3#ICON_Plus 1&apos;); width: 80%; height: 80%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Label text="X 80" style="font-size: 80px; -unity-text-align: middle-left; color: rgb(255, 255, 255); flex-grow: 1;" />
+</ui:UXML>

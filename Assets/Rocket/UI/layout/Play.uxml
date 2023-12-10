@@ -1,8 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="Pause" src="project://database/Assets/Rocket/UI/layout/Pause.uxml?fileID=9197481963319205126&amp;guid=6653461b081a2d24b955171aad2bd990&amp;type=3#Pause" />
     <ui:Template name="Result" src="project://database/Assets/Rocket/UI/layout/Result.uxml?fileID=9197481963319205126&amp;guid=60b465796ae47914f886351187ed3ff8&amp;type=3#Result" />
+    <ui:Template name="RequestAd" src="project://database/Assets/Rocket/UI/layout/RequestAd.uxml?fileID=9197481963319205126&amp;guid=9d406effef2ae864e86df88058db0dcc&amp;type=3#RequestAd" />
     <Style src="project://database/Assets/Rocket/UI/stylesheet/Play.uss?fileID=7433441132597879392&amp;guid=aa6d31d4ec6ea6046b7a8a721ed99ba8&amp;type=3#Play" />
-    <ui:VisualElement style="flex-grow: 1; position: absolute; width: 100%; height: 100%; flex-direction: row;">
+    <ui:VisualElement style="flex-grow: 1; position: absolute; width: 100%; height: 100%; flex-direction: row; padding-top: 100px; padding-right: 100px; padding-bottom: 100px; padding-left: 100px;">
         <ui:VisualElement name="LeftOperate" style="flex-grow: 1;" />
         <ui:VisualElement name="RightOperate" style="flex-grow: 1;" />
     </ui:VisualElement>
@@ -14,4 +15,5 @@
     </ui:VisualElement>
     <ui:Instance template="Pause" style="display: none;" />
     <ui:Instance template="Result" style="display: none;" />
+    <ui:Instance template="RequestAd" name="RequestAd" style="display: none;" />
 </ui:UXML>
