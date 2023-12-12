@@ -69,7 +69,7 @@ public class RocketReward : MonoBehaviour
 			.AppendCallback(() => {
 				card.gameObject.SetActive(false);
 				particleSystem.Emit(12);
-				SetRocketNum(rocketNum + 10);
+				SetRocketNum(rocketNum + 5);
 				SaveRocketNum();
 			});
 	}

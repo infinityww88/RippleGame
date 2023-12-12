@@ -5,8 +5,9 @@ using UnityEngine.Events;
 
 public class AppOpenAdManager
 {
+	
 #if UNITY_ANDROID
-	private const string AD_UNIT_ID = "ca-app-pub-3940256099942544/3419835294";
+	private const string AD_UNIT_ID = "ca-app-pub-8192918739206461/6876124877";
 #elif UNITY_IOS
 	private const string AD_UNIT_ID = "ca-app-pub-3940256099942544/5662855259";
 #else
