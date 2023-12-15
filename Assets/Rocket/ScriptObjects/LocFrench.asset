@@ -1,0 +1,748 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc4b24caa0813149ae14a8c628eec38, type: 3}
+  m_Name: LocFrench
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: text
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 58
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: contact-title
+    - Name: $v
+      Entry: 1
+      Data: Contact
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: contact-content
+    - Name: $v
+      Entry: 1
+      Data: "Pour toute question ou suggestion, n'h\xE9sitez pas \xE0 contacter le
+        d\xE9veloppeur par email infinityww88@proton.me"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: complete-title
+    - Name: $v
+      Entry: 1
+      Data: "F\xE9licitation !"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: complete-content
+    - Name: $v
+      Entry: 1
+      Data: "Vous compl\xE9tez toutes les constellations.\\nGr\xE2ce \xE0 jouer"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-header-star
+    - Name: $v
+      Entry: 1
+      Data: "\xC9toile"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-header-best-time
+    - Name: $v
+      Entry: 1
+      Data: Meilleur disque
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-play-button
+    - Name: $v
+      Entry: 1
+      Data: Jouer
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: play-button
+    - Name: $v
+      Entry: 1
+      Data: Jouer
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-music
+    - Name: $v
+      Entry: 1
+      Data: Musique
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-sound
+    - Name: $v
+      Entry: 1
+      Data: Son
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-operation
+    - Name: $v
+      Entry: 1
+      Data: "Op\xE9ration"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-contact
+    - Name: $v
+      Entry: 1
+      Data: Contact
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-success
+    - Name: $v
+      Entry: 1
+      Data: "Succ\xE8s"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-fail
+    - Name: $v
+      Entry: 1
+      Data: "\xC9chouer"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-new-record
+    - Name: $v
+      Entry: 1
+      Data: Nouvel enregistrement!
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-best-time
+    - Name: $v
+      Entry: 1
+      Data: meilleur temps
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-show-trail
+    - Name: $v
+      Entry: 1
+      Data: Afficher le parcours
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-replay
+    - Name: $v
+      Entry: 1
+      Data: Rejouer
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-back
+    - Name: $v
+      Entry: 1
+      Data: Dos
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-continue
+    - Name: $v
+      Entry: 1
+      Data: Continuer
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-back
+    - Name: $v
+      Entry: 1
+      Data: Dos
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-action
+    - Name: $v
+      Entry: 1
+      Data: Action
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-controls
+    - Name: $v
+      Entry: 1
+      Data: "Contr\xF4les"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-left-engine-action
+    - Name: $v
+      Entry: 1
+      Data: Moteur gauche
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-left-engine-controls
+    - Name: $v
+      Entry: 1
+      Data: Touche F\nJoystick gauche
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-right-engine-action
+    - Name: $v
+      Entry: 1
+      Data: Moteur droit
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-pause-action
+    - Name: $v
+      Entry: 1
+      Data: Pause
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-restart-action
+    - Name: $v
+      Entry: 1
+      Data: "Red\xE9marrage"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-around-action
+    - Name: $v
+      Entry: 1
+      Data: Regardez autour de vous
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-next-constellation-action
+    - Name: $v
+      Entry: 1
+      Data: Regardez la prochaine constellation
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-prev-constellation-action
+    - Name: $v
+      Entry: 1
+      Data: "Regardez la constellation pr\xE9c\xE9dente"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-right-engine-controls
+    - Name: $v
+      Entry: 1
+      Data: Touche J\nJoystick droit
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-pause-controls
+    - Name: $v
+      Entry: 1
+      Data: "Touche \xC9chap\\nBouton Cercle/B sur la manette de jeu"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-restart-controls
+    - Name: $v
+      Entry: 1
+      Data: "Touche R\\nBouton carr\xE9/X sur la manette de jeu"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-around-controls
+    - Name: $v
+      Entry: 1
+      Data: Manette gauche/droite
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-at-next-constellation-controls
+    - Name: $v
+      Entry: 1
+      Data: "Touche Fl\xE8che Gauche/Fl\xE8che Gauche sur la manette de jeu"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-at-prev-constellation-controls
+    - Name: $v
+      Entry: 1
+      Data: "Touche fl\xE9ch\xE9e droite\_/\_bouton fl\xE9ch\xE9 droit sur la manette
+        de jeu"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-both-engine
+    - Name: $v
+      Entry: 1
+      Data: "Appuyez sur la touche <color=green>F</color> et la touche <color=green>J</color>,
+        ou appuyez sur le <color=green>Joystick gauche</color> et le <color=green>Joystick
+        droit</color>. simultan\xE9ment pour d\xE9marrer les deux moteurs"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-left-engine
+    - Name: $v
+      Entry: 1
+      Data: "Appuyez sur la touche <color=green>F</color> ou appuyez sur le <color=green>Joystick
+        gauche</color> pour d\xE9marrer le moteur gauche."
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-right-engine
+    - Name: $v
+      Entry: 1
+      Data: "Appuyez sur la touche <color=green>J</color> ou appuyez sur le <color=green>Joystick
+        droit</color> pour d\xE9marrer le moteur droit."
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-landing-on-platform
+    - Name: $v
+      Entry: 1
+      Data: "Contr\xF4lez maintenant la fus\xE9e et posez-la sur la plate-forme,
+        \xE9vitez tout obstacle"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-lang
+    - Name: $v
+      Entry: 1
+      Data: Langue
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-replay
+    - Name: $v
+      Entry: 1
+      Data: "Red\xE9marrage"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: select-constellation
+    - Name: $v
+      Entry: 1
+      Data: "S\xE9lectionnez Constellation"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: confirm
+    - Name: $v
+      Entry: 1
+      Data: Confirmer
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: cancel
+    - Name: $v
+      Entry: 1
+      Data: Annuler
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: resume
+    - Name: $v
+      Entry: 1
+      Data: CV
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: device-change
+    - Name: $v
+      Entry: 1
+      Data: "D\xE9tecter le changement de contr\xF4leur de jeu, recharger pour prendre
+        effet imm\xE9diatement ?"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: dismiss
+    - Name: $v
+      Entry: 1
+      Data: Rejeter
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: navigate
+    - Name: $v
+      Entry: 1
+      Data: Naviguer
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: select-level
+    - Name: $v
+      Entry: 1
+      Data: Choisir le niveau
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting
+    - Name: $v
+      Entry: 1
+      Data: "Param\xE8tre"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: show-result
+    - Name: $v
+      Entry: 1
+      Data: "Afficher le r\xE9sultat"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: toggle
+    - Name: $v
+      Entry: 1
+      Data: Basculer
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: view
+    - Name: $v
+      Entry: 1
+      Data: Voir
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: view-constellation
+    - Name: $v
+      Entry: 1
+      Data: 'Voir les constellations '
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: exit-confirm
+    - Name: $v
+      Entry: 1
+      Data: "\xCAtes-vous s\xFBr de vouloir quitter le jeu\_?"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: exit
+    - Name: $v
+      Entry: 1
+      Data: Sortie
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  fontAsset: {fileID: 11400000, guid: f082f0043830a374385e36504d4694c3, type: 2}

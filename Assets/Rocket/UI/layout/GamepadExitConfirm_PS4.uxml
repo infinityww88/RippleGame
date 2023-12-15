@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Rocket/UI/stylesheet/CtrlBar.uss?fileID=7433441132597879392&amp;guid=1bb24785ddca4d04a99cafb78a7c122f&amp;type=3#CtrlBar" />
+    <ui:VisualElement class="gamepad" style="display: flex;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center; display: flex;">
+            <ui:Label text="Confirm" class="localization loc-key-confirm" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/ps4_gamepad.png?fileID=-1469608731&amp;guid=5bcaf266818a91847a1d9b4932d694cd&amp;type=3#ps4_gamepad_12&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:Label text="Cancel" class="localization loc-key-cancel" />
+            <ui:VisualElement name="VisualElement" class="d-pad" style="background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/ps4_gamepad.png?fileID=1971793846&amp;guid=5bcaf266818a91847a1d9b4932d694cd&amp;type=3#ps4_gamepad_11&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

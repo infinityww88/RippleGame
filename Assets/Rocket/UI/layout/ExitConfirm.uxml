@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="GamepadExitConfirm_PS4" src="project://database/Assets/Rocket/UI/layout/GamepadExitConfirm_PS4.uxml?fileID=9197481963319205126&amp;guid=8dcbc390ef90dce4c9ff1265117b1f9d&amp;type=3#GamepadExitConfirm_PS4" />
+    <ui:Template name="GamepadExitConfirm_XBOX" src="project://database/Assets/Rocket/UI/layout/GamepadExitConfirm_XBOX.uxml?fileID=9197481963319205126&amp;guid=b066c19461fb7a84091482b101b011f2&amp;type=3#GamepadExitConfirm_XBOX" />
+    <Style src="project://database/Assets/Rocket/UI/stylesheet/DeviceChangeConfirm.uss?fileID=7433441132597879392&amp;guid=b93bdc27af51852419737195275fe8b4&amp;type=3#DeviceChangeConfirm" />
+    <ui:VisualElement style="flex-grow: 0; width: 400px; height: 300px; background-image: url(&apos;project://database/Assets/Rocket/Texture/UI/Popup_DailyRewards%201.png?fileID=2800000&amp;guid=7dc8f7ad99bb7a54b9e98f3260140f6f&amp;type=3#Popup_DailyRewards 1&apos;); justify-content: center; font-size: 28px; color: rgb(255, 255, 255);">
+        <ui:VisualElement style="flex-grow: 0; padding-left: 10px; padding-right: 10px;">
+            <ui:Label text="Are you sure you want to exit the game?" class="localization loc-key-exit-confirm" style="white-space: normal; -unity-text-align: upper-center; margin-bottom: 35px;" />
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: center;">
+                <ui:Button text="Confirm" name="Confirm" class="button localization loc-key-confirm" />
+                <ui:Button text="Cancel" name="Cancel" class="button localization loc-key-cancel" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Instance template="GamepadExitConfirm_PS4" name="GamepadExitConfirm_PS4" style="bottom: 0; display: none;" />
+    <ui:Instance template="GamepadExitConfirm_XBOX" name="GamepadExitConfirm_XBOX" style="bottom: 0; display: none;" />
+</ui:UXML>

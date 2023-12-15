@@ -1,0 +1,746 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc4b24caa0813149ae14a8c628eec38, type: 3}
+  m_Name: LocJapanese
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: text
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 58
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: contact-title
+    - Name: $v
+      Entry: 1
+      Data: "\u9023\u7D61\u5148"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: contact-content
+    - Name: $v
+      Entry: 1
+      Data: "\u3054\u8CEA\u554F\u3084\u3054\u63D0\u6848\u304C\u3042\u308B\u5834\u5408\u306F\u3001\u96FB\u5B50\u30E1\u30FC\u30EB
+        (infinityww88@proton.me) \u3067\u958B\u767A\u8005\u306B\u304A\u554F\u3044\u5408\u308F\u305B\u304F\u3060\u3055\u3044\u3002"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: complete-title
+    - Name: $v
+      Entry: 1
+      Data: "\u304A\u3081\u3067\u3068\u3046\uFF01"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: complete-content
+    - Name: $v
+      Entry: 1
+      Data: "\u3059\u3079\u3066\u306E\u661F\u5EA7\u3092\u30B3\u30F3\u30D7\u30EA\u30FC\u30C8\u3057\u307E\u3057\u305F\u3002
+        \\n\u7D4C\u9A13\u3092\u3042\u308A\u304C\u3068\u3046"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-header-star
+    - Name: $v
+      Entry: 1
+      Data: "\u661F"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-header-best-time
+    - Name: $v
+      Entry: 1
+      Data: "\u6700\u9AD8\u8A18\u9332"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-play-button
+    - Name: $v
+      Entry: 1
+      Data: "\u59CB\u3081\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: play-button
+    - Name: $v
+      Entry: 1
+      Data: "\u59CB\u3081\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-music
+    - Name: $v
+      Entry: 1
+      Data: "\u97F3\u697D"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-sound
+    - Name: $v
+      Entry: 1
+      Data: "\u97F3"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-operation
+    - Name: $v
+      Entry: 1
+      Data: "\u8AAC\u660E\u66F8"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-contact
+    - Name: $v
+      Entry: 1
+      Data: "\u9023\u7D61\u5148"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-success
+    - Name: $v
+      Entry: 1
+      Data: "\u6210\u529F"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-fail
+    - Name: $v
+      Entry: 1
+      Data: "\u5931\u6557"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-new-record
+    - Name: $v
+      Entry: 1
+      Data: "\u65B0\u8A18\u9332\uFF01"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-best-time
+    - Name: $v
+      Entry: 1
+      Data: "\u30D9\u30B9\u30C8\u30BF\u30A4\u30E0"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-show-trail
+    - Name: $v
+      Entry: 1
+      Data: "\u30EB\u30FC\u30C8\u3092\u8868\u793A"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-replay
+    - Name: $v
+      Entry: 1
+      Data: "\u518D\u8D77\u52D5"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-back
+    - Name: $v
+      Entry: 1
+      Data: "\u623B\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-continue
+    - Name: $v
+      Entry: 1
+      Data: "\u7D9A\u304F"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-back
+    - Name: $v
+      Entry: 1
+      Data: "\u623B\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-action
+    - Name: $v
+      Entry: 1
+      Data: "\u30A2\u30AF\u30B7\u30E7\u30F3"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-controls
+    - Name: $v
+      Entry: 1
+      Data: "\u30B3\u30F3\u30C8\u30ED\u30FC\u30EB"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-left-engine-action
+    - Name: $v
+      Entry: 1
+      Data: "\u5DE6\u30A8\u30F3\u30B8\u30F3"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-left-engine-controls
+    - Name: $v
+      Entry: 1
+      Data: "F \u30AD\u30FC\\n\u30B3\u30F3\u30C8\u30ED\u30FC\u30E9\u306E\u5DE6\u30B8\u30E7\u30A4\u30B9\u30C6\u30A3\u30C3\u30AF"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-right-engine-action
+    - Name: $v
+      Entry: 1
+      Data: "\u53F3\u30A8\u30F3\u30B8\u30F3"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-pause-action
+    - Name: $v
+      Entry: 1
+      Data: "\u4E00\u6642\u505C\u6B62"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-restart-action
+    - Name: $v
+      Entry: 1
+      Data: "\u518D\u8D77\u52D5"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-around-action
+    - Name: $v
+      Entry: 1
+      Data: "\u898B\u56DE\u3059"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-next-constellation-action
+    - Name: $v
+      Entry: 1
+      Data: "\u6B21\u306E\u661F\u5EA7\u3092\u898B\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-prev-constellation-action
+    - Name: $v
+      Entry: 1
+      Data: "\u524D\u306E\u661F\u5EA7\u3092\u8868\u793A\u3059\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-right-engine-controls
+    - Name: $v
+      Entry: 1
+      Data: "J \u30AD\u30FC\\n\u30B3\u30F3\u30C8\u30ED\u30FC\u30E9\u306E\u53F3\u30B8\u30E7\u30A4\u30B9\u30C6\u30A3\u30C3\u30AF"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-pause-controls
+    - Name: $v
+      Entry: 1
+      Data: "Esc \u30AD\u30FC\\n\u30CF\u30F3\u30C9\u30EB\u5186/B \u30AD\u30FC"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-restart-controls
+    - Name: $v
+      Entry: 1
+      Data: "R \u30AD\u30FC\\n\u30CF\u30F3\u30C9\u30EB\u56DB\u89D2\u5F62/X \u30AD\u30FC"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-around-controls
+    - Name: $v
+      Entry: 1
+      Data: "\u30B3\u30F3\u30C8\u30ED\u30FC\u30E9\u30FC\u306E\u5DE6/\u53F3\u30B8\u30E7\u30A4\u30B9\u30C6\u30A3\u30C3\u30AF"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-at-next-constellation-controls
+    - Name: $v
+      Entry: 1
+      Data: "\u30AD\u30FC\u30DC\u30FC\u30C9\u306E\u5DE6\u77E2\u5370\u30AD\u30FC\\n\u30CF\u30F3\u30C9\u30EB\u306E\u5DE6\u77E2\u5370\u30AD\u30FC"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-at-prev-constellation-controls
+    - Name: $v
+      Entry: 1
+      Data: "\u30AD\u30FC\u30DC\u30FC\u30C9\u306E\u53F3\u77E2\u5370\u30AD\u30FC\\n\u30CF\u30F3\u30C9\u30EB\u306E\u53F3\u77E2\u5370"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-both-engine
+    - Name: $v
+      Entry: 1
+      Data: "<color=green>J</color> \u30AD\u30FC\u3068 <color=green>F</color> \u30AD\u30FC\u3092\u540C\u6642\u306B\u62BC\u3059\u304B\u3001\u30CF\u30F3\u30C9\u30EB\u306E
+        <color=green>\u5DE6\u53F3\u306E\u30B8\u30E7\u30A4\u30B9\u30C6\u30A3\u30C3\u30AF</color>
+        \u3092\u62BC\u3057\u307E\u3059\u3002\u4E21\u65B9\u306E\u30A8\u30F3\u30B8\u30F3\u3092\u540C\u6642\u306B\u59CB\u52D5\u3059\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-left-engine
+    - Name: $v
+      Entry: 1
+      Data: "<color=green>F</color> \u30AD\u30FC\u3092\u62BC\u3059\u304B\u3001<color=green>\u5DE6\u30B8\u30E7\u30A4\u30B9\u30C6\u30A3\u30C3\u30AF</color>
+        \u3092\u62BC\u3057\u3066\u5DE6\u30A8\u30F3\u30B8\u30F3\u3092\u59CB\u52D5\u3057\u307E\u3059\u3002 "
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-right-engine
+    - Name: $v
+      Entry: 1
+      Data: "<color=green>J</color> \u30AD\u30FC\u3092\u62BC\u3059\u304B\u3001<color=green>\u53F3\u30B8\u30E7\u30A4\u30B9\u30C6\u30A3\u30C3\u30AF</color>
+        \u3092\u62BC\u3057\u3066\u53F3\u306E\u30A8\u30F3\u30B8\u30F3\u3092\u59CB\u52D5\u3057\u307E\u3059\u3002 "
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-landing-on-platform
+    - Name: $v
+      Entry: 1
+      Data: "\u30ED\u30B1\u30C3\u30C8\u3092\u5236\u5FA1\u3057\u3001\u969C\u5BB3\u7269\u3092\u907F\u3051\u3066\u30BF\u30FC\u30B2\u30C3\u30C8\u306E\u30D7\u30E9\u30C3\u30C8\u30D5\u30A9\u30FC\u30E0\u306B\u7740\u9678\u3057\u307E\u3059\u3002 "
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-lang
+    - Name: $v
+      Entry: 1
+      Data: "\u8A00\u8A9E"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-replay
+    - Name: $v
+      Entry: 1
+      Data: "\u518D\u8D77\u52D5"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting
+    - Name: $v
+      Entry: 1
+      Data: "\u8A2D\u5B9A"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: view
+    - Name: $v
+      Entry: 1
+      Data: "\u30C1\u30A7\u30C3\u30AF"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: navigate
+    - Name: $v
+      Entry: 1
+      Data: "\u52D5\u304F"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: confirm
+    - Name: $v
+      Entry: 1
+      Data: "\u78BA\u8A8D\u3059\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: dismiss
+    - Name: $v
+      Entry: 1
+      Data: "\u9589\u9396"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: show-result
+    - Name: $v
+      Entry: 1
+      Data: "\u7D50\u679C\u3092\u793A\u3059"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: resume
+    - Name: $v
+      Entry: 1
+      Data: "\u7D9A\u304F"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: view-constellation
+    - Name: $v
+      Entry: 1
+      Data: "\u30DB\u30ED\u30B9\u30B3\u30FC\u30D7\u3092\u898B\u308B"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: toggle
+    - Name: $v
+      Entry: 1
+      Data: "\u30B9\u30A4\u30C3\u30C1"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: select-constellation
+    - Name: $v
+      Entry: 1
+      Data: "\u3042\u306A\u305F\u306E\u661F\u5EA7\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: select-level
+    - Name: $v
+      Entry: 1
+      Data: "\u30EC\u30D9\u30EB\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: cancel
+    - Name: $v
+      Entry: 1
+      Data: "\u30AD\u30E3\u30F3\u30BB\u30EB"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: device-change
+    - Name: $v
+      Entry: 1
+      Data: "\u30B2\u30FC\u30E0 \u30B3\u30F3\u30C8\u30ED\u30FC\u30E9\u30FC\u3078\u306E\u5909\u66F4\u304C\u691C\u51FA\u3055\u308C\u307E\u3057\u305F\u3002\u6709\u52B9\u306B\u3059\u308B\u305F\u3081\u306B\u3059\u3050\u306B\u30EA\u30ED\u30FC\u30C9\u3057\u307E\u3059\u304B?"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: exit-confirm
+    - Name: $v
+      Entry: 1
+      Data: "\u30B2\u30FC\u30E0\u3092\u7D42\u4E86\u3057\u3066\u3082\u3088\u308D\u3057\u3044\u3067\u3059\u304B?"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: exit
+    - Name: $v
+      Entry: 1
+      Data: "\u51FA\u53E3"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  fontAsset: {fileID: 11400000, guid: 4aee66c3bd532b04cb84c2e2aaeccc74, type: 2}

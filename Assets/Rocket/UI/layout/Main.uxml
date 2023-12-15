@@ -1,11 +1,15 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="GamepadMain_PS4" src="project://database/Assets/Rocket/UI/layout/GamepadMain_PS4.uxml?fileID=9197481963319205126&amp;guid=88efd9deb3c3b8543bc05d9834a275e4&amp;type=3#GamepadMain_PS4" />
+    <ui:Template name="GamepadMain_XBOX" src="project://database/Assets/Rocket/UI/layout/GamepadMain_XBOX.uxml?fileID=9197481963319205126&amp;guid=f4f5d1a5cf8ce15409db605beccb2ab3&amp;type=3#GamepadMain_XBOX" />
     <ui:Template name="SettingUXML" src="project://database/Assets/Rocket/UI/layout/Setting.uxml?fileID=9197481963319205126&amp;guid=8063bc5b95e16874ca16a0e68c7309b0&amp;type=3#Setting" />
     <ui:Template name="LevelRankUXML" src="project://database/Assets/Rocket/UI/layout/LevelRank.uxml?fileID=9197481963319205126&amp;guid=d3c9a9833c51b434b9ad39ac2b1cda7d&amp;type=3#LevelRank" />
     <ui:Template name="End" src="project://database/Assets/Rocket/UI/layout/End.uxml?fileID=9197481963319205126&amp;guid=b91bac83be2c05b44b6dd57155a2b170&amp;type=3#End" />
     <ui:Template name="DeviceChangeConfirm" src="project://database/Assets/Rocket/UI/layout/DeviceChangeConfirm.uxml?fileID=9197481963319205126&amp;guid=2290351d0395f88409b35147176e4373&amp;type=3#DeviceChangeConfirm" />
-    <ui:Template name="GamepadMain_XBOX" src="project://database/Assets/Rocket/UI/layout/GamepadMain_XBOX.uxml?fileID=9197481963319205126&amp;guid=f4f5d1a5cf8ce15409db605beccb2ab3&amp;type=3#GamepadMain_XBOX" />
+    <ui:Template name="ExitConfirm" src="project://database/Assets/Rocket/UI/layout/ExitConfirm.uxml?fileID=9197481963319205126&amp;guid=209c403ef8094be45a6910107b1af714&amp;type=3#ExitConfirm" />
     <Style src="project://database/Assets/Rocket/UI/stylesheet/Main.uss?fileID=7433441132597879392&amp;guid=dda4ec7b96c44e943b0a69183196c054&amp;type=3#Main" />
+    <ui:VisualElement name="ZodiacSign" style="flex-grow: 0; flex-direction: row; width: 300px; height: 100px; right: 498px; bottom: 299px; position: absolute; justify-content: center; align-items: center;">
+        <ui:Label text="Taurus" name="ZodiacTextLabel" style="-unity-text-align: middle-center; color: rgb(255, 255, 255); font-size: 74px; flex-grow: 1; -unity-font-style: normal; margin-right: 10px; -unity-font-definition: url(&apos;project://database/Assets/Rocket/akaDora%20SDF.asset?fileID=11400000&amp;guid=b676dac903b4e7f48baf4c1efea7466a&amp;type=2#akaDora SDF&apos;);" />
+    </ui:VisualElement>
     <ui:Instance template="GamepadMain_PS4" name="GamepadMain_PS4" style="align-self: center; bottom: 0; position: absolute; display: none;" />
     <ui:Instance template="GamepadMain_XBOX" name="GamepadMain_XBOX" style="display: none; bottom: 0; align-self: center;" />
     <ui:VisualElement name="GamepadRoot" style="flex-grow: 0; position: absolute; justify-content: flex-end; bottom: 0; align-items: center; align-self: center;">
@@ -25,9 +29,7 @@
     <ui:VisualElement name="DialogContainer" class="dialog-container" style="flex-grow: 1; display: none; align-items: center; justify-content: center;" />
     <ui:Instance template="SettingUXML" style="display: none;" />
     <ui:Instance template="LevelRankUXML" name="LevelRankPanel" style="display: none;" />
-    <ui:VisualElement name="ZodiacSign" style="flex-grow: 0; flex-direction: row; width: 300px; height: 100px; right: 498px; bottom: 299px; position: absolute; justify-content: center; align-items: center;">
-        <ui:Label text="Taurus" name="ZodiacTextLabel" style="-unity-text-align: middle-center; color: rgb(255, 255, 255); font-size: 74px; flex-grow: 1; -unity-font-style: normal; margin-right: 10px; -unity-font-definition: url(&apos;project://database/Assets/Rocket/akaDora%20SDF.asset?fileID=11400000&amp;guid=b676dac903b4e7f48baf4c1efea7466a&amp;type=2#akaDora SDF&apos;);" />
-    </ui:VisualElement>
     <ui:Instance template="End" style="position: absolute; flex-grow: 1; width: 100%; height: 100%; display: none;" />
     <ui:Instance template="DeviceChangeConfirm" style="display: none;" />
+    <ui:Instance template="ExitConfirm" name="ExitConfirm" style="display: none;" />
 </ui:UXML>

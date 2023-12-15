@@ -1,5 +1,5 @@
 {
-    "name": "Actions",
+    "name": "ActionsMain",
     "maps": [
         {
             "name": "MainScene",
@@ -63,6 +63,15 @@
                     "name": "BestRecord",
                     "type": "Button",
                     "id": "d697310c-9c90-417c-97d6-453bbe88cf72",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Exit",
+                    "type": "Button",
+                    "id": "904427d4-9907-4deb-9c6a-31d24ac9d0b5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -144,6 +153,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "BestRecord",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6cf5bd2d-67e0-4ecb-8b67-289d8522b91b",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Exit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -448,6 +468,54 @@
                     "processors": "",
                     "groups": "",
                     "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "ExitConfirm",
+            "id": "cc7a1e47-d99c-4ec0-8976-468e02b21f91",
+            "actions": [
+                {
+                    "name": "Confirm",
+                    "type": "Button",
+                    "id": "86a6475d-3211-48a9-b7b5-d9a21811df88",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "a55fe93c-9767-4e9f-bc32-f6efa4c8143c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7583c152-d08a-4ed0-8015-39069ac1abc4",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Confirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aac0cf1c-51d5-4d92-b4a7-3cc3c0d4bf18",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

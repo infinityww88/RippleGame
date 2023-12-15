@@ -34,7 +34,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 56
+      Data: 58
     - Name: 
       Entry: 7
       Data: 
@@ -72,7 +72,7 @@ MonoBehaviour:
       Data: complete-title
     - Name: $v
       Entry: 1
-      Data: " \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+      Data: "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
     - Name: 
       Entry: 8
       Data: 
@@ -218,7 +218,7 @@ MonoBehaviour:
       Data: result-new-record
     - Name: $v
       Entry: 1
-      Data: " \u041D\u043E\u0432\u0430\u044F \u0437\u0430\u043F\u0438\u0441\u044C!"
+      Data: "\u041D\u043E\u0432\u0430\u044F \u0437\u0430\u043F\u0438\u0441\u044C!"
     - Name: 
       Entry: 8
       Data: 
@@ -230,7 +230,7 @@ MonoBehaviour:
       Data: result-best-time
     - Name: $v
       Entry: 1
-      Data: " \u041B\u0443\u0447\u0448\u0435\u0435 \u0432\u0440\u0435\u043C\u044F"
+      Data: "\u041B\u0443\u0447\u0448\u0435\u0435 \u0432\u0440\u0435\u043C\u044F"
     - Name: 
       Entry: 8
       Data: 
@@ -302,7 +302,7 @@ MonoBehaviour:
       Data: operation-action
     - Name: $v
       Entry: 1
-      Data: " \u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0435"
+      Data: "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0435"
     - Name: 
       Entry: 8
       Data: 
@@ -326,7 +326,7 @@ MonoBehaviour:
       Data: operation-left-engine-action
     - Name: $v
       Entry: 1
-      Data: " \u041B\u0435\u0432\u044B\u0439 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
+      Data: "\u041B\u0435\u0432\u044B\u0439 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
     - Name: 
       Entry: 8
       Data: 
@@ -338,7 +338,7 @@ MonoBehaviour:
       Data: operation-left-engine-controls
     - Name: $v
       Entry: 1
-      Data: " \u041A\u043B\u0430\u0432\u0438\u0448\u0430 F\\n\u041B\u0435\u0432\u044B\u0439
+      Data: "\u041A\u043B\u0430\u0432\u0438\u0448\u0430 F\\n\u041B\u0435\u0432\u044B\u0439
         \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A"
     - Name: 
       Entry: 8
@@ -363,7 +363,7 @@ MonoBehaviour:
       Data: operation-pause-action
     - Name: $v
       Entry: 1
-      Data: " \u041F\u0430\u0443\u0437\u0430"
+      Data: "\u041F\u0430\u0443\u0437\u0430"
     - Name: 
       Entry: 8
       Data: 
@@ -412,7 +412,7 @@ MonoBehaviour:
       Data: operation-look-prev-constellation-action
     - Name: $v
       Entry: 1
-      Data: " \u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u0442\u0435 \u043D\u0430
+      Data: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u0442\u0435 \u043D\u0430
         \u043F\u0440\u0435\u0434\u044B\u0434\u0443\u0449\u0435\u0435 \u0441\u043E\u0437\u0432\u0435\u0437\u0434\u0438\u0435"
     - Name: 
       Entry: 8
@@ -425,7 +425,7 @@ MonoBehaviour:
       Data: operation-right-engine-controls
     - Name: $v
       Entry: 1
-      Data: " \u041A\u043B\u0430\u0432\u0438\u0448\u0430 J\\n\u041F\u0440\u0430\u0432\u044B\u0439
+      Data: "\u041A\u043B\u0430\u0432\u0438\u0448\u0430 J\\n\u041F\u0440\u0430\u0432\u044B\u0439
         \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A"
     - Name: 
       Entry: 8
@@ -745,6 +745,32 @@ MonoBehaviour:
     - Name: $v
       Entry: 1
       Data: "\u041E\u0442\u043C\u0435\u043D\u0430"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: exit-confirm
+    - Name: $v
+      Entry: 1
+      Data: "\u0412\u044B \u0443\u0432\u0435\u0440\u0435\u043D\u044B, \u0447\u0442\u043E
+        \u0445\u043E\u0442\u0438\u0442\u0435 \u0432\u044B\u0439\u0442\u0438 \u0438\u0437
+        \u0438\u0433\u0440\u044B?"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: exit
+    - Name: $v
+      Entry: 1
+      Data: "\u0412\u044B\u0445\u043E\u0434"
     - Name: 
       Entry: 8
       Data: 

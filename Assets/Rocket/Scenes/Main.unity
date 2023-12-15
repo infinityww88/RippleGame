@@ -752,6 +752,7 @@ GameObject:
   - component: {fileID: 768202474}
   - component: {fileID: 768202476}
   - component: {fileID: 768202477}
+  - component: {fileID: 768202478}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -879,6 +880,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eventSystem: {fileID: 272487517}
+--- !u!114 &768202478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768202469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b019ce967f8f54c8582e86f55de4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &768840433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,6 +1845,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f571bf1e-2281-44a5-bd1b-ca9320a8ae4f
     m_ActionName: 'BestRecord/Back[/DualShock4GamepadHID/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 768202472}
+        m_TargetAssemblyTypeName: UI_Main, Assembly-CSharp
+        m_MethodName: OnExitConfirm
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 904427d4-9907-4deb-9c6a-31d24ac9d0b5
+    m_ActionName: 'MainScene/Exit[/DualShock4GamepadHID/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 768202478}
+        m_TargetAssemblyTypeName: UI_ExitConfirm, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 86a6475d-3211-48a9-b7b5-d9a21811df88
+    m_ActionName: 'ExitConfirm/Confirm[/DualShock4GamepadHID/buttonEast]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 768202478}
+        m_TargetAssemblyTypeName: UI_ExitConfirm, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a55fe93c-9767-4e9f-bc32-f6efa4c8143c
+    m_ActionName: 'ExitConfirm/Cancel[/DualShock4GamepadHID/buttonSouth]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: BestRecord

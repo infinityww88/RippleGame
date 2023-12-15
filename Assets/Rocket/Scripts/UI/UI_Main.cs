@@ -20,6 +20,7 @@ public class UI_Main : MonoBehaviour
 
 	private UI_Setting setting;
 	private UI_LevelRecordList levelRank;
+	private UI_ExitConfirm exitConfirm;
 	private Label zodiacDescLabel;
 	private Button playBtn;
 	
@@ -60,6 +61,19 @@ public class UI_Main : MonoBehaviour
 		Utility.HideUI(gamepadPanel);
 	}
 	
+	private void OpenExitConfirm() {
+		exitConfirm.Show(useGamePad);
+		playInput.SwitchCurrentActionMap("ExitConfirm");
+		Utility.HideUI(gamepadPanel);
+	}
+	
+	public void OnExitConfirm(InputAction.CallbackContext ctx) {
+		if (ctx.phase != InputActionPhase.Performed) {
+			return;
+		}
+		OpenExitConfirm();
+	}
+	
 	public void OnSetting(InputAction.CallbackContext ctx) {
 		if (ctx.phase != InputActionPhase.Performed) {
 			return;
@@ -92,6 +106,7 @@ public class UI_Main : MonoBehaviour
 		
 		setting = GetComponent<UI_Setting>();
 		levelRank = GetComponent<UI_LevelRecordList>();
+		exitConfirm = GetComponent<UI_ExitConfirm>();
 		
 		zodiacDescLabel = root.Q<Label>("ZodiacTextLabel");
 		

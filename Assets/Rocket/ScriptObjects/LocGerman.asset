@@ -1,0 +1,746 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc4b24caa0813149ae14a8c628eec38, type: 3}
+  m_Name: LocGerman
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: text
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 58
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: contact-title
+    - Name: $v
+      Entry: 1
+      Data: Kontakt
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: contact-content
+    - Name: $v
+      Entry: 1
+      Data: "Bei Fragen oder Anregungen k\xF6nnen Sie sich gerne per E-Mail an den
+        Entwickler wenden: infinityww88@proton.me"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: complete-title
+    - Name: $v
+      Entry: 1
+      Data: "Herzlichen Gl\xFCckwunsch!"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: complete-content
+    - Name: $v
+      Entry: 1
+      Data: "Du vervollst\xE4ndigst alle Sternbilder.\\nDanke an Play"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-header-star
+    - Name: $v
+      Entry: 1
+      Data: Stern
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-header-best-time
+    - Name: $v
+      Entry: 1
+      Data: Beste Aufnahme
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-play-button
+    - Name: $v
+      Entry: 1
+      Data: Spielen
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: play-button
+    - Name: $v
+      Entry: 1
+      Data: Spielen
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-music
+    - Name: $v
+      Entry: 1
+      Data: Musik
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-sound
+    - Name: $v
+      Entry: 1
+      Data: Klang
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-operation
+    - Name: $v
+      Entry: 1
+      Data: Betrieb
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-contact
+    - Name: $v
+      Entry: 1
+      Data: Kontakt
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-success
+    - Name: $v
+      Entry: 1
+      Data: Erfolg
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-fail
+    - Name: $v
+      Entry: 1
+      Data: Scheitern
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-new-record
+    - Name: $v
+      Entry: 1
+      Data: Neuer Eintrag!
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-best-time
+    - Name: $v
+      Entry: 1
+      Data: beste Zeit
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-show-trail
+    - Name: $v
+      Entry: 1
+      Data: Trail anzeigen
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-replay
+    - Name: $v
+      Entry: 1
+      Data: Wiederholung
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-back
+    - Name: $v
+      Entry: 1
+      Data: "Zur\xFCck"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-continue
+    - Name: $v
+      Entry: 1
+      Data: Weitermachen
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-back
+    - Name: $v
+      Entry: 1
+      Data: "Zur\xFCck"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-action
+    - Name: $v
+      Entry: 1
+      Data: Aktion
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-controls
+    - Name: $v
+      Entry: 1
+      Data: Kontrollen
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-left-engine-action
+    - Name: $v
+      Entry: 1
+      Data: Linker Motor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-left-engine-controls
+    - Name: $v
+      Entry: 1
+      Data: 'F-Taste\nLinker '
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-right-engine-action
+    - Name: $v
+      Entry: 1
+      Data: Richtiger Motor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-pause-action
+    - Name: $v
+      Entry: 1
+      Data: Pause
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-restart-action
+    - Name: $v
+      Entry: 1
+      Data: Neu starten
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-around-action
+    - Name: $v
+      Entry: 1
+      Data: Umschauen
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-next-constellation-action
+    - Name: $v
+      Entry: 1
+      Data: "Schauen Sie sich die n\xE4chste Konstellation an"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-prev-constellation-action
+    - Name: $v
+      Entry: 1
+      Data: Schauen Sie sich die vorherige Konstellation an
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-right-engine-controls
+    - Name: $v
+      Entry: 1
+      Data: J-Taste\nRechter Joystick
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-pause-controls
+    - Name: $v
+      Entry: 1
+      Data: Esc-Taste\nKreis/B-Taste auf dem Gamepad
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-restart-controls
+    - Name: $v
+      Entry: 1
+      Data: R-Taste\nQuadrat/X-Taste auf dem Gamepad
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-around-controls
+    - Name: $v
+      Entry: 1
+      Data: Links/Rechts-Joystick
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-at-next-constellation-controls
+    - Name: $v
+      Entry: 1
+      Data: Linke Pfeiltaste\nLinke Pfeiltaste auf dem Gamepad
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-at-prev-constellation-controls
+    - Name: $v
+      Entry: 1
+      Data: Rechte Pfeiltaste\nRechte Pfeiltaste auf dem Gamepad
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-both-engine
+    - Name: $v
+      Entry: 1
+      Data: "Dr\xFCcken Sie die Taste <color=green>F</color> und die Taste <color=green>J</color>
+        oder dr\xFCcken Sie den <color=green>linken Joystick</color> und den <color=green>rechten
+        Joystick</color> gleichzeitig, um beide Motoren zu starten"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-left-engine
+    - Name: $v
+      Entry: 1
+      Data: "Dr\xFCcken Sie die <color=green>F</color>-Taste oder dr\xFCcken Sie
+        den <color=green>linken Joystick</color>, um den linken Motor zu starten"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-right-engine
+    - Name: $v
+      Entry: 1
+      Data: "Dr\xFCcken Sie die <color=green>J</color>-Taste oder dr\xFCcken Sie
+        den <color=green>rechten Joystick</color>, um den rechten Motor zu starten"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-landing-on-platform
+    - Name: $v
+      Entry: 1
+      Data: Steuern Sie nun die Rakete und landen Sie sie auf der Plattform. Vermeiden
+        Sie dabei jedes Hindernis
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-lang
+    - Name: $v
+      Entry: 1
+      Data: Sprache
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-replay
+    - Name: $v
+      Entry: 1
+      Data: Neu starten
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting
+    - Name: $v
+      Entry: 1
+      Data: Einstellung
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: view
+    - Name: $v
+      Entry: 1
+      Data: Sicht
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: navigate
+    - Name: $v
+      Entry: 1
+      Data: Navigieren
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: confirm
+    - Name: $v
+      Entry: 1
+      Data: "Best\xE4tigen"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: dismiss
+    - Name: $v
+      Entry: 1
+      Data: "Zur\xFCckweisen"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: show-result
+    - Name: $v
+      Entry: 1
+      Data: Zeige Ergebnis
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: resume
+    - Name: $v
+      Entry: 1
+      Data: Wieder aufnehmen
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: view-constellation
+    - Name: $v
+      Entry: 1
+      Data: Konstellation anzeigen
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: toggle
+    - Name: $v
+      Entry: 1
+      Data: Umschalten
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: select-constellation
+    - Name: $v
+      Entry: 1
+      Data: "W\xE4hlen Sie Konstellation"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: select-level
+    - Name: $v
+      Entry: 1
+      Data: "Stufe ausw\xE4hlen"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: device-change
+    - Name: $v
+      Entry: 1
+      Data: Spielcontrollerwechsel erkennen, neu laden, damit er sofort wirksam wird?
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: cancel
+    - Name: $v
+      Entry: 1
+      Data: Stornieren
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: exit-confirm
+    - Name: $v
+      Entry: 1
+      Data: "Sind Sie sicher, dass Sie das Spiel beenden m\xF6chten?"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: exit
+    - Name: $v
+      Entry: 1
+      Data: Ausfahrt
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  fontAsset: {fileID: 11400000, guid: f082f0043830a374385e36504d4694c3, type: 2}

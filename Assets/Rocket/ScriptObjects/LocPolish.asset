@@ -1,0 +1,747 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc4b24caa0813149ae14a8c628eec38, type: 3}
+  m_Name: LocPolish
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: text
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 58
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: contact-title
+    - Name: $v
+      Entry: 1
+      Data: Kontakt
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: contact-content
+    - Name: $v
+      Entry: 1
+      Data: "W przypadku jakichkolwiek pyta\u0144 lub sugestii skontaktuj si\u0119
+        z programist\u0105 pod adresem infinityww88@proton.me"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: complete-title
+    - Name: $v
+      Entry: 1
+      Data: Gratulacje!
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: complete-content
+    - Name: $v
+      Entry: 1
+      Data: "Uko\u0144czysz wszystkie konstelacje.\\nDzi\u0119ki grze"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-header-star
+    - Name: $v
+      Entry: 1
+      Data: Gwiazda
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-header-best-time
+    - Name: $v
+      Entry: 1
+      Data: ' Najlepszy rekord'
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: record-list-play-button
+    - Name: $v
+      Entry: 1
+      Data: "Gra\u0107"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: play-button
+    - Name: $v
+      Entry: 1
+      Data: "Gra\u0107"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-music
+    - Name: $v
+      Entry: 1
+      Data: Muzyka
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-sound
+    - Name: $v
+      Entry: 1
+      Data: "D\u017Awi\u0119k"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-operation
+    - Name: $v
+      Entry: 1
+      Data: Operacja
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-contact
+    - Name: $v
+      Entry: 1
+      Data: Kontakt
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-success
+    - Name: $v
+      Entry: 1
+      Data: Powodzenie
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-fail
+    - Name: $v
+      Entry: 1
+      Data: "Ponie\u015B\u0107 pora\u017Ck\u0119"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-new-record
+    - Name: $v
+      Entry: 1
+      Data: Nowy rekord!
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-best-time
+    - Name: $v
+      Entry: 1
+      Data: Najlepszy czas
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-show-trail
+    - Name: $v
+      Entry: 1
+      Data: "Poka\u017C szlak"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-replay
+    - Name: $v
+      Entry: 1
+      Data: "Powt\xF3rna rozgrywka "
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: result-back
+    - Name: $v
+      Entry: 1
+      Data: Z powrotem
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-continue
+    - Name: $v
+      Entry: 1
+      Data: "Kontynuowa\u0107"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-back
+    - Name: $v
+      Entry: 1
+      Data: 'Z powrotem '
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-action
+    - Name: $v
+      Entry: 1
+      Data: "Dzia\u0142anie"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-controls
+    - Name: $v
+      Entry: 1
+      Data: Sterownica
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-left-engine-action
+    - Name: $v
+      Entry: 1
+      Data: Lewy silnik
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-left-engine-controls
+    - Name: $v
+      Entry: 1
+      Data: 'Klawisz F\nLewy '
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-right-engine-action
+    - Name: $v
+      Entry: 1
+      Data: Prawy silnik
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-pause-action
+    - Name: $v
+      Entry: 1
+      Data: Pauza
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-restart-action
+    - Name: $v
+      Entry: 1
+      Data: Uruchom ponownie
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-around-action
+    - Name: $v
+      Entry: 1
+      Data: "Rozejrze\u0107 si\u0119"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-next-constellation-action
+    - Name: $v
+      Entry: 1
+      Data: "Sp\xF3jrz na nast\u0119pn\u0105 konstelacj\u0119"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-prev-constellation-action
+    - Name: $v
+      Entry: 1
+      Data: "Sp\xF3jrz na poprzedni\u0105 konstelacj\u0119"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-right-engine-controls
+    - Name: $v
+      Entry: 1
+      Data: 'Klawisz J\nPrawy '
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-pause-controls
+    - Name: $v
+      Entry: 1
+      Data: "Klawisz Esc\\nPrzycisk K\xF3\u0142ko/B na gamepadzie"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-restart-controls
+    - Name: $v
+      Entry: 1
+      Data: Klawisz R\nPrzycisk kwadratowy/X na padzie
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-around-controls
+    - Name: $v
+      Entry: 1
+      Data: Lewy/prawy joystick
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-at-next-constellation-controls
+    - Name: $v
+      Entry: 1
+      Data: "Klawisz strza\u0142ki w lewo\\nPrzycisk strza\u0142ki w lewo na gamepadzie"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: operation-look-at-prev-constellation-controls
+    - Name: $v
+      Entry: 1
+      Data: "Klawisz strza\u0142ki w prawo\\nPrzycisk strza\u0142ki w prawo na gamepadzie"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-both-engine
+    - Name: $v
+      Entry: 1
+      Data: "Naci\u015Bnij klawisz <color=green>F</color> i <color=green>J</color>
+        lub naci\u015Bnij <color=green>Lewy joystick</color> i <color=green>Prawy
+        joystick</color> symuluj\u0105c uruchomienie obu silnik\xF3w"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-left-engine
+    - Name: $v
+      Entry: 1
+      Data: "Naci\u015Bnij klawisz <color=green>F</color> lub naci\u015Bnij <color=green>Lewy
+        joystick</color>, aby uruchomi\u0107 lewy silnik"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-check-right-engine
+    - Name: $v
+      Entry: 1
+      Data: "Naci\u015Bnij klawisz <color=green>J</color> lub naci\u015Bnij <color=green>Prawy
+        joystick</color>, aby uruchomi\u0107 prawy silnik"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: tutorial-landing-on-platform
+    - Name: $v
+      Entry: 1
+      Data: "Teraz steruj rakiet\u0105 i wyl\u0105duj na platformie, omijaj\u0105c
+        wszelkie przeszkody"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting-lang
+    - Name: $v
+      Entry: 1
+      Data: "J\u0119zyk"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pause-replay
+    - Name: $v
+      Entry: 1
+      Data: Uruchom ponownie
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: setting
+    - Name: $v
+      Entry: 1
+      Data: Ustawienie
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: view
+    - Name: $v
+      Entry: 1
+      Data: "Pogl\u0105d"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: navigate
+    - Name: $v
+      Entry: 1
+      Data: "Nawigowa\u0107"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: confirm
+    - Name: $v
+      Entry: 1
+      Data: "Potwierdza\u0107"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: dismiss
+    - Name: $v
+      Entry: 1
+      Data: "Odrzuca\u0107"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: show-result
+    - Name: $v
+      Entry: 1
+      Data: "Poka\u017C rezultat"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: resume
+    - Name: $v
+      Entry: 1
+      Data: "Wznawia\u0107"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: view-constellation
+    - Name: $v
+      Entry: 1
+      Data: "Zobacz Konstelacj\u0119"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: toggle
+    - Name: $v
+      Entry: 1
+      Data: "Prze\u0142\u0105cznik"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: select-constellation
+    - Name: $v
+      Entry: 1
+      Data: "Wybierz Konstelacj\u0119"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: select-level
+    - Name: $v
+      Entry: 1
+      Data: Wybierz poziom
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: device-change
+    - Name: $v
+      Entry: 1
+      Data: "Wykryj zmian\u0119 kontrolera gier, za\u0142aduj ponownie, aby natychmiast
+        zastosowa\u0107?"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: cancel
+    - Name: $v
+      Entry: 1
+      Data: "Anulowa\u0107"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: exit-confirm
+    - Name: $v
+      Entry: 1
+      Data: "Czy na pewno chcesz wyj\u015B\u0107 z gry?"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: exit
+    - Name: $v
+      Entry: 1
+      Data: "Wyj\u015Bcie"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  fontAsset: {fileID: 11400000, guid: f082f0043830a374385e36504d4694c3, type: 2}
